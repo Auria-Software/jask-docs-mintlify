@@ -1,0 +1,174 @@
+import { Callout } from "nextra/components";
+import { Table } from "nextra/components";
+
+# Gestion des rôles
+
+Les rôles dans Jask donnent accès à des fonctionnalités ou des vues particulières. Ils s'appliquent aux comptes utilisateurs connus dans Jask.
+
+Un utilisateur se verra attribuer l'ensemble des rôles définis sur son profil et sur les groupes auxquels il appartient.
+
+<Callout type="info">
+  Seul un utilisateur avec le droit `Utilisateurs` peut les gérer
+</Callout>
+
+
+<Callout type="info">
+  Tous les rôles sous Espace de travail sont groupés et assignés ensemble. Dès qu'un groupe ou utilisateur se voit attribué un rôle supérieur, ceux rôles sont automatiquement fournis.
+</Callout>
+
+## Rôles
+### Espace de travail
+<Table>
+  <thead>
+    <Table.Tr>
+      <Table.Th>Catégorie</Table.Th>
+      <Table.Th>Rôle</Table.Th>
+      <Table.Th>Description</Table.Th>
+      <Table.Th>Recommandé pour</Table.Th>
+    </Table.Tr>
+  </thead>
+  <tbody>
+    <Table.Tr>
+      <Table.Td>Catalogues et stockage</Table.Td>
+      <Table.Td>Espace documentaire</Table.Td>
+      <Table.Td>Accès à la bibliothèque de documents</Table.Td>
+      <Table.Td>
+        <span className="tag admin">Utilisateurs</span>
+      </Table.Td>
+    </Table.Tr>
+    <Table.Tr>
+      <Table.Td>Catalogues et stockage</Table.Td>
+      <Table.Td>Catalogue d'agents</Table.Td>
+      <Table.Td>Accès au catalogue d'agents</Table.Td>
+      <Table.Td>
+        <span className="tag admin">Utilisateurs</span>
+      </Table.Td>
+    </Table.Tr>
+        <Table.Tr>
+      <Table.Td>Catalogues et stockage</Table.Td>
+      <Table.Td>Catalogue de skills</Table.Td>
+      <Table.Td>Accès au catalogue de skills</Table.Td>
+      <Table.Td>
+        <span className="tag admin">Utilisateurs</span>
+      </Table.Td>
+    </Table.Tr>
+        <Table.Tr>
+      <Table.Td>Catalogues et stockage</Table.Td>
+      <Table.Td>Catalogue de modèles</Table.Td>
+      <Table.Td>Accès au catalogue de modèles</Table.Td>
+      <Table.Td>
+        <span className="tag admin">Utilisateurs</span>
+      </Table.Td>
+    </Table.Tr>
+    </tbody>
+</Table>  
+  
+### Contributeur
+
+<Table>
+  <thead>
+    <Table.Tr>
+      <Table.Th>Catégorie</Table.Th>
+      <Table.Th>Rôle</Table.Th>
+      <Table.Th>Description</Table.Th>
+      <Table.Th>Recommandé pour</Table.Th>
+    </Table.Tr>
+  </thead>
+  <tbody>
+      <Table.Tr>
+      <Table.Td>Plateforme</Table.Td>
+      <Table.Td>Créateur d'agents</Table.Td>
+      <Table.Td>Permet de créer des agents et des skills</Table.Td>
+      <Table.Td>
+        <span className="tag data">Data champion</span>,
+        <span className="tag collaborator">Collaborateur créteur</span>
+      </Table.Td>
+    </Table.Tr>
+  </tbody>
+</Table>
+
+### Gouvernance et sécurité
+
+<Table>
+  <thead>
+    <Table.Tr>
+      <Table.Th>Catégorie</Table.Th>
+      <Table.Th>Rôle</Table.Th>
+      <Table.Th>Description</Table.Th>
+      <Table.Th>Recommandé pour</Table.Th>
+    </Table.Tr>
+  </thead>
+  <tbody>
+    <Table.Tr>
+      <Table.Td>Administration</Table.Td>
+      <Table.Td>Administrateur total</Table.Td>
+      <Table.Td>Donne accès à tous les droits d'administration</Table.Td>
+      <Table.Td>
+        <span className="tag data">Administrateur</span>
+      </Table.Td>
+    </Table.Tr>
+    <Table.Tr>
+      <Table.Td>Administration</Table.Td>
+      <Table.Td>Administrateur utilisateurs</Table.Td>
+      <Table.Td>Gestion des utilisateurs, des groupes et des rôles</Table.Td>
+      <Table.Td>
+        <span className="tag data">Administrateur</span>
+      </Table.Td>
+    </Table.Tr>
+    <Table.Tr>
+      <Table.Td>Administration</Table.Td>
+      <Table.Td>Administrateur source de données</Table.Td>
+      <Table.Td>Gestion des sources de données disponibles sur la plateforme</Table.Td>
+      <Table.Td>
+        <span className="tag data">Administrateur</span>
+      </Table.Td>
+    </Table.Tr>
+    <Table.Tr>
+      <Table.Td>Administration</Table.Td>
+      <Table.Td>Administrateur modèles IA</Table.Td>
+      <Table.Td>Gestion des modèles LLM disponibles sur la plateforme</Table.Td>
+      <Table.Td>
+        <span className="tag data">Administrateur</span>
+      </Table.Td>
+    </Table.Tr>
+    <Table.Tr>
+      <Table.Td>Administration</Table.Td>
+      <Table.Td>Suivi des usages</Table.Td>
+      <Table.Td>Accès à l'observabilité de l'usage de la plateforme</Table.Td>
+      <Table.Td>
+        <span className="tag data">Administrateur</span>
+      </Table.Td>
+    </Table.Tr>
+    <Table.Tr>
+      <Table.Td>Administration</Table.Td>
+      <Table.Td>Gestion du store interne</Table.Td>
+      <Table.Td>Onglet de visibilité et gestion des services créés par les utilisateurs de la plateforme</Table.Td>
+      <Table.Td>
+        <span className="tag data">Administrateur</span>
+      </Table.Td>
+    </Table.Tr>
+  </tbody>
+</Table>
+
+### APIs & WebHook
+
+<Table>
+  <thead>
+    <Table.Tr>
+      <Table.Th>Catégorie</Table.Th>
+      <Table.Th>Rôle</Table.Th>
+      <Table.Th>Description</Table.Th>
+      <Table.Th>Recommandé pour</Table.Th>
+    </Table.Tr>
+  </thead>
+  <tbody>
+    <Table.Tr>
+      <Table.Td>Déploiements</Table.Td>
+      <Table.Td>Créateur d'API externe</Table.Td>
+      <Table.Td>Donne accès à l'onglet Déploiements pour gérer les déploiements de la plateforme</Table.Td>
+      <Table.Td>
+        <span className="tag data">Administrateur</span>
+      </Table.Td>
+    </Table.Tr>
+  </tbody>
+</Table>

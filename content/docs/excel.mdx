@@ -1,0 +1,78 @@
+---
+title: Excel
+sidebarTitle: Excel
+asIndexPage: true
+---
+
+import { Callout } from "nextra/components";
+import { Cards } from "nextra/components";
+import { Steps } from "nextra/components";
+
+# Installation & Utilisation du plugin Excel
+
+<Callout type="warning">
+  Cette étape est **obligatoire** pour pouvoir utiliser le plugin Jask sur
+  Excel.
+</Callout>
+
+Cet article vous donnera les étapes pour installer le plugin Jask sur Excel et le fonctionnement de ce plugin. Pour les administrateurs, vous devez mettre le plugin à disposition de vos utilisateurs en suivant cet article.
+
+
+## Installation du plugin Jask sur Excel
+
+<Steps>
+
+### Ajouter un complément
+
+Dans Excel, ouvrer le menu `Insérer` puis `Compléments` et `Mes compléments`
+
+
+### Sélectionner le plugin mis à disposition par l'administrateur
+
+Rendez-vous sur l'onglet `Géré par l'administrateur`, sélectionnez le plugin `Jask Excel Add-in` puis cliquez sur `Ajouter`.
+
+
+### Connecter vous avec Microsoft
+
+Suivez la procédure de connexion avec Microsoft
+
+</Steps>
+
+Vous avez maintenant ajouté le plugin Jask dans Excel.
+
+## Utilisation du plugin Excel Jask
+
+Grâce au plugin Excel Jask, vous pouvez accéder à toute la puissance des Agents Jask, directement depuis vos tableurs Excel.
+Vous avez deux modes d'utilisation du plugin :
+
+- Le mode Traitement
+- Formule
+- Le mode Conversation
+
+### Mode Traitement
+
+Le mode Traitement est idéal pour faire un appel multiple à un Agent créé sur Jask et remplir des cases de votre tableur avec les réponses de l'agent :<div/>
+1- Sélectionner l'agent que vous souhaitez utiliser<div/>
+2- Sélectionner les cellules Excel en entrée - ces cellules seront passées à l'agent qui se basera sur leur contenu pour générer sa réponse<div/>
+3- Cliquez sur `Ajouter entrée`, les cellules en entrée sont ajoutées. Vous pouvez répéter cette étape pour toutes les cellules à ajouter en entrée<div/>
+4- Sélectionner les cellules Excel cibles (en sortie) - ces cellules seront remplies par l'agent<div/>
+5- Cliquez sur `Ajouter sortie`, les cellules en sortie sont ajoutées<div/>
+6- Cliquez ensuite sur `Appliquer JASK`, l'agent sélectionné est appelé pour remplir les cellules en sortie par rapport aux cellules en entrée<div/>
+
+
+### Formule
+
+Dans le tableur, après avoir sélectionné un agent dans le plugin Excel, vous pouvez utiliser la formule `=JASK()` afin de faire appel à l'agent.
+Cette formule prend en entrée une cellule, contenant l'élément à prendre en entrée par l'agent, à laquelle vous pouvez ajouter une instruction supplémentaire afin de donner une indication à l'agent.
+
+Une fois la formule écrite, vous pouvez l'étirer pour l'appliquer à une plage de cellules.
+
+
+### Mode Conversation
+
+Le mode Conversation permet d'accéder à des agents sans remplir de cellules du tableur :<div/>
+1- Sélectionner l'agent que vous souhaitez utiliser<div/>
+2- Sélectionner des cellules du tableur et poser votre question à l'agent<div/>
+3- Cliquer sur `Envoyer` ou appuyer sur `Entrée`, l'agent sélectionné est appelé pour répondre à votre question à laquelle il répondra dans le chat.<div/>
+
+

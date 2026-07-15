@@ -1,0 +1,97 @@
+import { Callout } from "nextra/components";
+import { Tabs } from "nextra/components";
+
+# Paramètres avancés
+
+Le paramétrage de la plateforme est l'espace de configuration globale de JAsk : les options définies ici s'appliquent à l'ensemble des utilisateurs de l'organisation, contrairement aux réglages de la page Mon profil qui restent individuels. C'est depuis cet écran que les administrateurs définissent l'expérience de chat par défaut, les limites des agents IA, les skills transverses, les règles de sécurité et de gouvernance, ainsi que les fonctionnalités activées sur la plateforme. 
+
+<Callout type="warning">
+Ce niveau de configuration de la plateforme est réservé aux administrateurs et doit être manipulé avec précaution. Les modifications apportées ont un impact direct sur la plateforme des utilisateurs.
+</Callout>
+Pour accèder à cette page, rendez-vous dans **Réglages → Déploiement → Paramètres avancés**.
+
+### Chats
+ 
+Cette section configure l'expérience des chats des utilisateurs :
+ 
+- **Ouverture automatique des documents** : les documents générés par les agent s'ouvrent dans le panneau de droite, sans que l'utilisateur ait à cliquer dessus
+- **Montrer automatiquement les résultats de recherche** : ouvre automatiquement le panneau de réflexion à droite avec les résultats de la recherche effectuée par l'agent
+- **Afficher la consommation** : affiche dans le panel de réflexion un résumé de la consommation en tokens de cette réflexion
+
+![advanced1](@public/advanced1.png)
+
+### Agents IA
+ 
+Cette section définit les limites et comportements globaux des agents IA :
+ 
+- **Durée maximale de réflexion des agents** : durée (en secondes) au-delà de laquelle un agent interrompt sa réflexion. Par exemple, une valeur de 3600 arrête tout raisonnement dépassant une heure.
+- **Model IA par défaut** : modèle utilisé par défaut sur la plateforme
+- **Model IA Vision par défaut** :modèle utilisé par défaut sur la plateforme pour les analyses d'images, questions-réponses sur des PowerPoint…)
+- **Prompt Système admin** : lorsqu'il est activé, inclut un prompt système défini par l'administrateur dans tous les agents de la plateforme
+<Callout type="tip">
+  La durée maximale de réflexion agit comme un garde-fou de consommation : elle évite qu'un agent avec un niveau de réflexion élevé ne s'exécute indéfiniment sur une requête complexe.
+</Callout>
+
+### Skills IA
+ 
+Cette section liste les skills transverses de la plateforme, c'est-à-dire des skills que vous souhaitez mettre à disposition globalement plutôt que de les rattacher à un agent en particulier. Pour chaque skill (par exemple `just-xlsx` pour les fichiers tableur ou `just-pptx` pour les présentations), vous pouvez :
+ 
+- Activer l'option **Attacher à tous les agents**, qui rend le skill disponible dans l'ensemble des agents de la plateforme, indépendamment du rattachement manuel sur un agent donné
+- Choisir le **modèle** utilisé par le skill : un modèle spécifique (ex. gpt-5.2) ou le **modèle par défaut** de la plateforme. Certains skills nécessitent des modèles avancés pour fonctionner correctement.
+
+![advanced2](@public/advanced2.png)
+ 
+### Sécurité et Gouvernance
+ 
+Cette section regroupe les options qui encadrent l'usage de la plateforme :
+ 
+- **Autoriser le partage de conversations** : active ou désactive la possibilité pour les utilisateurs de partager les conversations avec Jask à d'autres utilisateurs
+- **Activer la mémoire des agents** : permet aux agents d'enregistrer des informations sur les utilisateurs à travers toutes leurs conversations, pour des réponses plus personnalisées
+- **Afficher uniquement les utilisateurs d'un même tenant** : restreint la visibilité des utilisateurs à ceux du même tenant Azure
+- **Masquer automatiquement les données personnelles** : masque automatiquement les données personnelles (email, téléphone, carte bancaire…) dans les échanges
+- **Charte IA** : lorsqu'elle est activée, affiche une charte d'utilisation de l'IA que chaque utilisateur devra lire et valider avant d'utiliser la plateforme. Le contenu de la charte se rédige directement dans le champ texte qui apparaît sous l'option
+- **Autoriser le partage via JAsk** : contrôle l'affichage de ce paramètre dans le formulaire de création d'un agent. Par mesure de sécurité, il est pas défaut désactivé.
+ ![advanced3](@public/advanced3.png)
+
+### Fonctionnalités
+ 
+Cette section permet d'activer ou de désactiver des pans entiers de la plateforme, afin d'adapter JAsk aux usages de votre organisation :
+ 
+- **Expériences** : création de scénarios ou parcours métier
+- **Projets collaboratifs** : onglet Collab, permettant de créer des projets entre plusieurs utilisateurs
+- **Automatisation des tâches** : Affichage de l'écran de gestion des automatisations pour permettre aux utilisateurs de créer leurs propres automatisations d'agent et de workflows.
+- **Terminologie interne** : Utilisation de la terminologie interne (glossaire de vocabulaire spécifique à l'entreprise)
+- **Agents Workflow** : Utilisation (création, gestion) des workflows agentiques grâce au studio
+- **Masquer le menu réglage pour les simples utilisateurs uniquement** : simplifie la vue principale des collaborateurs en retirant le menu Réglages (catalogues, documents...). 
+- **Masquer également l'accès au profil utilisateur** : Retire aussi la page Mon profil du menu latéral, cela permet d'empêcher l'accès aux utilisateurs à certains paramètres avancés gérables depuis cette page.
+- **Masquer l'effort de raisonnement pour les utilisateurs** : Retire le sélecteur d'effort de raisonnement de la barre de saisie des conversations
+- **Applications natives** : Enlève les applications permettant d'accéder aux données O365 (fonctionnalité obsolète) 
+
+![advanced4](@public/advanced4.png)
+
+<Callout type="info">
+  Désactiver une fonctionnalité la retire de l'interface pour tous les utilisateurs, mais ne supprime pas les données associées : réactiver la fonctionnalité restaure l'accès aux contenus existants.
+</Callout>
+
+### Télémétrie
+ 
+Cette section définit les informations remontées pour le suivi de la plateforme :
+ 
+- **Heart Beat** : envoie un signal de disponibilité de la plateforme toutes les 5 minutes
+- **Données d'usage** : envoie des statistiques anonymisées d'usage, à des fins d'analyse de santé de la plateforme
+- **Contenu des chats en erreur** : inclut dans les demandes support le contenu des chats en erreur, à des fins de diagnostic
+
+![advanced5](@public/advanced5.png)
+
+### À propos de JAsk
+ 
+Cette section, en lecture seule, affiche les informations de version et de statut de votre instance :
+ 
+- **Identifiant tenant** : identifiant unique de l'organisation
+- **Audience API** : URI de ressource de l'application
+- **Image API** et **Tag de l'image** : nom et tag de l'image de conteneur déployée
+- **Version de l'API** : version courante déployée (référence de build)
+- **Commit de l'image** : référence du commit source
+- **Agent Support** et **Email Agent support** : interlocuteur en charge de la plateforme et son adresse de contact
+- **Dernier redémarrage** : date du dernier redémarrage du serveur.
+Ces informations sont utiles à communiquer aux équipes support en cas d'incident ou de demande d'assistance.

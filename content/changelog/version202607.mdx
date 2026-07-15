@@ -1,0 +1,75 @@
+import { Callout, FileTree, Cards, Card } from 'nextra/components';
+
+# JAsk v.2026.07
+---
+ 
+## 🧠 Modèles, agents & réflexion
+ 
+- **Nouveaux modèles disponibles** : Gemini (via Google AI Studio), Vertex AI (Google Cloud) et Deepseek en accès direct rejoignent la liste des modèles connectables. Le Model Foundry s'enrichit également de nouveaux fournisseurs (Mistral, Deepseek…). Voir la [doc Modèles LLM](https://docs.jask.auria-software.com/docs/catalog/ai_models).
+- **Modèle par défaut par skill** : dans les paramètres avancés d'un skill, vous pouvez désormais imposer le modèle utilisé — utile quand un skill donné tourne mieux avec un modèle précis.
+- **Skills plateforme** : Vous pouvez forcer que certains skills soient accessibles à tous les agents de la plateforme. Peu importe si le créateur a pensé à le rajouter. Cela permet de systématiser l'usage pour des éléments "standards" comme la génération de slides ou d'excel par exemple.
+- **Modèles épinglés** : épinglez vos modèles favoris pour les retrouver directement sur votre page d'accueil.
+- **Niveau de réflexion** : un niveau de réflexion par défaut d'un agent peut maintenant être fixé au niveau de l'agent. Vous pouvez choisir de laisser, ou non, vos utilisateurs le modifier eux-mêmes depuis leur profil.
+- **Modèle de l'agent** : De manière identique, vous pouvez définir un modèle par défaut sur un agent, et laisser ou non la possibilité aux utilisateurs de l'éditer pour leur usage personnel.
+- **Agent par défaut** : configurable à la fois par groupe d'utilisateurs et dans le profil de chaque utilisateur, pour forcer l'utilisation d'un certain agent à des utilisateurs ou un groupe d'utilisateurs.
+- **Partage d'agents restreint au tenant Azure** : pour éviter qu'un agent ne soit partagé en dehors de votre organisation.
+- **Skills et workflows personnalisables** : ajoutez un avatar sur vos skills et workflows pour les repérer plus facilement dans la liste.
+- Et une série de correctifs : lancement d'un agent depuis son panneau latéral, lien direct vers un agent corrigé, duplication d'un agents...
+## 📚 Sources, RAG & indexation
+ 
+- Correction d'un bug qui cassait le RAG sur les agents nouvellement créés.
+- Les sources ne s'affichent plus en double dans le panneau de sources.
+- Indexation Excel corrigée.
+- Modifier la configuration d'une source invalide n'invalide plus tout l'affichage de l'indexation.
+- Le message "deep search" qui s'affichait à l'appel d'une source a été retiré.
+
+## 🔌 Connecteurs Microsoft
+ 
+- MSGraph : ajout de la route CreateReplyAll.
+- Récupération des messages Teams via MSGraph.
+- Les agents peuvent désormais accéder à une boîte mail partagée O365.
+ 
+## 🛡️ Administration & sécurité
+ 
+- Rôles et permissions : plusieurs correctifs de logique et de refonte de l'interface associée.
+- Mise en place d'une Charte IA, configurable côté administration.
+
+[Gestion des rôles](https://docs.jask.auria-software.com/docs/users_groups/roles)
+## 💬 Conversations & panneau de réflexion
+ 
+- Le panneau de réflexion s'ouvre désormais de façon fiable, ses titres d'étapes ne s'affichent plus en texte technique brut, et le message "J'ai exploré 0 ressources" trompeur a été retiré.
+- La suppression d'une conversation ne vous renvoie plus systématiquement à l'accueil, et il n'est plus possible de supprimer une conversation partagée par erreur.
+- Correction d'un bug d'envoi de messages en rafale (plusieurs requêtes envoyées en tapant vite sur Entrée).
+- Petits ajustements visuels : header vide au premier appel d'une base de connaissances, chargement infini de l'observabilité, chevauchement du bouton "Partager" avec les tableaux de réponse.
+## ✨ Interface — le reste des ajustements
+ 
+Une bonne partie de cette version, ce sont des dizaines de petits ajustements d'interface qu'on ne va pas tous détailler ici. En résumé :
+ 
+<FileTree>
+  <FileTree.Folder name="Modales & headers" defaultOpen>
+    <FileTree.File name="Alignement et cohérence des headers de modales" />
+    <FileTree.File name="Traductions et pagination de la modale des notes de version" />
+    <FileTree.File name="Boutons Save / Download harmonisés" />
+  </FileTree.Folder>
+  <FileTree.Folder name="Accueil & bibliothèques" defaultOpen>
+    <FileTree.File name="Empty state de « Mes favoris »" />
+    <FileTree.File name="Correction du chevauchement des menus déroulants" />
+    <FileTree.File name="Intitulé des onglets navigateur corrigé" />
+  </FileTree.Folder>
+  <FileTree.Folder name="Divers" defaultOpen>
+    <FileTree.File name="Taille des avatars homogénéisée" />
+    <FileTree.File name="Logos des mini-apps natives" />
+    <FileTree.File name="Branding du plugin Excel (logo, couleurs)" />
+    <FileTree.File name="Placeholder qui se superposait au texte saisi" />
+    <FileTree.File name="Gestion du titre trop long sur les documents" />
+  </FileTree.Folder>
+</FileTree>
+## 🔧 Fiabilité
+ 
+Quelques correctifs de stabilité plus techniques, notamment sur le lancement des applications natives et sur des erreurs d'API ponctuelles rencontrées par certains clients. Rien de visible au quotidien, mais ça fait partie du travail de fond de cette version.
+ 
+---
+ 
+<Callout type="warning">
+  Une question sur l'une de ces évolutions ? Contactez votre interlocuteur JAsk habituel ou support@auria-software.com.
+</Callout>
