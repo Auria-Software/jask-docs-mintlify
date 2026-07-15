@@ -16,7 +16,7 @@ export const generateStaticParams = async () => {
 export async function generateMetadata(props) {
   const params = await props.params
 
-  if (!params?.mdxPath || params.mdxPath.length === 0) {
+  if (!params?.mdxPath || params.mdxPath.length === 0 || params.mdxPath[0] === '_next') {
     return {}
   }
 
@@ -31,7 +31,7 @@ export async function generateMetadata(props) {
 export default async function Page(props) {
   const params = await props.params
 
-  if (!params?.mdxPath || params.mdxPath.length === 0) {
+  if (!params?.mdxPath || params.mdxPath.length === 0 || params.mdxPath[0] === '_next') {
     notFound()
   }
 
