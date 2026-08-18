@@ -28,12 +28,7 @@
     "dismissible": true
   },
   "navbar": {
-    "links": [
-      {
-        "label": "GitHub",
-        "href": "https://github.com/Auria-Software/jask-docs"
-      }
-    ]
+    "links": []
   },
   "search": {
     "prompt": "Rechercher dans la documentation..."
@@ -269,7 +264,7 @@
         "tab": "Changelog",
         "icon": "history",
         "pages": [
-          "changelog/releases",
+          "releases",
           "changelog/version202607",
           "changelog/version202604",
           "changelog/version202602",
