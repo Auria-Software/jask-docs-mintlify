@@ -1,0 +1,168 @@
+---
+title: "Production de documents"
+sidebarTitle: "Production de Documents"
+---
+
+Trois actions sont disponibles pour générer des documents :
+
+- Traduire un document à partir d'un document
+- Générer un document de zéro à partir d'un texte
+
+![application_document_production](/images/applications/generate.png)
+
+## Traduire un document
+
+L'outil Traduction de JASK vous permet de traduire instantanément vos fichiers (Word, PowerPoint ou IDML) vers la langue de votre choix. 
+Pour garantir un résultat optimal et fidèle de vos documents traduits, vous pouvez intégrer des **consignes spécifiques** afin d'ajuster le ton et le style de la traduction.
+Vous pouvez y accéder directement apartir du Home en cliquant sur le bouton `+` puis en cherchant `Traduction` comme application, charger le fichier à traduire et enfin les instructions que vous souhaitez.
+ou bien via application
+
+### Paramètres
+
+<table>
+  <tbody>
+    <tr>
+      <td>Section</td>
+      <td>Production de documents</td>
+    </tr>
+    <tr>
+      <td>Titre</td>
+      <td>Traduire un document</td>
+    </tr>
+    <tr>
+      <td>Définition</td>
+      <td>Traduction de document doc à doc</td>
+    </tr>
+    <tr>
+      <td>Entrée</td>
+      <td>Fichiers (docx et pptx uniquement)</td>
+    </tr>
+    <tr>
+      <td>Sortie</td>
+      <td>
+        Fichier(s) (docx, pptx, pdf, markdown, html et excel uniquement en
+        fonction de l’entrée)
+      </td>
+    </tr>
+    <tr>
+      <td>Paramètres avancés</td>
+      <td>
+        - Langue cible : Sélection de la langue choisie parmi la liste de langue
+        proposée
+        <div />
+        - Nom du document (Prefix) : Nom qui sera donné au fichier généré, avec
+        l’heure de génération en suffixe
+        <div />
+        - Source de données cible : Sélection de la source de données dans
+        laquelle sera sauvegardé le document
+        <div />- Dossier de sauvegarde : Chemin de sauvegarde dans la source de
+        données sélectionnée
+      </td>
+    </tr>
+    <tr>
+      <td>Exemples d’utilisation</td>
+      <td>
+        - Ne peut se mettre qu'après le contexte
+        <div />- Traduction d'un fichier Powerpoint de présentation de
+        l'entreprise dans une langue cible - Traduction d'une fiche produit Word
+        dans une langue sélectionnée
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+### Guide d'utilisation
+
+Cette action vous permet de traduire un document tout en gardant le format du document original. Il accepte en entrée un document (soit depuis le [contexte](/docs/catalog/agents/applications/actions/context), soit depuis le [moteur de recherche](/docs/catalog/agents/applications/actions/data_sources#moteur-de-recherche) etc...).
+
+<Warning>
+  La traduction est effectuée uniquement pour les documents Word et PowerPoint.
+</Warning>
+
+![application_document_production](/images/applications/translate.png)
+
+Pour utiliser cette action, cliquez sur le bouton `+` puis sur `Production de documents` et enfin sur `Traduire un document`.
+Une fois l'action dans le workflow, vous pouvez sélectionner la langue de traduction (Anglais, Espagnol, etc...), donner un nom à votre document traduit et choisir un dossier de sauvegarde ainsi que la source de données dans laquelle vous souhaitez stocker votre document traduit.
+
+## Générer un document de zero
+
+### Paramètres
+
+<table>
+  <tbody>
+    <tr>
+      <td>Section</td>
+      <td>Production de documents</td>
+    </tr>
+    <tr>
+      <td>Titre</td>
+      <td>Générer un document</td>
+    </tr>
+    <tr>
+      <td>Définition</td>
+      <td>
+        Génération d’un document en sortie de la brique et sauvegarde de ce
+        document dans un dossier cible. Le document est une concaténation des
+        éléments reçus en entrée de cette brique
+      </td>
+    </tr>
+    <tr>
+      <td>Entrée</td>
+      <td>Texte</td>
+    </tr>
+    <tr>
+      <td>Sortie</td>
+      <td>Lien de téléchargement du fichier</td>
+    </tr>
+    <tr>
+      <td>Paramètres avancés</td>
+      <td>
+        - Type de document : Sélection du format du document en sortie parmi :
+        Word, Powerpoint, Markdown, HTML, Excel
+        <div />
+        - Nom du document (Prefix) : Nom qui sera donné au fichier généré, avec
+        l’heure de génération en suffixe
+        <div />
+        - Source de données cible : Sélection de la source de données dans
+        laquelle sera sauvegardé le document
+        <div />- Dossier de sauvegarde : Chemin de sauvegarde dans la source de
+        données sélectionnée
+      </td>
+    </tr>
+    <tr>
+      <td>Exemples d’utilisation</td>
+      <td>
+        - Je veux générer un document word contenant la recherche et l’étude de
+        marché faite par un agent
+        <div />- Je veux enregistrer un export Excel de l’extraction
+        d’informations consolidées de ma base de contrats
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+### Guide d'utilisation
+
+Cette action vous permet de générer un document à partir d'un texte et de le stocker dans votre source de données choisie.
+
+<Info>
+  Le document généré est basique pour l'instant mais il sera bientôt possible de
+  générer un document avec un format plus avancé.
+</Info>
+
+![application_document_production](/images/applications/generateppt.png)
+
+Vous avez le choix du format du document généré :
+
+- Word
+- PowerPoint
+- Markdown
+- HTML
+- PDF
+- Excel
+
+Vous pouvez également choisir le nom du nouveau document, le chemin de sauvegarde ainsi que la source de donnée dans laquelle vous souhaitez stocker votre document.

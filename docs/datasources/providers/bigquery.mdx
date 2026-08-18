@@ -1,0 +1,73 @@
+---
+title: "Connecteur BigQuery"
+sidebarTitle: "Big Query"
+---
+
+![BigQuery](/images/bigquery/bigquery.png)
+
+## Prérequis
+
+- Un compte administrateur BigQuery
+- Un compte administrateur Jask
+
+## Guide pour connecter BigQuery
+
+<Steps>
+
+<Step title="Etape 1 : Créer un compte de service Google Cloud">
+
+Rendez vous sur la page web [Compte de service](https://console.cloud.google.com/iam-admin/serviceaccounts) depuis le portail Google Cloud Plateforme.
+
+Cliquez sur le bouton `+ Créer un compte de service` au centre de l'écran.
+
+![BigQuery New](/images/bigquery/new.png)
+
+Entrez le nom du compte de service `Jask` puis cliquez sur le bouton `Créer et continuer` pour passer à l'étape suivante.
+
+![bq info](/images/bigquery/info.png)
+
+</Step>
+
+<Step title="Etape 2 : Donner les permissions à Jask pour accéder à BigQuery">
+
+Donnez les deux droits suivants à Jask :
+
+- `BigQuery Data Viewer` : permet à Jask de lire les données dans BigQuery
+- `BigQuery Job User` : permet à Jask de lancer des requêtes SQL dans BigQuery
+
+<Info>
+  Ces permissions permettent à Jask d'exécuter seulement des requêtes SQL de
+  lecture (Les requêtes SQL modifiant des données ne sont pas autorisées). Vous
+  pouvez changer les permissions à tout moment.
+</Info>
+
+![bq permissions](/images/bigquery/permissions.png)
+
+Cliquez sur `Continuer` pour passer à la dernière étape de création du compte de service.
+
+</Step>
+
+<Step title="Etape 3 : Créer la clé du compte de service">
+
+Rendez vous sur la page de configuration du compte de service puis dans l'onglet `clés` et créer une nouvelle clé `JSON`.
+
+![bigquery key](/images/bigquery/keys.png)
+
+<Warning>Vous devez télécharger la clé en format JSON.</Warning>
+
+![bigquery download](/images/bigquery/download.png)
+
+</Step>
+
+<Step title="Etape 4 : Déposer la clé dans Jask">
+
+Rendez vous sur Jask puis dans le menu de gauche, cliquez sur `Sources de données` puis sur `+ Ajouter une source de données`.
+Nommez votre source, sélectionnez `BigQuery`, paramétrez la visibilité et fournissez une description puis cliquez sur `Suivant`.
+
+Déposez le fichier JSON de la clé du compte de service dans Jask et cliquez sur `Tester la connexion` avant de terminer les étapes.
+
+![bigquery jask](/images/bigquery/jask.png)
+
+</Step>
+
+</Steps>

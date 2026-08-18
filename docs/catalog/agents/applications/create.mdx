@@ -1,0 +1,287 @@
+---
+title: "Création d'un workflow"
+sidebarTitle: "Créer un workflow"
+---
+
+<div
+  style={{
+    position: "relative",
+    paddingBottom: "56.25%",
+    height: 0,
+    overflow: "hidden",
+    width: "100%",
+    borderRadius: "8px",
+    marginTop: "24px",
+  }}>
+  <iframe
+    style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+      borderRadius: "12px",
+    }}
+    src="https://www.youtube.com/embed/a4Jwl-gCRP4"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowFullScreen
+  />
+</div>
+
+---
+
+## Tableau des actions
+
+<table>
+  <thead>
+    <tr>
+      <th>Section</th>
+      <th>Titre</th>
+      <th>Définition</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+      <td>-</td>
+      <td> [Context](/docs/catalog/agents/applications/actions/context)</td>
+      <td>
+        La brique de contexte est obligatoire pour définir le point de départ du workflow, son mode de déclenchement et les contraintes d’entrée imposées à l’utilisateur.
+      </td>
+    </tr>
+
+    <tr>
+      <td>Prompt Store</td>
+      <td>[Nouveau Prompt](/docs/catalog/agents/applications/actions/prompts_store#nouveau-prompt)</td>
+      <td>
+        Permet de définir un prompt appliquant des instructions à un contexte d’entrée afin de produire un résultat de sortie, en configurant le modèle LLM et ses paramètres.
+      </td>
+    </tr>
+
+    <tr>
+      <td>Prompt Store</td>
+      <td>[Prompt Existant](/docs/catalog/agents/applications/actions/prompts_store#prompt-existant)</td>
+      <td>
+        Permet de réutiliser un prompt existant et figé depuis le Prompt Store, sans modifier ses instructions, pour standardiser des usages récurrents.
+      </td>
+    </tr>
+
+    <tr>
+      <td>Traitement de fichiers</td>
+      <td>[Extraction de Tableau](/docs/catalog/agents/applications/actions/file_processing#extraction-de-tableau)</td>
+      <td>
+        Extrait des informations structurées depuis des documents et restitue les résultats sous forme de tableaux configurables.
+      </td>
+    </tr>
+
+    <tr>
+      <td>Traitement de fichiers</td>
+      <td>[Analyse de fichier(s)](/docs/catalog/agents/applications/actions/file_processing#analyse-de-fichiers)</td>
+      <td>
+        Analyse ou traite les documents en entrée (résumé, traduction, restructuration…), en forçant la lecture complète des fichiers si nécessaire.
+      </td>
+    </tr>
+    <tr>
+      <td>Microsoft 0365</td>
+      <td>[Envoyer un mail](/docs/catalog/agents/applications/actions/m365#envoyer-un-mail)</td>
+      <td>
+        Envoie un email au cours du workflow en utilisant le contenu généré ou défini dans la brique.
+      </td>
+    </tr>
+    <tr>
+      <td>Microsoft 0365</td>
+      <td>[Créer un brouillon](/docs/catalog/agents/applications/actions/m365)</td>
+      <td>
+        Crée un brouillon d’email dans la boîte mail associée au compte Jask.
+      </td>
+    </tr>
+    <tr>
+      <td>Microsoft 0365</td>
+      <td>[Lire mes mails](/docs/catalog/agents/applications/actions/m365#lire-mes-mails)</td>
+      <td>
+        Récupère et analyse les emails reçus selon différents critères (nombre, période, journée).
+      </td>
+    </tr>
+    <tr>
+      <td>Microsoft 0365</td>
+      <td>[Transcripts Teams](/docs/catalog/agents/applications/actions/m365#transcripts-teams)</td>
+      <td>
+        Récupère et analyse les transcripts Teams enregistrés sur une certaine période de temps.
+      </td>
+    </tr>
+    <tr>
+      <td>Mes sources de données</td>
+      <td>[Import d’un fichier](/docs/catalog/agents/applications/actions/data_sources#importer-un-fichier)</td>
+      <td>
+        Permet d’importer un document statique utilisé comme source de données à chaque exécution du workflow.
+      </td>
+    </tr>
+    <tr>
+      <td>Mes sources de données</td>
+      <td>[Moteur de recherche](/docs/catalog/agents/applications/actions/data_sources#moteur-de-recherche)</td>
+      <td>
+        Récupère dynamiquement des documents depuis des sources de données selon une recherche textuelle ou une logique de liste.
+      </td>
+    </tr>
+    <tr>
+      <td>Mes sources de données</td>
+      <td>[Analyse d'une source](/docs/catalog/agents/applications/actions/data_sources)</td>
+      <td>
+        Analyse une source de données avec un workflow ou une instruction spécifique
+      </td>
+    </tr>
+    <tr>
+      <td>Mes agents</td>
+      <td>[Mes agents](/docs/catalog/agents/applications/actions/assistants)</td>
+      <td>
+        Permet d’appeler des agents spécialisés (juridique, financier, technique, etc.) pour analyser un contexte selon leur expertise.
+      </td>
+    </tr>
+    <tr>
+      <td>Mes Workflows</td>
+      <td>[Mes Workflows](/docs/catalog/agents/applications/actions/workflows)</td>
+      <td>
+        Permet d’appeler des workflows dans une application
+      </td>
+    </tr>
+    <tr>
+      <td>Production de documents</td>
+      <td>[Générer un document](/docs/catalog/agents/applications/actions/document_production)</td>
+      <td>
+        Génère un document (Word, Excel, PowerPoint, etc.) à partir des éléments en entrée et le sauvegarde dans une source cible.
+      </td>
+    </tr>
+
+    <tr>
+      <td>Production de documents</td>
+      <td>[Traduire un document](/docs/catalog/agents/applications/actions/document_production#traduire-un-document)</td>
+      <td>
+        Traduit automatiquement un document existant (Word ou PowerPoint) et enregistre la version traduite.
+      </td>
+    </tr>
+
+    <tr>
+      <td>Web</td>
+      <td>[Requête HTTP (BETA)](/docs/catalog/agents/applications/actions/web)</td>
+      <td>
+        Exécute une requête HTTP vers un service externe afin d’intégrer des données ou déclencher des actions via une API.
+      </td>
+    </tr>
+
+    <tr>
+      <td>Web</td>
+      <td>[Importer une page web (BETA)](/docs/catalog/agents/applications/actions/web#importer-une-page-web)</td>
+      <td>
+        Indexe le contenu textuel d’une page web pour l’exploiter dans un workflow.
+      </td>
+    </tr>
+    <tr>
+      <td>Web</td>
+      <td>[Télécharger un fichier web](/docs/catalog/agents/applications/actions/web)</td>
+      <td>
+        Télécharge un fichier hébergé sur le web afin de l’utiliser comme élément de contexte dans le workflow.
+      </td>
+    </tr>
+    <tr>
+      <td>Structure de contrôle</td>
+      <td>[Boucle](/docs/catalog/agents/applications/actions/control_structure#la-boucle)</td>
+      <td>
+        La boucle est une action permettant d’exécuter une action sur une liste d’éléments.
+      </td>
+    </tr>
+    <tr>
+      <td>Structure de contrôle</td>
+      <td>[Découpe](/docs/catalog/agents/applications/actions/control_structure#la-découpe)</td>
+      <td>
+        L'action de découpe permet de découper un fichier ou un contenu passé en entrée de cette brique, en une liste d'éléments pour ne pas dépasser le contexte d'entrée d'un LLM
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+
+## Guide pour créer et partager un workflow
+
+Depuis la page `Agents IA > Workflows` du catalogue de Jask, vous pouvez créer un process en appuyant sur le bouton `Actions` puis `Créer un workflow` en haut à droite.
+
+{/* ![application_create](/images/applications/app_create.gif) */}
+
+<Steps>
+
+<Step title="Contexte">
+
+Le [**`Contexte`**](/docs/catalog/agents/applications/actions/context) représente les données d'entrée de votre workflow. Cette brique déterminera les contraintes imposées à l'utilisateur au lancement du workflow ainsi que son mode de déclenchement (manuel, automatisé...). Pour une déclenchement manuel, l'entrée peut être vide, un texte écrit par l'utilisateur et/ou des documents téléchargés par l'utilisateur qui exécute le workflow.
+
+![application_context](/images/applications/contexte.png)
+
+Ici, sur cet exemple, le contexte accepte seulement du texte utilisateur et le texte à afficher au lancement du workflow est "Renseigner le nom du client / compte"
+
+</Step>
+
+<Step title="Enchaîner les actions">
+
+Une fois le contexte configuré, vous pouvez enchainer les actions en cliquant sur le bouton `+ Ajouter` en haut à droite de l'écran.
+Il existe une multitude d'actions à disposition pour construire votre workflow métier (voir le tableau en haut de cet article).
+Chaque action peut prendre en compte des entrées (inputs) et/ou des sorties (outputs) représentées par des connexions (pins) situées des deux côtés de l'action. Ils vous simplifieront la connexion de l'action ajoutée au reste du workflow.
+
+Les pins situés à gauche de la brique sont des entrées de données qui vont permettre à l'action de s'exécuter.
+Les pins situés à droite de la brique sont des sorties de données qui vont permettre de récupérer les résultats de l'action.
+Vous pouvez aussi enchaîner les actions en les connectant entre elles.
+Pour cela, vous pouvez cliquer sur le pin situé à droite de l'action et le relier au pin situé à gauche d'une autre action.
+Les entrées de données de l'action connectée seront automatiquement remplies avec les sorties de données de l'action précédente.
+
+![application_chain](/images/applications/actions.png)
+
+</Step>
+
+<Step title="Sauvegarder le workflow">
+
+Une fois le workflow testé et validé, vous pouvez l'enregistrer en cliquant sur le bouton `Sauvegarder` en haut à droite.
+
+Vous pouvez lui donner un nom et une description puis choisir un tag pour qu'elle soit triée dans la bonne section du catalogue de services.
+Enfin, définissez la visibilité du workflow : Toute l'organisation, Moi uniquement ou Personnalisé (Utilisateurs et Groupes spécifiques).
+
+![application_save](/images/applications/deploy.png)
+
+</Step>
+
+</Steps>
+
+## Exemples de workflows
+
+<Accordion title="Workflow simple">
+
+Objectif : Faire un résumé court d’un corpus de fichiers, contenant des éléments graphiques (images, tableaux, graphiques)
+
+Le workflow prend en entrée une liste de fichiers, qui seront lu avec Vision IA. Cela permet de parcourir l’ensemble du contenu des fichiers, avec de la Vision (à la place de l’OCR) avec le model 4.1 (ici aucune instruction spécifique de vision n’est ajoutée).
+
+Ces fichiers vont ensuite être traités par une brique “Analyse de fichiers” qui a pour objectif de réaliser un résumé court du contexte d’entrée avec le modèle gpt4.1.
+L’option “Lire toutes les pages” permet d’assurer que le modèle va parcourir l’intégralité des pages des documents en entrée. En effet, si les fichiers sont trop longs, le contexte du LLM pourrait être dépassé et certaines pages ne pas être parcourues
+
+![simple_app](/images/applications/simple_app.png)
+
+</Accordion>
+<Accordion title="Workflow moyen">
+
+Objectif : Trouver des profils qui correspondent à une compétence demandée dans une base SharePoint de CV et scorer les CV trouvés par rapport au besoin
+
+Le contexte permet à l’utilisateur qui démarre l’application de saisir les compétences recherchées dans son projet.
+
+Ces compétences sont passées à un moteur de recherche, dont l’objectif est de restituer une liste de CV, depuis un fichier “CV” contenu dans un SharePoint, par rapport à la compétence saisie en entrée.
+
+Cette liste de document va ensuite être traitée par un prompt qui analyse les CV trouvés et a pour objectif de les scorer par rapport à une série de règles métiers indiquées dans le prompt
+
+![medium_app](/images/applications/medium_app.png)
+
+</Accordion>
+<Accordion title="Workflow avancé">
+
+Objectif : Analyse d’une entreprise suivant 3 axes Business, Finance, Juridique à partir d’un ensemble documentaire sur l’entreprise
+
+Les documents sur l’entreprise à analyser en entrée sont analysés par 3 agents indépendamment, qui chacun ont des instructions pour analyser le contenu en entrée et faire une restitution spécifique selon des règles métiers.
+Le prompt qui suit permet de structurer les rapports individuels de chacun des agents et restructurer les informations selon des règles spécifiés dans le prompt avec un modèle o1-mini dans cet exemple.
+La derniere étape permet de générer un document word contenant la synthèse en sortie du prompt.
+
+![advanced_app](/images/applications/advanced_app.png)
+
+</Accordion>

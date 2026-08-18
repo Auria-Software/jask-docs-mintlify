@@ -1,0 +1,62 @@
+---
+title: "Les workflows dans les workflows"
+sidebarTitle: "Workflows"
+---
+
+![workflows](/images/applications/workflow_in_workflow.png)
+
+Les workflows peuvent eux memes être utilisés comme actions dans d'autres workflows. C'est un excellent moyen d'utiliser un workflow pour une taches spécifique de façon répétitive sur une multitude de documents en entrée.
+
+## Créer un workflow
+
+Pour créer un nouveau workflow rendez-vous dans la page Agents IA > Workflows du catalogue de Jask et cliquez sur le bouton `+ Actions` puis sur `Créer un workflow`.
+Suivez la documentation [ici](/docs/catalog/agents/applications/create) pour créer un workflow.
+
+## Utiliser un workflow dans un workflow
+
+Pour utiliser un workflow dans un workflow, cliquez sur le bouton `+` puis sur `Workflows` et enfin sur le workflow à utiliser.
+
+<table>
+  <tbody>
+    <tr>
+      <td>Section</td>
+      <td>Mes applications</td>
+    </tr>
+    <tr>
+      <td>Titre</td>
+      <td>`le nom du workflow`</td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td>
+`la description du workflow`
+      </td>
+    </tr>
+    <tr>
+      <td>Entrée</td>
+      <td>
+        Texte et/ou fichier(s)
+      </td>
+    </tr>
+    <tr>
+      <td>Sortie</td>
+      <td>
+            Une ou plusieurs execution du workflow
+      </td>
+    </tr>
+    <tr>
+      <td>Paramètres avancés</td>
+      <td>
+        - Executer autant de fois qu'il y'a d'entrées distinctes : Plusieurs workflows s'executeront en parallèle si plusieurs documents sont importés en entrée.
+      </td>
+    </tr>
+    <tr>
+      <td>Exemples d’utilisation</td>
+      <td>
+        - Je veux executer un workflow sur chacun d'une liste de documents
+        - Je veux pouvoir lancer un workflow déjà existant comme étape de mon workflow actuel
+      </td>
+    </tr>
+
+  </tbody>
+</table>

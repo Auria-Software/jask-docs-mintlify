@@ -1,0 +1,35 @@
+---
+title: "Groupes"
+sidebarTitle: "Groupes"
+---
+
+Les groupes permettent de gérer plusieurs utilisateurs en même temps. Ils permettent notamment d'associer des rôles à l'ensemble des utilisateurs d'un groupe ou de partager certains éléments aux utilisateurs de ce groupe.
+
+## Création d'un groupe
+
+Depuis Groupes, l'administrateur peut créer un nouveau groupe en cliquant sur le bouton `+ Nouveau`
+
+![groups](/images/groups.png)
+
+L'administrateur définit les paramètres du groupe :
+
+- Nom du groupe
+- Description du groupe
+- Agent par défaut du groupe - Ce paramètre définit l'agent qui sera utilisé par défaut pour les utilisateurs dans ce groupe.
+- Membres : Liste des utilisateurs du groupe
+- Rôles : Liste des rôles dont bénéficieront tous les utilisateurs du groupes
+
+<Note>
+Si vous utilisez le modèle par défaut sur un groupe, assurez vous que les utilisateurs de ce groupe, ne sont pas dans un autre groupe qui définit un modèle par défaut. 
+Si cette configuration est effectuée par erreur, un des agents par défaut des groupes de l'utilisateur sera utilisé aléatoirement pour l'utilisateur.
+</Note>
+
+Pour plus d'information sur les rôles, consultez la page [Gestion des rôles](/docs/users_groups/roles).
+
+## Édition et suppression des groupes
+
+Vous pouvez modifier les informations d'un groupe en cliquant sur le bouton d'édition sur un groupe.
+
+Pour supprimer un groupe, cliquez sur le bouton de suppression. Il vous faudra valider cette action avant qu'elle soit prise en compte.
+
+![groups1](/images/groups_1.png)

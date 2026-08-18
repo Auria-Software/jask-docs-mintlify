@@ -1,0 +1,362 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Jask",
+  "description": "Documentation produit et référence API de Jask.",
+  "colors": {
+    "primary": "#9826A8",
+    "light": "#B94FC8",
+    "dark": "#B94FC8"
+  },
+  "logo": {
+    "light": "/images/logo-light.svg",
+    "dark": "/images/logo-dark.svg"
+  },
+  "favicon": "/images/favicon.svg",
+  "appearance": {
+    "default": "system"
+  },
+  "icons": {
+    "library": "lucide"
+  },
+  "styling": {
+    "eyebrows": "breadcrumbs",
+    "codeblocks": "system"
+  },
+  "banner": {
+    "content": "Nouvelle version de Jask v2026.07. [Découvrir les nouveautés](/changelog/version202607)",
+    "dismissible": true
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "GitHub",
+        "href": "https://github.com/Auria-Software/jask-docs"
+      }
+    ]
+  },
+  "search": {
+    "prompt": "Rechercher dans la documentation..."
+  },
+  "contextual": {
+    "options": [
+      "copy",
+      "view"
+    ],
+    "display": "header"
+  },
+  "integrations": {
+    "ga4": {
+      "measurementId": "G-VHWH82GG1F"
+    }
+  },
+  "seo": {
+    "indexing": "navigable",
+    "metatags": {
+      "robots": "noindex, nofollow",
+      "googlebot": "noindex, nofollow",
+      "google-site-verification": "QZuJf6xlz4IGab0TRwRHSag-c_KaNTYxJ710BRr3-mg",
+      "og:site_name": "Jask Documentation"
+    }
+  },
+  "errors": {
+    "404": {
+      "redirect": false,
+      "title": "Page introuvable",
+      "description": "Cette page n'existe pas ou a été déplacée. [Retour à la documentation](/docs)."
+    }
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "icon": "book-open",
+        "pages": [
+          "docs/index",
+          "docs/faq",
+          "docs/terminology",
+          {
+            "group": "Chats",
+            "icon": "messages-square",
+            "pages": [
+              "docs/accueil",
+              "docs/menu",
+              "docs/conversations",
+              "docs/services"
+            ]
+          },
+          {
+            "group": "Collaboration",
+            "icon": "users",
+            "pages": [
+              {
+                "group": "Projets",
+                "root": "docs/projects/index",
+                "pages": [
+                  "docs/projects/projects_preview",
+                  "docs/projects/projects_settings"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Réglages",
+            "icon": "settings",
+            "pages": [
+              {
+                "group": "Mon espace de travail",
+                "pages": [
+                  "docs/workspace/libraries",
+                  "docs/workspace/datasources",
+                  "docs/workspace/automations",
+                  "docs/workspace/myprofile"
+                ]
+              },
+              {
+                "group": "Catalogue",
+                "pages": [
+                  {
+                    "group": "Agents IA",
+                    "root": "docs/catalog/agents/index",
+                    "pages": [
+                      "docs/catalog/agents/create",
+                      "docs/catalog/agents/group",
+                      {
+                        "group": "Workflows",
+                        "root": "docs/catalog/agents/applications/index",
+                        "pages": [
+                          "docs/catalog/agents/applications/create",
+                          {
+                            "group": "Les actions",
+                            "pages": [
+                              "docs/catalog/agents/applications/actions/context",
+                              "docs/catalog/agents/applications/actions/prompts_store",
+                              "docs/catalog/agents/applications/actions/file_processing",
+                              "docs/catalog/agents/applications/actions/m365",
+                              "docs/catalog/agents/applications/actions/data_sources",
+                              "docs/catalog/agents/applications/actions/assistants",
+                              "docs/catalog/agents/applications/actions/workflows",
+                              "docs/catalog/agents/applications/actions/document_production",
+                              "docs/catalog/agents/applications/actions/web",
+                              "docs/catalog/agents/applications/actions/control_structure"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "docs/catalog/prompts_store",
+                  "docs/catalog/skills",
+                  "docs/catalog/ai_models",
+                  {
+                    "group": "Expériences",
+                    "root": "docs/catalog/experiences/index",
+                    "pages": [
+                      {
+                        "group": "Créer une expérience",
+                        "root": "docs/catalog/experiences/create/index",
+                        "pages": [
+                          "docs/catalog/experiences/create/start",
+                          "docs/catalog/experiences/create/human_action",
+                          "docs/catalog/experiences/create/internal_action"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "Utilisateurs et Groupes",
+                "pages": [
+                  "docs/users_groups/users",
+                  "docs/users_groups/groups",
+                  "docs/users_groups/roles"
+                ]
+              },
+              {
+                "group": "Sources de données",
+                "pages": [
+                  "docs/datasources/permissions",
+                  {
+                    "group": "Fournisseurs",
+                    "pages": [
+                      "docs/datasources/providers/bigquery",
+                      {
+                        "group": "Microsoft",
+                        "root": "docs/datasources/providers/microsoft/index",
+                        "pages": [
+                          "docs/datasources/providers/microsoft/sharepoint"
+                        ]
+                      },
+                      "docs/datasources/providers/notion",
+                      "docs/datasources/providers/odoo",
+                      "docs/datasources/providers/RSS",
+                      "docs/datasources/providers/salesforce"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "Déploiement",
+                "pages": [
+                  "docs/deployment/teams",
+                  "docs/deployment/excel"
+                ]
+              },
+              "docs/advanced_parameters",
+              "docs/observability"
+            ]
+          },
+          {
+            "group": "Plugins",
+            "icon": "blocks",
+            "pages": [
+              "docs/excel"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "icon": "square-terminal",
+        "pages": [
+          {
+            "group": "API Jask",
+            "pages": [
+              "api/intro"
+            ]
+          },
+          {
+            "group": "Objets",
+            "pages": [
+              "api/formats"
+            ]
+          },
+          {
+            "group": "Routes",
+            "pages": [
+              {
+                "group": "Conversations",
+                "pages": [
+                  "api/conversations/post",
+                  "api/conversations/get"
+                ]
+              },
+              {
+                "group": "Agents",
+                "pages": [
+                  "api/agents/post",
+                  "api/agents/answer"
+                ]
+              },
+              {
+                "group": "Documents",
+                "pages": [
+                  "api/documents/upload_index"
+                ]
+              },
+              {
+                "group": "Applications",
+                "pages": [
+                  "api/workflows/run"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Changelog",
+        "icon": "history",
+        "pages": [
+          "changelog/version202607",
+          "changelog/version202604",
+          "changelog/version202602",
+          "changelog/version202510"
+        ]
+      }
+    ]
+  },
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/docs"
+    },
+    {
+      "source": "/docs/applications/create/actions/mail/:path*",
+      "destination": "/docs/catalog/agents/applications/actions/m365"
+    },
+    {
+      "source": "/docs/applications/create/actions/:path*",
+      "destination": "/docs/catalog/agents/applications/actions/:path*"
+    },
+    {
+      "source": "/docs/applications/create/intro",
+      "destination": "/docs/catalog/agents/applications/create"
+    },
+    {
+      "source": "/docs/applications/:path*",
+      "destination": "/docs/catalog/agents/applications/:path*"
+    },
+    {
+      "source": "/docs/agentia/intro",
+      "destination": "/docs/catalog/agents"
+    },
+    {
+      "source": "/docs/agentia/applications/create/actions/:path*",
+      "destination": "/docs/catalog/agents/applications/actions/:path*"
+    },
+    {
+      "source": "/docs/agentia/applications/:path*",
+      "destination": "/docs/catalog/agents/applications/:path*"
+    },
+    {
+      "source": "/docs/experiences/:path*",
+      "destination": "/docs/catalog/experiences/:path*"
+    },
+    {
+      "source": "/docs/catalog/agents/applications/intro",
+      "destination": "/docs/catalog/agents/applications"
+    },
+    {
+      "source": "/docs/catalog/experiences/intro",
+      "destination": "/docs/catalog/experiences"
+    },
+    {
+      "source": "/docs/settings/connectors/bigquery",
+      "destination": "/docs/datasources/providers/bigquery"
+    },
+    {
+      "source": "/docs/settings/connectors/providers/google/bigquery",
+      "destination": "/docs/datasources/providers/bigquery"
+    },
+    {
+      "source": "/docs/settings/connectors/permissions",
+      "destination": "/docs/datasources/permissions"
+    },
+    {
+      "source": "/docs/settings/connectors/:path*",
+      "destination": "/docs/datasources/providers/:path*"
+    },
+    {
+      "source": "/docs/settings/ai_center/ai_extensions/web_api",
+      "destination": "/docs/catalog/skills"
+    },
+    {
+      "source": "/docs/assistants/create",
+      "destination": "/docs/catalog/agents/create"
+    },
+    {
+      "source": "/docs/ai_search/search",
+      "destination": "/docs/workspace/datasources"
+    },
+    {
+      "source": "/docs/projects/projects_intro",
+      "destination": "/docs/projects/projects_preview"
+    },
+    {
+      "source": "/api/conversations/create",
+      "destination": "/api/conversations/post"
+    }
+  ]
+}

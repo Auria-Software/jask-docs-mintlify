@@ -1,0 +1,174 @@
+---
+title: "Gestion des rôles"
+sidebarTitle: "Rôles"
+---
+
+Les rôles dans Jask donnent accès à des fonctionnalités ou des vues particulières. Ils s'appliquent aux comptes utilisateurs connus dans Jask.
+
+Un utilisateur se verra attribuer l'ensemble des rôles définis sur son profil et sur les groupes auxquels il appartient.
+
+<Info>
+  Seul un utilisateur avec le droit `Utilisateurs` peut les gérer
+</Info>
+
+
+<Info>
+  Tous les rôles sous Espace de travail sont groupés et assignés ensemble. Dès qu'un groupe ou utilisateur se voit attribué un rôle supérieur, ceux rôles sont automatiquement fournis.
+</Info>
+
+## Rôles
+### Espace de travail
+<table>
+  <thead>
+    <tr>
+      <th>Catégorie</th>
+      <th>Rôle</th>
+      <th>Description</th>
+      <th>Recommandé pour</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Catalogues et stockage</td>
+      <td>Espace documentaire</td>
+      <td>Accès à la bibliothèque de documents</td>
+      <td>
+        <span className="tag admin">Utilisateurs</span>
+      </td>
+    </tr>
+    <tr>
+      <td>Catalogues et stockage</td>
+      <td>Catalogue d'agents</td>
+      <td>Accès au catalogue d'agents</td>
+      <td>
+        <span className="tag admin">Utilisateurs</span>
+      </td>
+    </tr>
+        <tr>
+      <td>Catalogues et stockage</td>
+      <td>Catalogue de skills</td>
+      <td>Accès au catalogue de skills</td>
+      <td>
+        <span className="tag admin">Utilisateurs</span>
+      </td>
+    </tr>
+        <tr>
+      <td>Catalogues et stockage</td>
+      <td>Catalogue de modèles</td>
+      <td>Accès au catalogue de modèles</td>
+      <td>
+        <span className="tag admin">Utilisateurs</span>
+      </td>
+    </tr>
+    </tbody>
+</table>  
+  
+### Contributeur
+
+<table>
+  <thead>
+    <tr>
+      <th>Catégorie</th>
+      <th>Rôle</th>
+      <th>Description</th>
+      <th>Recommandé pour</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+      <td>Plateforme</td>
+      <td>Créateur d'agents</td>
+      <td>Permet de créer des agents et des skills</td>
+      <td>
+        <span className="tag data">Data champion</span>,
+        <span className="tag collaborator">Collaborateur créteur</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+### Gouvernance et sécurité
+
+<table>
+  <thead>
+    <tr>
+      <th>Catégorie</th>
+      <th>Rôle</th>
+      <th>Description</th>
+      <th>Recommandé pour</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Administration</td>
+      <td>Administrateur total</td>
+      <td>Donne accès à tous les droits d'administration</td>
+      <td>
+        <span className="tag data">Administrateur</span>
+      </td>
+    </tr>
+    <tr>
+      <td>Administration</td>
+      <td>Administrateur utilisateurs</td>
+      <td>Gestion des utilisateurs, des groupes et des rôles</td>
+      <td>
+        <span className="tag data">Administrateur</span>
+      </td>
+    </tr>
+    <tr>
+      <td>Administration</td>
+      <td>Administrateur source de données</td>
+      <td>Gestion des sources de données disponibles sur la plateforme</td>
+      <td>
+        <span className="tag data">Administrateur</span>
+      </td>
+    </tr>
+    <tr>
+      <td>Administration</td>
+      <td>Administrateur modèles IA</td>
+      <td>Gestion des modèles LLM disponibles sur la plateforme</td>
+      <td>
+        <span className="tag data">Administrateur</span>
+      </td>
+    </tr>
+    <tr>
+      <td>Administration</td>
+      <td>Suivi des usages</td>
+      <td>Accès à l'observabilité de l'usage de la plateforme</td>
+      <td>
+        <span className="tag data">Administrateur</span>
+      </td>
+    </tr>
+    <tr>
+      <td>Administration</td>
+      <td>Gestion du store interne</td>
+      <td>Onglet de visibilité et gestion des services créés par les utilisateurs de la plateforme</td>
+      <td>
+        <span className="tag data">Administrateur</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+### APIs & WebHook
+
+<table>
+  <thead>
+    <tr>
+      <th>Catégorie</th>
+      <th>Rôle</th>
+      <th>Description</th>
+      <th>Recommandé pour</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Déploiements</td>
+      <td>Créateur d'API externe</td>
+      <td>Donne accès à l'onglet Déploiements pour gérer les déploiements de la plateforme</td>
+      <td>
+        <span className="tag data">Administrateur</span>
+      </td>
+    </tr>
+  </tbody>
+</table>

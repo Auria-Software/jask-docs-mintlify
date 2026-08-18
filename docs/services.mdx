@@ -1,0 +1,163 @@
+---
+title: "Les services Jask"
+sidebarTitle: "Cas avancés"
+---
+
+Retrouvez l'ensemble de la [terminologie Jask](/docs/terminology)
+
+<Columns cols={2}>
+  <Card
+    title="Prompts"
+    href="/docs/catalog/prompts_store"
+    icon="book-type"
+  />
+  <Card
+    title="Agents"
+    href="/docs/catalog/agents/create"
+    icon="bot"
+  />
+  <Card
+    title="Workflows"
+    href="/docs/catalog/agents/applications"
+    icon="package"
+  />
+  <Card
+    title="Groupe d'agents"
+    href="/docs/catalog/agents/group"
+    icon="group"
+  />
+  <Card title="Skills" href="/docs/catalog/skills" icon="wrench" />
+  <Card
+    title="Expériences"
+    href="/docs/catalog/experiences"
+    icon="workflow"
+  />
+  <Card
+    title="Modèles"
+    href="/docs/catalog/ai_models"
+    icon="brain-circuit"
+  />
+</Columns>
+
+## Les workflows custom
+
+Créés par vous ou votre organisation, ces workflows permettent de réaliser une série de tâches spécifiques de manière automatisée selon la configuration qui a été définie.
+Vous pouvez sélectionner les workflows via la commande @ ou en cherchant dans le catalogue. Et l'exécuter directement depuis la page d'accueil.
+
+### Les workflows natifs (Microsoft)
+
+Ils sont présents par défaut sur votre environnement et permettent d'intéragir avec des ressources Microsoft (emails, transcripts, sharepoints, MS Graph...).
+
+[Voir plus](/docs/catalog/agents/applications)
+
+## Interroger vos bases de données
+
+Recherchez des informations dans les bases de connaissance de votre organisation.
+L'IA va générer une réponse en fonction de votre requête en se basant sur les bases de données sélectionées.
+Vous pouvez **sélectionner une ou plusieurs sources de données** que vous souhaitez interroger avec votre requête en utilisant la commande / puis en tapant le nom de la source
+
+
+## Enchaîner les interactions
+
+Depuis l'accueil, vous pouvez enchaîner plusieurs services présentés précédemment. Cela vous permet de poursuivre, d'approfondir ou de challenger les résultats fournis par l'IA
+Par exemple, vous pouvez :
+
+- **Exécuter** un workflows
+- **Rebondir sur le résultat du workflow** avec un agent pour approfondir
+
+## Croiser les services
+
+<table>
+  <thead>
+    <tr>
+      <th>Service(s)</th>
+      <th>Comportement</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Agent</td>
+      <td>
+        L'agent répond à la requête de l'utilisateur en prenant en compte les
+        fichiers importés (si c'est le cas)
+      </td>
+    </tr>
+       <tr>
+      <td>Skills</td>
+      <td>
+        Le skill répond a une demande de l'utilisateur de manière unitaire. Il peut aussi être attaché à un agent, qui appelera le skill et ses instructions si l'agent identifie que le skill peut être utile pour répondre à la requête de l'utilisateur.
+      </td>
+    </tr>
+    <tr>
+      <td>Groupe d'agents</td>
+      <td>
+        Le groupe d'agents répond à la requête de l'utilisateur en fonction du
+        mode de fonctionnement défini dans le groupe.
+      </td>
+    </tr>
+    <tr>
+      <td>Workflows</td>
+      <td>
+        Le workflow se lance en prenant en contexte la requête/fichier saisis
+        par l'utilisateur (si c'est le cas). Si l'application ne permet pas de
+        prendre en contexte un fichier, le fichier importé sera ignoré.
+      </td>
+    </tr>
+    <tr>
+      <td>Base de connaissance</td>
+      <td>
+        L'IA répond à la requête de l'utilsateur en interrogeant la base de
+        données séléctionnée. Si un fichier est importé, l'IA traitera la base
+        de données sélectionnée et le fichier comme deux sources distinctes pour
+        générer sa réponse.
+      </td>
+    </tr>
+    <tr>
+      <td>Plusieurs agents</td>
+      <td>
+        Les agents sélectionnés répondent parallèlement à la requête de
+        l'utilisateur.
+      </td>
+    </tr>
+    <tr>
+      <td>Plusieurs workflows</td>
+      <td>
+        Les workflows sélectionnés sont déclenchés en parallèle.
+      </td>
+    </tr>
+    <tr>
+      <td>Plusieurs bases de données</td>
+      <td>
+        Les bases de données sont utilisées par l'IA pour répondre à la requête
+        de l'utilisateur.
+      </td>
+    </tr>
+    <tr>
+      <td>Deux services sélectionnés</td>
+      <td>Les deux services sont exécutés parallèlement.</td>
+    </tr>
+  </tbody>
+</table>
+
+<Info>
+  Le service natif Deep Research a été déprécié et remplacé par les niveaux de
+  réflexion
+</Info>
+
+<Columns cols={2}>
+  <Card
+    title="Historique des conversations"
+    href="/docs/menu"
+    icon="messages-square"
+  />
+  <Card
+    title="Détails d'une conversation"
+    href="/docs/conversations"
+    icon="history"
+  />
+  <Card
+    title="Création des services IA"
+    href="/docs/catalog/agents/create"
+    icon="bot"
+  />
+</Columns>

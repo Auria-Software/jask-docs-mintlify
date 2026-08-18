@@ -1,0 +1,59 @@
+---
+title: "Foire Aux Questions"
+sidebarTitle: "FAQ"
+---
+
+Voici quelques questions fréquemment posées sur Jask :
+
+<Accordion title="À quoi sert Jask et en quoi est-il différent d’un simple chatbot IA ?">
+
+Jask est une plateforme IA complète qui va bien au-delà d’un chatbot générique. Elle permet à vos équipes de créer des **agents IA métier**, des **workflows automatisés** et des **projets collaboratifs**, tous branchés sur vos propres sources de données (SharePoint, BigQuery, Notion, Salesforce…). Contrairement à un chatbot grand public, chaque agent Jask est configuré avec un rôle précis, des connaissances internes et un niveau de confidentialité adapté à votre organisation.
+
+</Accordion>
+
+<Accordion title="Quelle est la différence entre un agent, un groupe d’agents et un workflow ?">
+
+Ce sont trois types de **services IA** distincts dans Jask :
+  - Un **agent** répond aux questions en s’appuyant sur ses sources de données et son prompt système. C’est le service de base.
+  - Un **groupe d’agents** regroupe plusieurs agents qui se coordonnent pour traiter une requête complexe, selon différents modes de fonctionnement.
+  - Un **workflow** est une série d’actions automatisées et prédéfinies. Il s’exécute de manière structurée, idéal pour des tâches répétitives ou des processus multi-étapes.
+
+  Vous pouvez combiner ces trois types depuis l’interface Jask pour enchaîner ou croiser les services.
+
+</Accordion>
+
+<Accordion title="Comment partager une conversation ou un résultat avec un collègue ?">
+
+Depuis n’importe quelle conversation, cliquez sur le bouton **Partager** en haut à droite. Vous pouvez définir un titre, une description et choisir la visibilité : tous les utilisateurs ayant accès à cet agent, ou une sélection précise. Votre collègue accède alors à l’intégralité du fil de conversation, y compris les fichiers générés et les détails de réflexion de l’agent.
+
+  Vous pouvez également exporter la conversation en **Word, Markdown ou PDF** via le menu `…`.
+
+</Accordion>
+
+<Accordion title="Comment utiliser les Projets pour collaborer en équipe ?">
+
+Les Projets sont des espaces de travail partagés et persistants. Chaque membre invité peut y mener ses propres conversations, retrouver l’historique commun et accéder aux mêmes ressources (fichiers importés, sources connectées). Vous pouvez mentionner n’importe quel agent disponible directement dans le chat du projet avec `@nom_de_l_agent`. Les droits d’accès sont définis par niveau : Lecture seule, Contributeur ou Administrateur.
+
+</Accordion>
+
+<Accordion title="Qu’est-ce que le panneau de réflexion et pourquoi est-il utile ?">
+
+Lorsqu’un agent effectue un raisonnement multi-étapes, un badge **Réflexion →** apparaît dans la réponse. En cliquant dessus, vous ouvrez un panneau latéral qui détaille chaque étape du raisonnement : ce que l’agent a analysé, quelles sources il a consultées, et avec quelle logique il est parvenu à sa réponse. C’est un outil essentiel pour **valider la fiabilité d’une réponse** avant de l’utiliser dans un contexte professionnel. Le niveau de détail dépend du niveau de réflexion configuré sur l’agent.
+
+</Accordion>
+
+<Accordion title="Comment faire pour que les agents ne répondent que sur les textes qu’on leur fournit ?">
+
+Deux paramètres sur lesquels jouer dans la [configuration d’un agent](/docs/catalog/agents/create) :
+  - Le **Prompt système** : indiquez explicitement à l’agent de ne pas répondre s’il ne dispose pas de l’information dans ses sources.
+  - Le **niveau de réflexion** : "faible" limite la créativité et réduit le risque d’hallucinations.
+
+  Vous pouvez aussi activer l’option **"Informe l’utilisateur lorsque la réponse ne se base pas sur les sources connectées"** dans la configuration avancée de l’agent.
+
+</Accordion>
+
+<Accordion title="Pourquoi donner un Prompt système à un agent ?">
+
+Le Prompt système permet de donner un cadre à l’agent : le ton à employer, le périmètre de réponse, la structure attendue, les sujets à éviter. Sans prompt système, l’agent se comporte comme un LLM générique. Avec un prompt bien rédigé, il devient un expert métier ciblé. [Consultez le guide de configuration d’un agent](/docs/catalog/agents/create) pour des exemples concrets.
+
+</Accordion>

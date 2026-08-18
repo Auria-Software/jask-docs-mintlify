@@ -1,0 +1,180 @@
+---
+title: "Traitement de fichiers"
+sidebarTitle: "Traitement de fichiers"
+---
+
+Deux actions sont disponibles pour traiter les fichiers :
+
+- Extraction de tableau
+- Analyse de fichier(s)
+
+![application_file_processing](/images/applications/file_processing.png)
+
+<Info>
+  Si vous souhaitez extraire des données d'un document de grande taille dans un
+  format structuré, nous vous conseillons de faire usage de ces deux briques de
+  manière coordonnées.
+</Info>
+
+## Extraction de tableau
+
+### Paramètres
+
+<table>
+  <tbody>
+    <tr>
+      <td>Section</td>
+      <td>Traitement de fichiers</td>
+    </tr>
+    <tr>
+      <td>Titre</td>
+      <td>Extraction de Tableau</td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td>
+Extraction d’informations d’un fichier et restitution dans un format de tableau défini
+      </td>
+    </tr>
+    <tr>
+      <td>Entrée</td>
+      <td>
+        Texte et/ou fichier(s)
+      </td>
+    </tr>
+    <tr>
+      <td>Sortie</td>
+      <td>
+Tableau(x) : un ou plusieurs
+      </td>
+    </tr>
+    <tr>
+      <td>Paramètres avancés</td>
+      <td>
+        - Colonnes à extraire : Définition des colonnes que vous souhaitez obtenir en sortie (titre et description de la colonne) pour donner du contexte au modèle sur les informations à extraire du contexte
+        - Inclure le nom du fichier : Rajoute une colonne avec le nom du fichier d’ou provient la ligne ajoutée. Permet de repérer plus rapidement d’ou provient l’information
+        - Consolider les tableaux :  Chaque fichiers en entrée fournira un tableau. Si cette option est activée, les tableaux de chaque fichier seront consolidés en un seul. Ainsi, les informations de plusieurs fichiers sont restituées en un seul tableau.
+        - Instructions personnalisées : Permet de fournir des instructions de traitement personnalisées pour guider le modèle sur la manière d’extraire l’information
+        - Sélection du modèle LLM utilisé
+      </td>
+    </tr>
+    <tr>
+      <td>Exemples d’utilisation</td>
+      <td>
+        - J’ai besoin d’un tableau consolidé de tous les acronymes contenus dans un document en entrée
+        - Je veux extraire toutes les valeurs financières contenues dans un corpus documentaires
+        - Je veux extraire des données de la base de contrats de mon entreprise sous forme d’un tableau contenant le montant du contrat, la date de signature, la date de fin et le nom du client
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+
+---
+
+### Guide d'utilisation
+
+Cette action vous permet d'extraire des informations structurées depuis des documents et de les restituer sous forme de tableaux configurables.
+
+![application_file_processing](/images/applications/tab_extraction.png)
+
+Pour utiliser cette action, cliquez sur le bouton `+` puis sur `Traitement de fichiers` et enfin sur `Extraction de tableau`.
+Une fois l'action dans le workflow, vous pouvez entrer les colonnes à extraire, sélectionner le modèle LLM utilisé et configurer les paramètres avancés.
+
+## Analyse de fichier(s)
+
+### Paramètres
+
+<table>
+  <tbody>
+    <tr>
+      <td>Section</td>
+      <td>Traitement de fichiers</td>
+    </tr>
+    <tr>
+      <td>Titre</td>
+      <td>Analyse de fichier(s)</td>
+    </tr>
+    <tr>
+      <td>Définition</td>
+      <td>
+        Cette brique permet de faire une analyse ou un traitement spécifique sur
+        les éléments de contexte. Par défaut, Jask propose "Résumé court" et
+        "Résumé détaillé" du contexte d’entrée. Vous pouvez aussi spécifier des
+        instructions personnalisées (traduction, restructuration…). Ce brique
+        permet de forcer l’IA à parcourir chaque page des documents en entrée
+        (voir paramètres avancés), pour éviter de dépasser le contexte d’entrée
+        du LLM.
+      </td>
+    </tr>
+    <tr>
+      <td>Entrée</td>
+      <td>Fichier(s)</td>
+    </tr>
+    <tr>
+      <td>Sortie</td>
+      <td>Texte</td>
+    </tr>
+    <tr>
+      <td>Paramètres avancés</td>
+      <td>
+        - Type de traitement : Résumé court, résumé long ou Instructions
+        personnalisées
+        <div />
+        - Si Instructions personnalisées : L'utilisateur peut saisir un prompt
+        d'instruction ou lier les instructions au contexte. Dans ce cas, le
+        texte passé en entrée de la brique sera utilisé en tant instructions
+        pour le traitement à effectuer.
+        <div />
+        - Lire toutes les pages : Force le modèle à lire l’intégralité des
+        pages, cela permet de s’assurer que tout le contenu sera parcouru lors
+        du traitement du/des éléments de contexte
+        <div />
+        - Produire un seul livrable si plusieurs fichiers : Consolide les
+        résultats en une seule sortie, sinon une sortie est fournie par fichier
+        passé en contexte
+        <div />- Sélection du modèle LLM utilisé pour le traitement
+      </td>
+    </tr>
+    <tr>
+      <td>Exemples d’utilisation</td>
+      <td>
+        - Je veux faire un résume court de mon contenu en entrée de brique
+        <div />
+        - Je veux traduire page par page un des documents dans une langue donnée
+        (instructions personnalisées)
+        <div />
+        - Je veux faire une analyse détaillée de chaque document en entrée, en
+        analysant l’intégralité du contenu (page par page) et en fournir un
+        résumé unique (consolidé) selon des instructions
+        <div />
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+### Guide d'utilisation
+
+Cette action vous permet d'analyser ou traiter les documents en entrée (résumé, traduction, restructuration…), en forçant la lecture complète des fichiers si nécessaire.
+
+![application_file_processing](/images/applications/file_analysis.png)
+
+Pour utiliser cette action, cliquez sur le bouton `+` puis sur `Traitement de fichiers` et enfin sur `Analyse de fichier(s)`.
+Une fois l'action dans le workflow, vous pouvez sélectionner le type de traitement, configurer les paramètres avancés et entrer les instructions personnalisées.
+
+## Exemple d'utilisation
+
+<Accordion title="Utilisation les briques de traitement de fichiers pour extraire des informations">
+
+Objectif : Je souhaite extraire les noms et emails de tous les participants à une conférence. J'ai en ma possession 15 documents correspondants aux 15 sessions de l'événement. Mon objectif est d'obtenir un tableau contenant tous les participants.
+
+Dans un premier temps, je vais utiliser une brique analyse de fichiers, cette brique va pouvoir parcourir page par page l'intégralité de mes documents, et en extraire uniquement les informations personnalisées. Cette étape est primordiale pour éviter de dépasser le contexte d'entrée du modèle.
+Dans un second temps, je vais utiliser une brique Extraction de tableau, qui va utiliser tous les éléments extraits dans l'étape précédente, sous forme de tableau consolidé.
+Ainsi, même avec de fichiers de grande taille, en travaillant sur les prompts d'extraction, et sur le paramétrage de mon tableau de sortie, je peux extraire de grandes quantités d'information de manière consolidée.
+![extraction_app](/images/applications/analyse.png)
+
+![extraction_app](/images/applications/table.png)
+
+</Accordion>

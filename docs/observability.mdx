@@ -1,0 +1,128 @@
+---
+title: "Observabilité"
+sidebarTitle: "Observabilité"
+---
+
+Depuis les réglages, allez sur la page `Observabilité`, vous pouvez suivre la consommation des agents, workflows, modèles et utilisateurs de votre organisation. Cette vue est la pour vous donner une vue d'ensemble de l'utilisation et de la consommation sur Jask.
+
+### Filtrer sur une période
+
+Choisissez la période sur laquelle vous voulez voir les données en utilisant le filtre en haut à droite de la page.
+
+### Télécharger les logs
+
+Vous pouvez télécharger les logs / consommation de votre organisation en cliquant sur le bouton `Télécharger` (flèche) en haut à droite de la page à coté du filtre sur la période.
+En effectuant cette action, vous allez télécharger un fichier CSV contenant les logs de votre organisation sur la période sélectionnée.
+
+<Warning>
+  Afin d’optimiser les performances, il est conseillé d’exporter les logs par
+  petites périodes (inférieures à 1 mois de préférence). Dans Power BI par
+  exemple, les fichiers peuvent ensuite être chargés depuis un dossier unique et
+  combinés automatiquement (fonction “Combiner les fichiers”), ce qui permet une
+  analyse évolutive mois par mois sans recharger l’historique complet.
+</Warning>
+
+Chaque ligne du fichier correspond à un log associé à une requête effectuée par un utilisateur dans Jask.
+Une seule requête adressée à un agent **peut générer plusieurs lignes**, chacune représentant un type de ressource utilisé lors du traitement de la requête :
+
+- User : 1 ligne identifiant l’utilisateur à l’origine de la requête
+- Agent : 0 ou 1 ligne indiquant l’agent sollicité
+- Models : 0 ou N lignes indiquant le modèle d’IA utilisé
+- Datasources : 0 à N lignes par source de données utilisée par l’agent
+- Resources : 0 à N lignes par fichier ou ressource consommée
+
+![download logs](/images/logs.png)
+
+### Vue d'ensemble
+Dans cette vue vous avez un résumé de la consommation globale de Jask au travers de 6 graphiques :
+
+- le nombre de requêtes (nombre de requêtes, utilisateurs actifs, estimation du coûts, évolution temporelle des requêtes
+- les ressources utilisées (nombre d'agents, nombre de workflows, nombre de sources de données connectées, bar chart de la répartition des requêtes par ressources)
+- les top agents (nombre de requêtes aux agents, total de tokens des requêtes, estimations du coût, bar chart de la répartition des requêtes sur le top 10 des agents utilisés)
+- les top workflows (nombre de requêtes aux workflows, total de tokens des requêtes, estimations du coût, bar chart de la répartition des requêtes sur le top 10 des workflows utilisés)
+- les modèles les plus utilisés (nombre de modèles déployés, nombre de modèles utilisés, estimations du coût, bar chart de la répartition des requêtes sur le top 10 des modèles utilisés)
+- les utilisateurs les plus actifs (nombre total d'utilisateurs, nombre total d'utilisateurs actifs, nombre de requêtes moyen par utilisateur, bar chart de la répartition des requêtes pour le top 5 utilisateurs)
+
+![obs_general](/images/obs_general.png)
+
+### Onglets dédiés
+
+En haut de l'écran d'observabilité, vous pouvez accéder à différents onglets, donnant à chaque fois un classement par utilisations ainsi que des informations liées à cette utilisation (tokens, nombre de requêtes, coûts associés, taux d'utilisation). Les onglets sont : vue d'ensemble, utilisateurs, groupes, agents, applicaitons, sources de données, file rooms, modèle IA, canaux.
+
+<Tabs>
+  <Tab title="Utilisateurs">
+    **Utilisateurs**:<br />
+    Total : Nombre d'utilisateurs, % actifs, total de requêtes,
+    estimation coûts<br />
+    Par utilisateur : taux d'utilisation, nombre de requêtes total, tokens
+    consommés, estimations coût
+![obs_users](/images/obs_users.png)  
+</Tab>
+  <Tab title="Groupes">
+    **Groupes**:<br /> Total : Nombre de groupes, % groupes actifs (au moins 1
+    utilisateur du groupe actif), total de requêtes, estimation coûts<br />
+    Par groupe : taux d'utilisation, nombre de requêtes total, tokens consommés,
+    estimations coût
+    <Note>
+      
+      La somme des taux d'utilisation des groupe peut dépasser 100% puisque
+      chaque utilisateur est compté dans chacun des groupes dans lequel il est
+    </Note>
+   ![obs_group](/images/obs_group.png) 
+  </Tab>
+  <Tab title="Agents">
+    **Agents**:<br />
+    Total : Nombre d'agents, total de requêtes, total de tokens,
+    estimation coûts<br />
+    Par agent : taux d'utilisation, nombre de requêtes total, tokens consommés,
+    estimations coût 
+    ![obs_agents](/images/obs_agents.png) 
+  </Tab>
+  <Tab title="Workflows">
+    **Workflows**:<br /> Total : Nombre de workflows, total de requêtes, total
+    token, estimation coûts<br />
+    Par workflow : taux d'utilisation, nombre de requêtes total, tokens
+    consommés, estimations coût
+   ![obs_workflow](/images/obs_workflow.png) 
+  </Tab>
+  <Tab title="Sources de données">
+    **Sources de données**:<br /> Total : Nombre de sources de données, total
+    de requêtes, total tokens, estimation coûts<br />
+    Par sources de données : taux d'utilisation, nombre de requêtes total,
+    tokens consommés, estimations coût
+   ![obs_datasources](/images/obs_datasources.png) 
+  </Tab>
+  <Tab title="File Rooms">
+    **File Rooms**:<br /> Total : Nombre de file rooms, total de requêtes,
+    total tokens, estimation coûts<br />
+    Par file room : taux d'utilisation, nombre de requêtes total, tokens
+    consommés, estimations coût
+    ![observability_filerooms](/images/settings/kpi-filerooms.png)
+  </Tab>
+  <Tab title="Modèles IA">
+    **Modèles IA**:<br />
+    Total : Nombre de modèles utilisés, total de requêtes, total tokens,
+    estimation coûts<br />
+    Par modèle : taux d'utilisation, nombre de requêtes total, tokens consommés,
+    estimations coût
+      ![obs_models](/images/obs_models.png) 
+  </Tab>
+  <Tab title="Canaux">
+    **Canaux**:<br /> Total : Nombre de canaux, total de requêtes, total
+    tokens, estimation coûts<br />
+    Par canal: taux d'utilisation, nombre de requêtes total, tokens consommés,
+    estimations coût
+       ![obs_channels](/images/obs_channels.png) 
+  </Tab>
+    <Tab title="Feedbacks">
+    **Feedbacks**:<br /> Total : Nombre de feedbacks, feedbacks positifs et négatifs, taux de satisfaction, nombre de problèmes ouverts, taux de feedback.
+    Courbe de distribution des feedbacks, nombre de feedbacks par agents, nombre de feedbacks par utilisateurs<br />
+    Sur la partie basse, vous pouvez retrouver le détails des feedbacks par utilisateur, agent ou workflows, ainsi que le détail de chacun des feedbacks
+       ![obs_feedbacks](/images/obs_feedbacks.png) 
+  </Tab>
+  <Tab title="Alertes">
+    **Alertes**:<br /> Total des alertes, et découpage par criticité (critiques, modérés, faible)<br />
+   Tableau de détail de chaque alerte : type, description technique, sévérité, id de la ressource, utilisateur impacté et date
+       ![obs_alerts](/images/obs_alerts.png) 
+  </Tab>
+</Tabs>
