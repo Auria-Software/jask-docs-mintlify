@@ -274,6 +274,18 @@
           "changelog/version202602",
           "changelog/version202510"
         ]
+      },
+      {
+        "tab": "Untitled Tab",
+        "anchors": [
+          {
+            "anchor": "Nouveautés",
+            "icon": "notepad-text",
+            "pages": [
+              "untitled-page"
+            ]
+          }
+        ]
       }
     ]
   },
