@@ -264,7 +264,6 @@
         "tab": "Changelog",
         "icon": "history",
         "pages": [
-          "releases",
           "changelog/version202607",
           "changelog/version202604",
           "changelog/version202602",
