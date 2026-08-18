@@ -67,15 +67,6 @@
     }
   },
   "navigation": {
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Nouveautés",
-          "icon": "notepad-text",
-          "href": "/releases"
-        }
-      ]
-    },
     "tabs": [
       {
         "tab": "Documentation",
@@ -278,6 +269,7 @@
         "tab": "Changelog",
         "icon": "history",
         "pages": [
+          "changelog/releases",
           "changelog/version202607",
           "changelog/version202604",
           "changelog/version202602",
