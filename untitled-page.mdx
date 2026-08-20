@@ -1,0 +1,84 @@
+---
+title: "Environnements"
+description: "Créez, gérez et configurez des espaces de travail internes ou externes pour vos équipes et partenaires."
+icon: "earth"
+---
+
+<Info>
+  Un environnement est un espace de travail isolé qui contient des services limités parmi vos agents, vos sources de données et vos bibliothèques. <br />Il permet de d'offrir à vos équipes ou à des partenaires, un accès partiel à la plateforme Jask tout en contrôlant finement l'accès aux fonctionnalités et aux ressources.
+</Info>
+
+<Frame>
+  ![Environnement Accueil](/images/environnement_accueil.png "Environnement Accueil")
+</Frame>
+
+## Avant de commencer
+
+Assurez-vous d'avoir les droits nécessaires. Seuls les utilisateurs disposant des permissions `Environments` peuvent créer de nouveaux espaces.
+
+- **Permissions requises** : `Environments`ou rôle Administrateur système.
+- **Prérequis** : Avoir des Agents et Modèles IA disponibles dans votre organisation pour pouvoir les attacher à l'environnement.
+
+## Créer un environnement
+
+La création se fait depuis la page "Environnements" dans le menu latéral.
+
+1. Dans la section **Utilisateurs & Groupes**, cliquez sur **Environnements**.
+2. En haut à droite, cliquez sur le bouton **Nouveau**.
+3. Remplissez le formulaire dans le panneau latéral **Ajouter un environnement** en suivant les onglets ci-dessous :
+
+<Tabs>
+  <Tab title="Informations">
+    - **Nom** (Obligatoire) : Donnez un nom clair à votre espace (il sera affiché aux utilisateurs qui accèdent à cet environnement)
+    - **Photo** (Optionnel) : Logo de l'environnement.
+    - **Description** (Optionnel) : Résumez l'objectif de l'environnement 
+    - **Type d'environnement** : Choisissez entre **Interne** et **Externe** selon l'usage :
+      - **Interne** : Offre une **expérience complète** aux utilisateurs (accès à l'interface complète de la plateforme). Idéal pour des collaborateurs de l'entreprise avec accès à des ressources limitées
+      - **Externe** : Offre une **expérience simplifiée**, avec des fonctionnalités restreintes et un accès limité aux données. Idéal pour les partenaires ou clients.
+    - **Agent par défaut** : L'agent qui sera proposé par défaut aux utilisateurs dans le portail de cet environnement.
+  </Tab>
+  <Tab title="Membres">
+    - **Administrateurs** : Utilisez le champ de recherche pour sélectionner les utilisateurs ou groupes qui auront la permission de gérer les membres et les ressources associées à cet environnement.
+    - **Qui peut y accéder** : Définissez le niveau de visibilité de l'environnement. Par défaut, l'option sélectionnée est **Privé**, ce qui signifie que seuls les administrateurs et les membres explicitement invités pourront voir et utiliser cet environnement.
+  </Tab>
+  <Tab title="Ressources">
+    - **Agents** : Restreignez les agents IA qui seront disponibles sur cet environnement. Choisissez "Hérité" (pour utiliser les agents par défaut de la plateforme) ou sélectionnez une liste d'agents spécifiques disponibles exclusivement dans cet environnement.
+    - **Modèles IA** : De la même manière, vous pouvez restreindre ou "Hériter" des modèles disponibles.
+  </Tab>
+</Tabs>
+
+## Utiliser un environnement (Portail utilisateur)
+
+L'expérience utilisateur finale se fait via le portail central.
+
+1. L'utilisateur se connecte à son compte.
+2. En haut à gauche de l'interface, un menu déroulant à côté du logo lui permet de **basculer entre plusieurs environnements** auxquels il a accès.
+3. Une fois l'environnement choisi, l'utilisateur accès à une interface complète ou simplifiée, avec les ressources spécifiques à cet environnement (agents, applications et bibliothèques).
+
+| Externe (simplifiée) | Interne (Complète) |
+| --- | --- |
+| <img src="/images/environnement_accueil.png" alt="Environnement Accueil" title="Environnement Accueil" /> | <img src="/images/env_complet.png" alt="Env Complet" title="Env Complet" /> |
+
+## Vérifier le fonctionnement
+
+Après la configuration, effectuez ces validations pour vous assurer que tout est en place :
+
+1. **Visibilité** : L'environnement apparaît bien dans la liste principale de la page "Environnements".
+2. **Accès Admin** : Connectez-vous avec le compte d'un utilisateur que vous avez déclaré comme "Administrateur" de cet environnement. Il doit pouvoir ouvrir le panneau latéral de l'environnement pour modifier les membres ou les ressources.
+3. **Basculement** : Connectez-vous en tant que membre standard, et assurez-vous que le menu déroulant en haut à gauche vous permet de changer d'environnement.
+4. **Restriction des ressources** : Si vous avez sélectionné des Agents ou Modèles IA spécifiques (et non "Hérité"), connectez-vous et vérifiez que seuls ces éléments sont visibles dans l'onglet `Mes agents`.
+
+## Dépannage
+
+| Symptôme | Cause possible | Solution |
+| :-- | :-- | :-- |
+| **Impossible de voir l'environnement** | L'utilisateur n'est pas dans la liste "Administrateurs" ou n'est pas invité (espace "Privé"). | Depuis l'onglet "Membres", ajoutez l'utilisateur ou changez le mode d'accès si nécessaire. |
+| **L'Agent par défaut ou le modèle IA est manquant** | L'agent ou le modèle a été désactivé globalement. | Le système reviendra probablement à un fallback. Réactivez la ressource ou changez la sélection dans l'onglet "Ressources". |
+| **Erreur "Valeur requise"** | Le champ "Nom" du formulaire est vide. | Remplissez le champ avant d'enregistrer. |
+| **L'utilisateur ne peut pas switcher d'environnement** | L'utilisateur n'a pas les droits sur le deuxième environnement. | Vérifiez la configuration de l'onglet "Membres" sur le second environnement. |
+
+## Voir aussi
+
+- [Gérer les Agents IA](/guides/agents)
+- [Configuration des sources de données](/guides/data-sources)
+- [Gestion des utilisateurs et groupes](/guides/users-groups)

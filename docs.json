@@ -4,7 +4,7 @@
   "name": "Jask",
   "description": "Documentation produit et référence API de Jask.",
   "colors": {
-    "primary": "#9826A8",
+    "primary": "#593EFF",
     "light": "#B94FC8",
     "dark": "#B94FC8"
   },
@@ -199,7 +199,8 @@
                 ]
               },
               "docs/advanced_parameters",
-              "docs/observability"
+              "docs/observability",
+              "untitled-page"
             ]
           },
           {
