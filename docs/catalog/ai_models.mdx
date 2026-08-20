@@ -1,38 +1,31 @@
 ---
 title: "Gestion des modèles"
 sidebarTitle: "Modèles IA"
+icon: "languages"
 ---
 
-Depuis la page `Gestion des Modèles`, vous pouvez administrer les modèles d'IA disponibles sur votre plateforme Jask et en gérer l'accès pour vos utilisateurs.
-Jask vous permet de connecter librement vos modèles d’IA, qu’ils proviennent d’Azure, de Google Cloud, du public ou qu’ils soient fine-tunés sur mesure.
+Depuis la page `Gestion des Modèles`, vous pouvez administrer les modèles d'IA disponibles sur votre plateforme Jask et en gérer l'accès pour vos utilisateurs. Jask vous permet de connecter librement vos modèles d’IA, qu’ils proviennent d’Azure, de Google Cloud, du public ou qu’ils soient fine-tunés sur mesure.
 
 ![models](/images/settings/ai_models/add-model-providers.png)
 
 <Note>
-  Nous recommandons l’utilisation de modèles Azure, déployés directement au sein
-  de votre environnement Azure. Cela garantit un niveau optimal de
-  confidentialité, de sécurité et de maîtrise de vos données.
+  Nous recommandons l’utilisation de modèles Azure, déployés directement au sein de votre environnement Azure. Cela garantit un niveau optimal de confidentialité, de sécurité et de maîtrise de vos données.
 </Note>
 
-| Fournisseur       | Description                                                            | Authentification              |
-| ----------------- | ----------------------------------------------------------------------| ------------------------------|
-| **Azure**         | Modèles Azure OpenAI, AI Foundry et Codex — détectés automatiquement à partir de l'endpoint | Clé API (Bearer Token ou APIM) |
-| **Anthropic**     | Modèles Claude via l'API Anthropic directe                            | Clé API                       |
-| **Vertex AI**     | Modèles Google (Gemini) et Claude via Google Cloud Vertex AI          | Compte de service Google (JSON) |
-| **Google Gemini** | Modèles Gemini via l'API publique Google                               | Clé API                       |
-| **OpenAI**        | Modèles GPT via l'API OpenAI directe                                   | Clé API                       |
-| **Mistral AI**    | Modèles Mistral via l'API Mistral directe                              | Clé API                       |
-| **Groq**          | Inférence rapide via l'API Groq (compatible OpenAI)                    | Clé API                       |
-| **DeepSeek**      | Modèles DeepSeek via l'API DeepSeek directe (compatible OpenAI)        | Clé API                       |
-| **Other**         | Tout autre fournisseur compatible avec un endpoint custom (compatible OpenAI) | Clé API                 |
+| Fournisseur | Description | Authentification |
+| --- | --- | --- |
+| **Azure** | Modèles Azure OpenAI, AI Foundry et Codex — détectés automatiquement à partir de l'endpoint | Clé API (Bearer Token ou APIM) |
+| **Anthropic** | Modèles Claude via l'API Anthropic directe | Clé API |
+| **Vertex AI** | Modèles Google (Gemini) et Claude via Google Cloud Vertex AI | Compte de service Google (JSON) |
+| **Google Gemini** | Modèles Gemini via l'API publique Google | Clé API |
+| **OpenAI** | Modèles GPT via l'API OpenAI directe | Clé API |
+| **Mistral AI** | Modèles Mistral via l'API Mistral directe | Clé API |
+| **Groq** | Inférence rapide via l'API Groq (compatible OpenAI) | Clé API |
+| **DeepSeek** | Modèles DeepSeek via l'API DeepSeek directe (compatible OpenAI) | Clé API |
+| **Other** | Tout autre fournisseur compatible avec un endpoint custom (compatible OpenAI) | Clé API |
 
 <Info>
-  Codex (modèles de raisonnement OpenAI déployés sur Azure) n'apparaît plus
-  comme fournisseur séparé : il est désormais détecté automatiquement lorsque
-  vous configurez un modèle via le fournisseur **Azure** unifié (voir
-  ci-dessous). De même, **Azure OpenAI** et **AI Foundry** ne sont plus deux
-  entrées distinctes dans le sélecteur de fournisseur : elles sont fusionnées
-  dans l'entrée unique **Azure**.
+  Codex (modèles de raisonnement OpenAI déployés sur Azure) n'apparaît plus comme fournisseur séparé : il est désormais détecté automatiquement lorsque vous configurez un modèle via le fournisseur **Azure** unifié (voir ci-dessous). De même, **Azure OpenAI** et **AI Foundry** ne sont plus deux entrées distinctes dans le sélecteur de fournisseur : elles sont fusionnées dans l'entrée unique **Azure**.
 </Info>
 
 ## Azure (fournisseur unifié)
@@ -46,145 +39,110 @@ L’ajout d’un modèle Azure dans Jask se fait en trois grandes étapes :
 3. **Enregistrer ce modèle dans Jask** depuis la page Gestion des modèles.
 
 <Warning>
-  Le changement fréquent des API Azure OpenAI et Azure Foundry peut entraîner
-  des problèmes d'ajout de modèles d'IA dans Jask. Veuillez contacter l'équipe
-  Jask si vous rencontrez des problèmes d'ajout de modèles d'IA.
+  Le changement fréquent des API Azure OpenAI et Azure Foundry peut entraîner des problèmes d'ajout de modèles d'IA dans Jask. Veuillez contacter l'équipe Jask si vous rencontrez des problèmes d'ajout de modèles d'IA.
 </Warning>
 
 <Steps>
+  <Step title="Déployer un modèle">
+    Rendez-vous sur la page [déploiement sur Azure Foundry](https://ai.azure.com/foundryProject/overview) pour deployer un modèle Azure OpenAI. Cliquez sur le bouton `+ Déployer un modèle` puis sélectionnez `Déployer un modèle de base`.
 
-<Step title="Déployer un modèle">
+    ![azure\_foundry](/images/settings/ai_models/foundry.png)
 
-Rendez-vous sur la page [déploiement sur Azure Foundry](https://ai.azure.com/foundryProject/overview) pour deployer un modèle Azure OpenAI. Cliquez sur le bouton `+ Déployer un modèle` puis sélectionnez `Déployer un modèle de base`.
+    Cherchez un modèle d'IA que vous souhaitez déployer puis cliquez sur le bouton `Confirmer` pour déployer le modèle d'IA.
 
-![azure_foundry](/images/settings/ai_models/foundry.png)
+    ![model](/images/settings/ai_models/model.png)
 
-Cherchez un modèle d'IA que vous souhaitez déployer puis cliquez sur le bouton `Confirmer` pour déployer le modèle d'IA.
+    Vous pouvez ensuite augmenter les quotas (tokens par minutes du modèle d'IA) si nécessaire dans la section détails du déploiement. Enfin cliquez sur le bouton `Déployer` pour confirmer le déploiement.
 
-![model](/images/settings/ai_models/model.png)
+    ![quotas](/images/settings/ai_models/quotas.png)
+  </Step>
+  <Step title="Récupérer les informations">
+    Cliquez ensuite sur le modèle que vous venez de déployer apparaissant à l'écran pour voir les détails du modèle.
 
-Vous pouvez ensuite augmenter les quotas (tokens par minutes du modèle d'IA) si nécessaire dans la section détails du déploiement. Enfin cliquez sur le bouton `Déployer` pour confirmer le déploiement.
+    Récupérez les informations suivantes :
 
-![quotas](/images/settings/ai_models/quotas.png)
+    1. **`URI Cible`** (endpoint)
+    2. **`Clé`** d'authentification
+    3. Nom du modèle ou nom du déploiement (ex. `gpt-4o`)
 
-</Step>
+    ![model](/images/settings/ai_models/openai-version.png)
+  </Step>
+  <Step title="Enregistrer le modèle sur Jask">
+    1. Ouvrez **Réglages → Gestion des modèles**.
+    2. Cliquez sur **`+`**.
+    3. Sélectionnez **`Azure`** comme fournisseur (entrée unique, qu'il s'agisse d'un déploiement Azure OpenAI, AI Foundry ou d'un modèle de raisonnement Codex).
+    4. Renseignez les champs du formulaire :
 
-<Step title="Récupérer les informations">
+    ![add\_model\_providers](/images/settings/ai_models/add-model-providers.png)
 
-Cliquez ensuite sur le modèle que vous venez de déployer apparaissant à l'écran pour voir les détails du modèle.
+    | Champ | Description | Statut |
+    | --- | --- | --- |
+    | **Display name** | Alias visible dans la liste des modèles (ex. `Mon Mistral`, `GPT Prod`) | Requis |
+    | **Endpoint** | URL de l'API du modèle. Toujours obligatoire pour Azure | Requis |
+    | **Model name** | Identifiant technique ou nom du déploiement (ex. `gpt-4o`, `o3-mini`) | Requis |
+    | **API Key** | Clé secrète fournie par Azure. Masquée par défaut (icône œil pour afficher) | Requis |
 
-Récupérez les informations suivantes :
+    <Info>
+      **Détection automatique du type de déploiement Azure** : dès que vous saisissez un endpoint, Jask analyse l'URL et affiche un badge indiquant le type détecté :
 
-1. **`URI Cible`** (endpoint)
-2. **`Clé`** d'authentification
-3. Nom du modèle ou nom du déploiement (ex. `gpt-4o`)
+      - **Azure OpenAI** — endpoint contenant `.openai.azure.com` ou `.cognitiveservices.azure.com`. Jask extrait automatiquement le **nom du déploiement** et la **version d'API** directement depuis l'URL (ex. `.../openai/deployments/gpt-4o/...?api-version=2024-12-01-preview`) et pré-remplit les champs correspondants.
+      - **AI Foundry** — endpoint contenant `.services.ai.azure.com`. La version d'API est également extraite automatiquement si elle est présente dans l'URL.
+      - **Codex / Raisonnement** — détecté à partir du **nom du modèle** (ex. `codex-mini`, `gpt-5.3-codex`, `o1-mini`, `o3-mini`, `o4-mini`, `o3`, `gpt-5`). Ces modèles de raisonnement passent par l'API Responses et ignorent le paramètre `temperature`.
 
-![model](/images/settings/ai_models/openai-version.png)
+      Si aucun type n'est reconnu, un message vous invite à vérifier l'endpoint saisi.
+    </Info>
 
-</Step>
+    5. Dépliez la section **`Advanced settings`** si vous devez ajuster les paramètres suivants :
 
-<Step title="Enregistrer le modèle sur Jask">
+    | Paramètre | Description | Valeur par défaut |
+    | --- | --- | --- |
+    | **API Version** | Version de l'API utilisée pour les appels (pré-remplie si détectée dans l'endpoint) | `2024-12-01-preview` |
+    | **Authentication method** | `Bearer Token` (clé API classique) ou `APIM` (API Management Azure) | `Bearer Token` |
+    | **Nom du header APIM** | Nom du header HTTP à utiliser (ex. `Ocp-Apim-Subscription-Key`). Visible uniquement si l'authentification `APIM` est sélectionnée | — |
 
-1. Ouvrez **Réglages → Gestion des modèles**.
-2. Cliquez sur **`+`**.
-3. Sélectionnez **`Azure`** comme fournisseur (entrée unique, qu'il s'agisse d'un déploiement Azure OpenAI, AI Foundry ou d'un modèle de raisonnement Codex).
-4. Renseignez les champs du formulaire :
+    ![add\_model\_advanced](/images/settings/ai_models/add-model-advanced.png)
 
-![add_model_providers](/images/settings/ai_models/add-model-providers.png)
+    <Info>
+      Pour la plupart des déploiements, les valeurs par défaut conviennent. Modifiez-les uniquement si votre fournisseur l'exige explicitement (par exemple si vos appels Azure OpenAI transitent par une passerelle **APIM**, auquel cas vous devez sélectionner l'authentification `APIM` et renseigner le nom du header attendu par votre passerelle).
+    </Info>
 
-| Champ            | Description                                                                          | Statut       |
-| ----------------- | ------------------------------------------------------------------------------------ | ------------ |
-| **Display name**  | Alias visible dans la liste des modèles (ex. `Mon Mistral`, `GPT Prod`)              | Requis       |
-| **Endpoint**      | URL de l'API du modèle. Toujours obligatoire pour Azure                             | Requis       |
-| **Model name**    | Identifiant technique ou nom du déploiement (ex. `gpt-4o`, `o3-mini`)                | Requis       |
-| **API Key**       | Clé secrète fournie par Azure. Masquée par défaut (icône œil pour afficher)          | Requis       |
+    6. Cliquez sur **`Test de connexion`** pour vérifier que le modèle est bien accessible.
 
-<Info>
-  **Détection automatique du type de déploiement Azure** : dès que vous saisissez
-  un endpoint, Jask analyse l'URL et affiche un badge indiquant le type détecté :
+    ![add\_model\_success](/images/settings/ai_models/add-model-success.png)
 
-  - **Azure OpenAI** — endpoint contenant `.openai.azure.com` ou
-    `.cognitiveservices.azure.com`. Jask extrait automatiquement le **nom du
-    déploiement** et la **version d'API** directement depuis l'URL (ex.
-    `.../openai/deployments/gpt-4o/...?api-version=2024-12-01-preview`) et
-    pré-remplit les champs correspondants.
-  - **AI Foundry** — endpoint contenant `.services.ai.azure.com`. La version
-    d'API est également extraite automatiquement si elle est présente dans
-    l'URL.
-  - **Codex / Raisonnement** — détecté à partir du **nom du modèle** (ex.
-    `codex-mini`, `gpt-5.3-codex`, `o1-mini`, `o3-mini`, `o4-mini`, `o3`,
-    `gpt-5`). Ces modèles de raisonnement passent par l'API Responses et
-    ignorent le paramètre `temperature`.
+    En cas de succès, un bandeau vert s'affiche en bas de la fenêtre :
 
-  Si aucun type n'est reconnu, un message vous invite à vérifier l'endpoint
-  saisi.
-</Info>
+    > ✅ **Connection successful — you can add the model**
 
+    <Info>
+      Si le modèle testé ne supporte pas le paramètre `temperature` (cas de certains modèles de raisonnement comme les modèles Codex/o3/o4), un bandeau orange complémentaire vous en informe : ce paramètre sera simplement ignoré automatiquement lors des appels, aucune action n'est requise de votre part.
+    </Info>
 
-5. Dépliez la section **`Advanced settings`** si vous devez ajuster les paramètres suivants :
+    <Warning>
+      En cas d'échec du test, vérifiez : la **clé API**, le **nom du modèle** et l'**endpoint**. Assurez-vous également que la **version d'API** correspond bien à celle indiquée dans Azure.
+    </Warning>
 
-| Paramètre                 | Description                                                        | Valeur par défaut    |
-| ------------------------- | -------------------------------------------------------------------| --------------------- |
-| **API Version**           | Version de l'API utilisée pour les appels (pré-remplie si détectée dans l'endpoint) | `2024-12-01-preview` |
-| **Authentication method** | `Bearer Token` (clé API classique) ou `APIM` (API Management Azure) | `Bearer Token`       |
-| **Nom du header APIM**    | Nom du header HTTP à utiliser (ex. `Ocp-Apim-Subscription-Key`). Visible uniquement si l'authentification `APIM` est sélectionnée | — |
+    7. Cliquez sur **`Add`** pour finaliser l'ajout du modèle.
 
-![add_model_advanced](/images/settings/ai_models/add-model-advanced.png)
+    ![add\_model\_final](/images/settings/ai_models/add-model-final.png)
 
-<Info>
-  Pour la plupart des déploiements, les valeurs par défaut conviennent.
-  Modifiez-les uniquement si votre fournisseur l'exige explicitement (par
-  exemple si vos appels Azure OpenAI transitent par une passerelle **APIM**,
-  auquel cas vous devez sélectionner l'authentification `APIM` et renseigner le
-  nom du header attendu par votre passerelle).
-</Info>
+    Une fenêtre de confirmation s'affiche indiquant que le modèle a bien été ajouté, avec son nom et le fournisseur via lequel il est disponible pour tous les utilisateurs du workspace.
 
-6. Cliquez sur **`Test de connexion`** pour vérifier que le modèle est bien accessible.
+    ![add\_model\_confirmed](/images/settings/ai_models/add-model-confirmed.png)
 
-![add_model_success](/images/settings/ai_models/add-model-success.png)
+    Depuis cet écran, vous pouvez :
 
-En cas de succès, un bandeau vert s'affiche en bas de la fenêtre :
+    - Cliquer sur **`Add another`** pour ajouter un nouveau modèle sans fermer la fenêtre.
+    - Cliquer sur **`Close`** pour fermer la fenêtre et revenir à la liste des modèles.
 
-> ✅ **Connection successful — you can add the model**
+    Après l'ajout, cliquez sur le modèle pour accéder à ses paramètres, gérer les accès utilisateurs, le rendre disponible par défaut ou le supprimer.
 
-<Info>
-  Si le modèle testé ne supporte pas le paramètre `temperature` (cas de
-  certains modèles de raisonnement comme les modèles Codex/o3/o4), un bandeau
-  orange complémentaire vous en informe : ce paramètre sera simplement ignoré
-  automatiquement lors des appels, aucune action n'est requise de votre part.
-</Info>
+    <Info>
+      Quand vous partagez un modèle d'IA avec un utilisateur, celui-ci aura accès à ce choix de modèle d'IA dans toutes les applications et assistants qu'il pourra créer.
+    </Info>
 
-<Warning>
-  En cas d'échec du test, vérifiez : la **clé API**, le **nom du modèle** et
-  l'**endpoint**. Assurez-vous également que la **version d'API** correspond
-  bien à celle indiquée dans Azure.
-</Warning>
-
-7. Cliquez sur **`Add`** pour finaliser l'ajout du modèle.
-
-![add_model_final](/images/settings/ai_models/add-model-final.png)
-
-Une fenêtre de confirmation s'affiche indiquant que le modèle a bien été ajouté, avec son nom et le fournisseur via lequel il est disponible pour tous les utilisateurs du workspace.
-
-![add_model_confirmed](/images/settings/ai_models/add-model-confirmed.png)
-
-Depuis cet écran, vous pouvez :
-
-- Cliquer sur **`Add another`** pour ajouter un nouveau modèle sans fermer la fenêtre.
-- Cliquer sur **`Close`** pour fermer la fenêtre et revenir à la liste des modèles.
-
-Après l'ajout, cliquez sur le modèle pour accéder à ses paramètres, gérer les accès utilisateurs, le rendre disponible par défaut ou le supprimer.
-
-<Info>
-  Quand vous partagez un modèle d'IA avec un utilisateur, celui-ci aura accès à
-  ce choix de modèle d'IA dans toutes les applications et assistants qu'il
-  pourra créer.
-</Info>
-
-![ai_models](/images/settings/model-update.png)
-
-</Step>
-
+    ![ai\_models](/images/settings/model-update.png)
+  </Step>
 </Steps>
 
 ## Google Vertex AI
@@ -192,110 +150,88 @@ Après l'ajout, cliquez sur le modèle pour accéder à ses paramètres, gérer 
 Le fournisseur **Vertex AI** permet de connecter des modèles Google (Gemini) ainsi que des modèles Claude disponibles via le Model Garden de Vertex, en s'appuyant sur votre projet Google Cloud. Contrairement aux autres fournisseurs, Vertex AI **ne repose pas sur une clé API** mais sur un **compte de service Google (Service Account)**, et le formulaire d'ajout est donc différent des autres fournisseurs.
 
 <Info>
-  Vertex AI ne demande ni **Endpoint**, ni **API Key**, ni **version d'API**.
-  L'authentification se fait exclusivement via un fichier de compte de service
-  Google Cloud (JSON), et l'inférence est routée vers la **région GCP** que
-  vous sélectionnez.
+  Vertex AI ne demande ni **Endpoint**, ni **API Key**, ni **version d'API**. L'authentification se fait exclusivement via un fichier de compte de service Google Cloud (JSON), et l'inférence est routée vers la **région GCP** que vous sélectionnez.
 </Info>
 
 <Info>
-  **Besoin d'aide pour préparer votre projet Google Cloud ?** Consultez notre
-  [guide détaillé pas-à-pas pour déployer un modèle Vertex AI](/docs/catalog/vertex_ai_guide),
-  qui couvre la création du projet GCP, l'activation des APIs, la création du
-  compte de service et la résolution des blocages fréquents en environnement
-  entreprise.
+  **Besoin d'aide pour préparer votre projet Google Cloud ?** Consultez notre [guide détaillé pas-à-pas pour déployer un modèle Vertex AI](/docs/catalog/vertex_ai_guide), qui couvre la création du projet GCP, l'activation des APIs, la création du compte de service et la résolution des blocages fréquents en environnement entreprise.
 </Info>
 
 <Steps>
+  <Step title="Créer un compte de service Google Cloud">
+    1. Rendez-vous dans la [console Google Cloud](https://console.cloud.google.com/), sur le projet contenant votre configuration Vertex AI.
+    2. Ouvrez **IAM & Admin → Comptes de service**.
+    3. Créez (ou réutilisez) un compte de service disposant des permissions nécessaires pour appeler l'API Vertex AI (rôle `Vertex AI User` a minima).
+    4. Générez une **clé JSON** pour ce compte de service et téléchargez-la sur votre poste.
+  </Step>
+  <Step title="Enregistrer le modèle sur Jask">
+    1. Ouvrez **Réglages → Gestion des modèles**.
+    2. Cliquez sur **`+`**.
+    3. Sélectionnez **`Vertex AI`** comme fournisseur.
 
-<Step title="Créer un compte de service Google Cloud">
+    ![vertex\_provider\_selection](/images/settings/ai_models/vertex-provider-selection.png)
 
-1. Rendez-vous dans la [console Google Cloud](https://console.cloud.google.com/), sur le projet contenant votre configuration Vertex AI.
-2. Ouvrez **IAM & Admin → Comptes de service**.
-3. Créez (ou réutilisez) un compte de service disposant des permissions nécessaires pour appeler l'API Vertex AI (rôle `Vertex AI User` a minima).
-4. Générez une **clé JSON** pour ce compte de service et téléchargez-la sur votre poste.
+    4. Renseignez les champs suivants :
 
-</Step>
+    | Champ | Description | Statut |
+    | --- | --- | --- |
+    | **Display name** | Alias visible dans la liste des modèles | Optionnel |
+    | **Model name** | Identifiant technique du modèle (ex. `gemini-2.0-flash-001`, ou un modèle Claude via Model Garden) | Requis |
+    | **Région GCP** | Région Google Cloud où le modèle sera invoqué (voir liste ci-dessous) | Requis |
+    | **Thinking budget** | Budget de raisonnement étendu, pour les modèles Gemini 2.5\+ (voir détails ci-dessous) | Optionnel |
+    | **Fichier de compte de service (.json)** | Fichier JSON du compte de service Google Cloud téléchargé à l'étape précédente | Requis |
 
-<Step title="Enregistrer le modèle sur Jask">
+    **Régions GCP disponibles :**
 
-1. Ouvrez **Réglages → Gestion des modèles**.
-2. Cliquez sur **`+`**.
-3. Sélectionnez **`Vertex AI`** comme fournisseur.
+    | Zone | Régions |
+    | --- | --- |
+    | Global | `Global` |
+    | Europe (multi) | `Europe - Multi-region (eu-multi-region)` |
+    | États-Unis | Iowa (`us-central1`), Virginie (`us-east4`), Oregon (`us-west1`), Las Vegas (`us-west4`) |
+    | Europe | Belgique (`europe-west1`), Londres (`europe-west2`), Francfort (`europe-west3`), Pays-Bas (`europe-west4`), Paris (`europe-west9`) |
+    | Asie | Tokyo (`asia-northeast1`), Séoul (`asia-northeast3`), Singapour (`asia-southeast1`) |
+    | Amériques / MEA | Canada — Montréal (`northamerica-northeast1`), Brésil — São Paulo (`southamerica-east1`), Moyen-Orient — Qatar (`me-central1`) |
 
-![vertex_provider_selection](/images/settings/ai_models/vertex-provider-selection.png)
+    <Info>
+      **Thinking budget** : les modèles Gemini 2.5 activent le raisonnement étendu par défaut. Vous pouvez ajuster ce comportement :
 
-4. Renseignez les champs suivants :
+      - `Par défaut (auto)` — laisse le modèle décider
+      - `Désactivé — réponses rapides` — désactive le raisonnement étendu (0 token)
+      - `Léger — 512 tokens`
+      - `Moyen — 8 192 tokens`
+      - `Élevé — 24 576 tokens`
 
-| Champ                          | Description                                                                                       | Statut  |
-| ------------------------------ | --------------------------------------------------------------------------------------------------| ------- |
-| **Display name**               | Alias visible dans la liste des modèles                                                            | Optionnel |
-| **Model name**                 | Identifiant technique du modèle (ex. `gemini-2.0-flash-001`, ou un modèle Claude via Model Garden)  | Requis  |
-| **Région GCP**                 | Région Google Cloud où le modèle sera invoqué (voir liste ci-dessous)                              | Requis  |
-| **Thinking budget**            | Budget de raisonnement étendu, pour les modèles Gemini 2.5+ (voir détails ci-dessous)               | Optionnel |
-| **Fichier de compte de service (.json)** | Fichier JSON du compte de service Google Cloud téléchargé à l'étape précédente            | Requis  |
+      Un budget plus élevé peut améliorer la qualité des réponses sur des tâches complexes mais augmente la latence et le coût.
+    </Info>
 
-**Régions GCP disponibles :**
+    5. Glissez-déposez votre fichier de compte de service JSON dans la zone dédiée, ou cliquez pour parcourir vos fichiers.
 
-| Zone              | Régions                                                                                      |
-| ----------------- | ----------------------------------------------------------------------------------------------|
-| Global            | `Global`                                                                                        |
-| Europe (multi)    | `Europe - Multi-region (eu-multi-region)`                                                      |
-| États-Unis        | Iowa (`us-central1`), Virginie (`us-east4`), Oregon (`us-west1`), Las Vegas (`us-west4`)        |
-| Europe            | Belgique (`europe-west1`), Londres (`europe-west2`), Francfort (`europe-west3`), Pays-Bas (`europe-west4`), Paris (`europe-west9`) |
-| Asie              | Tokyo (`asia-northeast1`), Séoul (`asia-northeast3`), Singapour (`asia-southeast1`)             |
-| Amériques / MEA   | Canada — Montréal (`northamerica-northeast1`), Brésil — São Paulo (`southamerica-east1`), Moyen-Orient — Qatar (`me-central1`) |
+    Une fois le fichier chargé, Jask vérifie qu'il s'agit bien d'un compte de service Google valide (présence du champ `type: "service_account"`) et affiche :
 
-<Info>
-  **Thinking budget** : les modèles Gemini 2.5 activent le raisonnement étendu
-  par défaut. Vous pouvez ajuster ce comportement :
+    - Le nom du fichier
+    - Le **Project ID** extrait du fichier JSON
+    - L'**adresse e-mail** du compte de service (`client_email`)
 
-  - `Par défaut (auto)` — laisse le modèle décider
-  - `Désactivé — réponses rapides` — désactive le raisonnement étendu (0 token)
-  - `Léger — 512 tokens`
-  - `Moyen — 8 192 tokens`
-  - `Élevé — 24 576 tokens`
+    ![vertex\_service\_account\_upload](/images/settings/ai_models/vertex-service-account-upload.png)
 
-  Un budget plus élevé peut améliorer la qualité des réponses sur des tâches
-  complexes mais augmente la latence et le coût.
-</Info>
+    <Warning>
+      Si le fichier n'est pas un JSON valide, ou s'il ne s'agit pas d'un compte de service Google (champ `type` différent de `service_account`), un message d'erreur s'affiche et le fichier est rejeté.
+    </Warning>
 
-5. Glissez-déposez votre fichier de compte de service JSON dans la zone dédiée, ou cliquez pour parcourir vos fichiers.
+    6. Cliquez sur **`Test de connexion`** pour vérifier que le modèle est bien accessible (le bouton reste désactivé tant que le nom du modèle, la région et le fichier de compte de service ne sont pas tous renseignés).
 
-Une fois le fichier chargé, Jask vérifie qu'il s'agit bien d'un compte de service Google valide (présence du champ `type: "service_account"`) et affiche :
+    En cas de succès, un bandeau vert s'affiche en bas de la fenêtre :
 
-- Le nom du fichier
-- Le **Project ID** extrait du fichier JSON
-- L'**adresse e-mail** du compte de service (`client_email`)
+    > ✅ **Connection successful — you can add the model**
 
-![vertex_service_account_upload](/images/settings/ai_models/vertex-service-account-upload.png)
+    7. Cliquez sur **`Add`** pour finaliser l'ajout du modèle.
 
-<Warning>
-  Si le fichier n'est pas un JSON valide, ou s'il ne s'agit pas d'un compte de
-  service Google (champ `type` différent de `service_account`), un message
-  d'erreur s'affiche et le fichier est rejeté.
-</Warning>
-
-6. Cliquez sur **`Test de connexion`** pour vérifier que le modèle est bien accessible (le bouton reste désactivé tant que le nom du modèle, la région et le fichier de compte de service ne sont pas tous renseignés).
-
-En cas de succès, un bandeau vert s'affiche en bas de la fenêtre :
-
-> ✅ **Connection successful — you can add the model**
-
-
-7. Cliquez sur **`Add`** pour finaliser l'ajout du modèle.
-
-Comme pour les autres fournisseurs, une fenêtre de confirmation s'affiche et vous pouvez ajouter un autre modèle ou fermer la fenêtre.
-
-</Step>
-
+    Comme pour les autres fournisseurs, une fenêtre de confirmation s'affiche et vous pouvez ajouter un autre modèle ou fermer la fenêtre.
+  </Step>
 </Steps>
 
 <Info>
-  En interne, Jask combine le contenu du fichier de compte de service, la
-  région sélectionnée et le budget de raisonnement en un secret unique,
-  stocké de façon sécurisée dans le coffre de secrets — le contenu du fichier
-  JSON n'est jamais affiché en clair après l'import initial.
+  En interne, Jask combine le contenu du fichier de compte de service, la région sélectionnée et le budget de raisonnement en un secret unique, stocké de façon sécurisée dans le coffre de secrets — le contenu du fichier JSON n'est jamais affiché en clair après l'import initial.
 </Info>
 
 ## Autres fournisseurs (Anthropic, OpenAI, Mistral, Groq, DeepSeek, Google Gemini, Other)
@@ -303,59 +239,47 @@ Comme pour les autres fournisseurs, une fenêtre de confirmation s'affiche et vo
 Ces fournisseurs partagent le même formulaire d'ajout, basé sur une **clé API**.
 
 <Steps>
+  <Step title="Récupérer les informations du modèle">
+    Récupérez, depuis la console de votre fournisseur :
 
-<Step title="Récupérer les informations du modèle">
+    1. Le **nom du modèle** à utiliser (ex. `claude-opus-4`, `gpt-4o`, `mistral-large-latest`, `deepseek-chat`).
+    2. Votre **clé API**.
+    3. Le cas échéant, un **endpoint** personnalisé si vous utilisez une passerelle ou un déploiement compatible OpenAI (obligatoire pour `Other`, optionnel pour les autres fournisseurs qui utilisent alors leur endpoint public par défaut).
+  </Step>
+  <Step title="Enregistrer le modèle sur Jask">
+    1. Ouvrez **Réglages → Gestion des modèles**.
+    2. Cliquez sur **`+`**.
+    3. Sélectionnez le fournisseur souhaité.
+    4. Renseignez les champs du formulaire :
 
-Récupérez, depuis la console de votre fournisseur :
+    | Champ | Description | Statut |
+    | --- | --- | --- |
+    | **Display name** | Alias visible dans la liste des modèles (ex. `Mon Mistral`, `GPT Prod`) | Requis |
+    | **Endpoint** | URL de l'API du modèle — obligatoire pour **`Other`**, optionnel pour les autres (endpoint public par défaut sinon) | Conditionnel |
+    | **Model name** | Identifiant technique du modèle (ex. `gpt-4o`, `mistral-medium-latest`) | Requis |
+    | **API Key** | Clé secrète fournie par le fournisseur. Masquée par défaut (icône œil pour afficher) | Requis |
 
-1. Le **nom du modèle** à utiliser (ex. `claude-opus-4`, `gpt-4o`, `mistral-large-latest`, `deepseek-chat`).
-2. Votre **clé API**.
-3. Le cas échéant, un **endpoint** personnalisé si vous utilisez une passerelle ou un déploiement compatible OpenAI (obligatoire pour `Other`, optionnel pour les autres fournisseurs qui utilisent alors leur endpoint public par défaut).
+    5. Dépliez la section **`Advanced settings`** si nécessaire :
 
-</Step>
+    | Paramètre | Description | Valeur par défaut |
+    | --- | --- | --- |
+    | **API Version** | Version de l'API utilisée pour les appels (rarement utile hors Azure) | — |
+    | **Authentication method** | `Bearer Token` (clé API classique) ou `APIM` | `Bearer Token` |
+    | **Nom du header APIM** | Requis uniquement si `APIM` est sélectionné | — |
 
-<Step title="Enregistrer le modèle sur Jask">
+    <Info>
+      Pour la plupart des fournisseurs, les valeurs par défaut conviennent. Modifiez-les uniquement si votre fournisseur l'exige explicitement.
 
-1. Ouvrez **Réglages → Gestion des modèles**.
-2. Cliquez sur **`+`**.
-3. Sélectionnez le fournisseur souhaité.
-4. Renseignez les champs du formulaire :
+      - **Groq**, **DeepSeek** et **Other** utilisent des API compatibles OpenAI.
+      - **Google Gemini** (API publique) est distinct de **Vertex AI** : Gemini utilise une simple clé API, tandis que Vertex AI passe par un compte de service Google Cloud (voir section dédiée ci-dessus).
+    </Info>
 
-| Champ            | Description                                                                          | Statut       |
-| ----------------- | ------------------------------------------------------------------------------------ | ------------ |
-| **Display name**  | Alias visible dans la liste des modèles (ex. `Mon Mistral`, `GPT Prod`)              | Requis       |
-| **Endpoint**      | URL de l'API du modèle — obligatoire pour **`Other`**, optionnel pour les autres (endpoint public par défaut sinon) | Conditionnel |
-| **Model name**    | Identifiant technique du modèle (ex. `gpt-4o`, `mistral-medium-latest`)              | Requis       |
-| **API Key**       | Clé secrète fournie par le fournisseur. Masquée par défaut (icône œil pour afficher) | Requis       |
+    6. Cliquez sur **`Test de connexion`** pour vérifier que le modèle est bien accessible, puis sur **`Add`** pour finaliser l'ajout.
 
-5. Dépliez la section **`Advanced settings`** si nécessaire :
-
-| Paramètre                 | Description                               | Valeur par défaut    |
-| ------------------------- | ------------------------------------------| --------------------- |
-| **API Version**           | Version de l'API utilisée pour les appels (rarement utile hors Azure) | — |
-| **Authentication method** | `Bearer Token` (clé API classique) ou `APIM` | `Bearer Token`       |
-| **Nom du header APIM**    | Requis uniquement si `APIM` est sélectionné | — |
-
-<Info>
-  Pour la plupart des fournisseurs, les valeurs par défaut conviennent.
-  Modifiez-les uniquement si votre fournisseur l'exige explicitement.
-
-  - **Groq**, **DeepSeek** et **Other** utilisent des API compatibles OpenAI.
-  - **Google Gemini** (API publique) est distinct de **Vertex AI** : Gemini
-    utilise une simple clé API, tandis que Vertex AI passe par un compte de
-    service Google Cloud (voir section dédiée ci-dessus).
-</Info>
-
-6. Cliquez sur **`Test de connexion`** pour vérifier que le modèle est bien accessible, puis sur **`Add`** pour finaliser l'ajout.
-
-Comme pour les autres fournisseurs, une fenêtre de confirmation s'affiche indiquant que le modèle a bien été ajouté, avec la possibilité d'**ajouter un autre modèle** ou de **fermer la fenêtre**.
-
-</Step>
-
+    Comme pour les autres fournisseurs, une fenêtre de confirmation s'affiche indiquant que le modèle a bien été ajouté, avec la possibilité d'**ajouter un autre modèle** ou de **fermer la fenêtre**.
+  </Step>
 </Steps>
 
 <Info>
-  Quand vous partagez un modèle d'IA avec un utilisateur, celui-ci aura accès à
-  ce choix de modèle d'IA dans toutes les applications et assistants qu'il
-  pourra créer.
+  Quand vous partagez un modèle d'IA avec un utilisateur, celui-ci aura accès à ce choix de modèle d'IA dans toutes les applications et assistants qu'il pourra créer.
 </Info>

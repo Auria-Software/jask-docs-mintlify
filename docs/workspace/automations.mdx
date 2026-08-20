@@ -1,6 +1,7 @@
 ---
 title: "Automatisations"
 sidebarTitle: "Automatisations"
+icon: "alarm-clock"
 ---
 
 La page **Automatisations** centralise l'historique de toutes les tâches exécutées par vos applications JAsk. Elle vous permet de suivre en temps réel l'état de vos workflows automatisés — qu'ils aient été déclenchés manuellement ou de façon planifiée — et d'accéder au détail de chaque exécution, étape par étape. C'est le point d'entrée principal pour auditer, relancer ou exporter les résultats produits par vos workflows.
@@ -12,43 +13,45 @@ Accessible depuis **Réglages → Mon espace de travail → Automatisation**, ce
 Un bandeau de synthèse en haut de page affiche les compteurs clés de la période :
 
 | Indicateur | Description |
-|---|---|
+| --- | --- |
 | **Terminé** | Nombre d'exécutions terminées avec succès |
 | **En cours** | Exécutions encore actives au moment de la consultation |
 | **Erreur** | Exécutions ayant rencontré une erreur |
 
-Filtrer sur une **période** (en haut à droite) pour filtrer l'historique sur une plage de dates précise.
-Forcer le rechargement de la liste de tâches.
+Filtrer sur une **période** (en haut à droite) pour filtrer l'historique sur une plage de dates précise. Forcer le rechargement de la liste de tâches.
 
 ![automations](/images/automations.png)
 
 ## Tâches personnalisées
 
-Les utilisateurs peuvent définir des automatisations personnalisées sur certains workflows. En cliquant sur le + en haut à droite du tableau.
+Les utilisateurs peuvent définir des automatisations personnalisées sur certains workflows. En cliquant sur le \+ en haut à droite du tableau.
 
 ### Création d'une nouvelle automatisation
-Pour définir une nouvelle automatisation sur un workflow, l'utilisateur devra définir les champs suivants : 
-- Nom de l'automatisation 
-- Workflow à automatiser (séléction parmi les workflows auxquels vous avez accès)
-- Déclencheur et fréquence de déclenchement : 
-    * Toutes les X minutes
-    * Toutes les X heures
-    * Quotidien
-    * Hebdomadaire
-    * Mensuel
 
-![automations_create](/images/automations_create.png)
+Pour définir une nouvelle automatisation sur un workflow, l'utilisateur devra définir les champs suivants :
+
+- Nom de l'automatisation
+- Workflow à automatiser (séléction parmi les workflows auxquels vous avez accès)
+- Déclencheur et fréquence de déclenchement :
+  - Toutes les X minutes
+  - Toutes les X heures
+  - Quotidien
+  - Hebdomadaire
+  - Mensuel
+
+![automations\_create](/images/automations_create.png)
 
 ### Liste des tâches personnalisées créées
-Via l'icône **Tâches automatisées** (à la gauche du bouton **+**), l'utilisateur retrouve la liste des automatisations qu'il a créées et peut les supprimer ou les éditer. 
 
-![automations_perso](/images/automations_perso.png)
+Via l'icône **Tâches automatisées** (à la gauche du bouton **\+**), l'utilisateur retrouve la liste des automatisations qu'il a créées et peut les supprimer ou les éditer.
+
+![automations\_perso](/images/automations_perso.png)
 
 ## Liste des tâches exécutées
 
 Chaque ligne du tableau représente une exécution d'application et affiche les informations suivantes :
 
-- **Application** — nom de l'application exécutée et son type 
+- **Application** — nom de l'application exécutée et son type
 - **Déclencheur** — mode de lancement : `Manuel` (déclenché à la main) ou `Automatique`
 - **Exécuté le** — date et heure du démarrage de l'exécution
 - **Durée** — temps total d'exécution
@@ -77,4 +80,4 @@ Depuis le panneau de détail, plusieurs actions sont accessibles :
   Utilisez **Relancer** pour rejouer rapidement une exécution qui a échoué ou dont vous souhaitez rafraîchir les résultats sans repasser par le catalogue.
 </Tip>
 
-    ![automations_details](/images/automations_details.png)
+![automations\_details](/images/automations_details.png)

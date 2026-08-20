@@ -1,10 +1,11 @@
 ---
 title: "Skills"
 sidebarTitle: "Skills"
+icon: "toolbox"
 ---
 
-* [Skills](/docs/catalog/skills#catalogue-de-skills)
-* [Extension](/docs/catalog/skills#utilisation)
+- [Skills](/docs/catalog/skills#catalogue-de-skills)
+- [Extension](/docs/catalog/skills#utilisation)
 
 ## Catalogue de skills
 
@@ -27,7 +28,8 @@ Plutôt que de réécrire les mêmes instructions pour chaque agent, un skill vo
 
 Un skill est un bloc de logique réutilisable que vous définissez une seule fois et attachez à vos agents selon vos besoins. Créer votre propre skill vous permet de standardiser des instructions,  et des processus sans les répéter pour chaque agent.
 
-La de skills (si vous en avez les permissions) peut être démarrée de 3 manières : 
+La de skills (si vous en avez les permissions) peut être démarrée de 3 manières :
+
 - Dans le menu, via le bouton `**...**` à droite de `+Chat`
 - Dans l'accueil, via le bouton **`Ajouter`** à droite de la barre de recherche du catalogue
 - Dans l'onglet **`Réglages`**, sous la menu Agents IA de la section Catalogue
@@ -35,91 +37,75 @@ La de skills (si vous en avez les permissions) peut être démarrée de 3 maniè
 Le formulaire de création s'ouvre avec tous les champs nécessaires pour définir votre skill.
 
 <Steps>
+  <Step title="Informations du skill">
+    - Le nom doit être court et identifiable, sans majuscule ni espace
+    - La description du skill qui sera utilisée par les agents pour déterminer quand appeler un skill
+    - Les tags, pour filtrer les skills
 
-<Step title="Informations du skill">
+    <Info>
+      les skills natifs de la plateforme sont tous préfixé par `just-xyz`
+    </Info>
+  </Step>
+  <Step title="Instructions">
+    C'est la partie la plus importante : ici vous décrivez **comment votre skill fonctionne et ce qu'un agent doit faire** quand il l'utilise.
 
-- Le nom doit être court et identifiable, sans majuscule ni espace
-- La description du skill qui sera utilisée par les agents pour déterminer quand appeler un skill
-- Les tags, pour filtrer les skills
+    - **Contexte métier** — expliquez pourquoi on fait ça, pas seulement le comment
+    - **Précises** — dites exactement ce que le skill doit accomplir, pas de généralités vagues
+    - **Exemples concrets** — incluez des cas d'usage réels, des résultats attendus
+    - **Étapes ordonnées** — si le processus a plusieurs étapes, numérotez-les
 
-<Info>
-les skills natifs de la plateforme sont tous préfixé par `just-xyz`
-</Info>
+    Vous pouvez prévisualiser votre skill en markdown avec le bouton Prévisualiser.
 
-</Step>
+    <Tip>
+      **Exemple d'instructions faibles :**<br />"Analyser les données." **Exemple d'instructions fortes :**
 
-<Step title="Instructions">
+      - Récupérez le fichier Excel fourni par l'utilisateur.
+      - Filtrez les lignes avec un montant \> 1000€.
+      - Calculez la somme par catégorie et par mois.
+      - Créez un graphique en barres avec ces totaux.
+      - Générez un résumé en français avec les 3 catégories les plus importantes.
+    </Tip>
 
-C'est la partie la plus importante : ici vous décrivez **comment votre skill fonctionne et ce qu'un agent doit faire** quand il l'utilise.
+    <Tip>
+      Les agents comprennent mieux les instructions si vous décrivez le **résultat attendu** en détail. N'hésitez pas à être verbeux dans les instructions d'un skill — ce n'est pas une limite.
+    </Tip>
 
-- **Contexte métier** — expliquez pourquoi on fait ça, pas seulement le comment
-- **Précises** — dites exactement ce que le skill doit accomplir, pas de généralités vagues
-- **Exemples concrets** — incluez des cas d'usage réels, des résultats attendus
-- **Étapes ordonnées** — si le processus a plusieurs étapes, numérotez-les
+    #### Ajouter des skills supplémentaires
 
-Vous pouvez prévisualiser votre skill en markdown avec le bouton Prévisualiser.
+    Si votre skill dépend d'autres skills (il en appelle d'autres ou les utilise en arrière-plan), vous pouvez les lister en cliquant sur **\+ Cliquez pour ajouter** dans la section **Skills supplémentaires**.
 
-<Tip>
-**Exemple d'instructions faibles :**  
-"Analyser les données."
-**Exemple d'instructions fortes :**  
-* Récupérez le fichier Excel fourni par l'utilisateur. 
-* Filtrez les lignes avec un montant > 1000€. 
-* Calculez la somme par catégorie et par mois. 
-* Créez un graphique en barres avec ces totaux. 
-* Générez un résumé en français avec les 3 catégories les plus importantes.
-</Tip>
+    Cela crée une **dépendance** : si un agent utilise votre skill, il aura automatiquement accès aux skills liés.
 
-<Tip>
-Les agents comprennent mieux les instructions si vous décrivez le **résultat attendu** en détail. N'hésitez pas à être verbeux dans les instructions d'un skill — ce n'est pas une limite.
-</Tip>
+    <Tip>
+      Votre skill _Rapport financier complet_ peut dépendre de _Extraction de données_ \+ _Génération de graphiques_.
+    </Tip>
 
-#### Ajouter des skills supplémentaires
+    <Info>
+      Les dépendances facilitent la composition de skills complexes, mais n'oubliez pas que plus de dépendances = plus de complexité pour l'agent. Gardez les dépendances au minimum.
+    </Info>
 
-Si votre skill dépend d'autres skills (il en appelle d'autres ou les utilise en arrière-plan), vous pouvez les lister en cliquant sur **+ Cliquez pour ajouter** dans la section **Skills supplémentaires**.
+    #### Attacher des scripts
 
-Cela crée une **dépendance** : si un agent utilise votre skill, il aura automatiquement accès aux skills liés.
+    Vous pouvez attacher des scripts (python notamment) à vos skills. Cela permet de traiter des cas techniques plus complexes.
 
-<Tip>
-Votre skill *Rapport financier complet* peut dépendre de *Extraction de données* + *Génération de graphiques*.
-</Tip>
+    #### Attacher d'autres fichiers
 
+    Si votre skill nécessite des documents spécifiques, vous pouvez les ajouter dans cette section.
 
-<Info>
-Les dépendances facilitent la composition de skills complexes, mais n'oubliez pas que plus de dépendances = plus de complexité pour l'agent. Gardez les dépendances au minimum.
-</Info>
+    Par exemple, un skill de production de Powerpoint, peut insérer un template de slides pour guider le skill à la production de slides.
 
+    #### Configurer la sécurité et les accès
 
+    Définissez la visibilité du skill pour les autres utilisateurs. En fonction des droits donnés, vous pourrez définir si les utilisateurs peuvent uniquement utiliser l'agent ou bien l'éditer et le modifier :
 
-#### Attacher des scripts
+    - **`Privé`** (moi uniquement (par défaut)) : utile en phase de construction de l'agent ou pour des agents personnels
+    - **`Toute l'organisation`** : Tous les utilisateurs de votre organisation sont impactés par la visibiltié donnée (utilisation uniquement ou édition)
+    - **`Accès restreint`** : Vous sélectionnez un ou plusieurs utilisateurs et vous leur attachez le rôle nécessaire (utilisation ou édition).
 
-Vous pouvez attacher des scripts (python notamment) à vos skills. Cela permet de traiter des cas techniques plus complexes.
-
-
-
-#### Attacher d'autres fichiers
-
-Si votre skill nécessite des documents spécifiques, vous pouvez les ajouter dans cette section. 
-
-Par exemple, un skill de production de Powerpoint, peut insérer un template de slides pour guider le skill à la production de slides.
-
-
-
-#### Configurer la sécurité et les accès
-
-Définissez la visibilité du skill pour les autres utilisateurs. En fonction des droits donnés, vous pourrez définir si les utilisateurs peuvent uniquement utiliser l'agent ou bien l'éditer et le modifier :
-    * **`Privé`** (moi uniquement (par défaut)) : utile en phase de construction de l'agent ou pour des agents personnels
-    * **`Toute l'organisation`** : Tous les utilisateurs de votre organisation sont impactés par la visibiltié donnée (utilisation uniquement ou édition)
-    * **`Accès restreint`** : Vous sélectionnez un ou plusieurs utilisateurs et vous leur attachez le rôle nécessaire (utilisation ou édition).
-
-<Warning>
-Un skill public fait partie du catalogue partagé. Avant de le rendre public, testez-le avec vos agents et vérifiez que les instructions sont complètes et sans erreurs.
-</Warning>
-
-
-
-</Step>
-
+    <Warning>
+      Un skill public fait partie du catalogue partagé. Avant de le rendre public, testez-le avec vos agents et vérifiez que les instructions sont complètes et sans erreurs.
+    </Warning>
+  </Step>
 </Steps>
 
 ![skills](/images/skills_2.png)
@@ -130,7 +116,7 @@ L'extension Web API transforme votre agent en véritable pont vers vos systèmes
 
 ## Utilisation
 
-Imaginez pouvoir dire à votre agent : "Trouve-moi le client avec l'email jean.dupont@example.com" et qu'il consulte automatiquement votre CRM. Ou encore : "Crée un rendez-vous demain à 14h avec Marie" et hop, c'est fait dans votre calendrier.
+Imaginez pouvoir dire à votre agent : "Trouve-moi le client avec l'email [jean.dupont@example.com](mailto:jean.dupont@example.com)" et qu'il consulte automatiquement votre CRM. Ou encore : "Crée un rendez-vous demain à 14h avec Marie" et hop, c'est fait dans votre calendrier.
 
 C'est exactement ce que fait cette extension. Elle donne à votre agent la capacité d'interagir avec vos outils métier, sans que vos utilisateurs aient besoin de connaître les détails techniques.
 
@@ -151,8 +137,7 @@ C'est exactement ce que fait cette extension. Elle donne à votre agent la capac
 - Éventuellement la documentation de l'API, c'est toujours utile
 
 <Info>
-  Vous n'avez pas encore d'API sous la main ? Voyons ensemble comment connecter
-  une API météo publique, pour bien comprendre le principe.
+  Vous n'avez pas encore d'API sous la main ? Voyons ensemble comment connecter une API météo publique, pour bien comprendre le principe.
 </Info>
 
 ![extensions](/images/extensions.png)
@@ -163,166 +148,143 @@ Créons ensemble une extension fonctionnelle avec une API météo gratuite. Vous
 
 On va se connecter à **Open-Meteo**, une API météo gratuite qui ne nécessite même pas de clé d'authentification. Parfait pour débuter !
 
-**Documentation :** https://open-meteo.com/en/docs
+**Documentation :** [https://open-meteo.com/en/docs](https://open-meteo.com/en/docs)
 
 <Steps>
+  <Step title="Créer l'extension">
+    - Pour créer une extension, rendez-vous dans le menu latéral : **Centre de contrôle IA** → **Extensions IA**
+    - Une fois dans la liste de vos extensions, cliquez sur le bouton **\+** pour en créer une nouvelle
+    - Un panneau s'ouvre sur la droite avec le formulaire de configuration
+  </Step>
+  <Step title="Remplir les informations">
+    **Nom** :
 
-<Step title="Créer l'extension">
+    ```text
+    Météo Paris
+    ```
 
-- Pour créer une extension, rendez-vous dans le menu latéral : **Centre de contrôle IA** → **Extensions IA**
-- Une fois dans la liste de vos extensions, cliquez sur le bouton **+** pour en créer une nouvelle
-- Un panneau s'ouvre sur la droite avec le formulaire de configuration
+    **Description** :
 
-</Step>
+    ```text
+    Obtenir la météo actuelle à Paris. À utiliser quand l'utilisateur demande la météo ou le temps qu'il fait à Paris.
+    ```
 
-<Step title="Remplir les informations">
+    **Type** :
 
-**Nom** :
+    ```text
+    Web API
+    ```
 
-```
-Météo Paris
-```
+    **Endpoint :**
 
-**Description** :
+    ```text
+    https://api.open-meteo.com/v1/forecast
+    ```
 
-```
-Obtenir la météo actuelle à Paris. À utiliser quand l'utilisateur demande la météo ou le temps qu'il fait à Paris.
-```
+    **Méthode :** GET
 
-**Type** :
+    **En-têtes HTTP :** Laissez vide ! Cette API est totalement ouverte, pas besoin d'authentification.
 
-```
-Web API
-```
+    **Paramètres de requête :**
 
-**Endpoint :**
+    Cliquez sur **\+ Ajouter un paramètre** pour chaque ligne :
 
-```
-https://api.open-meteo.com/v1/forecast
-```
+    ```text
+    Clé : latitude
+    Valeur : 48.8566
+    
+    Clé : longitude
+    Valeur : 2.3522
+    
+    Clé : current
+    Valeur : temperature_2m,relative_humidity_2m,weathercode
+    
+    Clé : timezone
+    Valeur : Europe/Paris
+    ```
 
-**Méthode :** GET
+    <Info>
+      **Pourquoi ces valeurs ?** - `48.8566, 2.3522` = coordonnées de Paris - `current` = les données qu'on veut (température, humidité, météo) - `timezone` = pour avoir l'heure locale
+    </Info>
 
-**En-têtes HTTP :**
-Laissez vide ! Cette API est totalement ouverte, pas besoin d'authentification.
+    **Qui peut utiliser cette extension** :
 
-**Paramètres de requête :**
+    Moi uniquement (pour le test)
+  </Step>
+  <Step title="Valider">
+    Cliquez sur **Valider** pour sauvegarder votre extension.
+  </Step>
+  <Step title="Activer l'extension dans votre Agent IA">
+    Votre extension est créée, mais elle n'est pas encore disponible pour les conversations. Il faut l'activer dans un agent :
 
-Cliquez sur **+ Ajouter un paramètre** pour chaque ligne :
+    1. Allez dans **Agent IA** (menu latéral)
+    2. Sélectionnez votre agent (par exemple "Agent Opérationnel" ou "Agent Agentique")
+    3. Dans la section **Outils disponibles**, trouvez "Météo Paris"
+    4. **Activez le toggle** pour rendre l'outil accessible à cet agent
 
-```
-Clé : latitude
-Valeur : 48.8566
+    <Info>
+      Un même outil peut être activé pour plusieurs agents différents. Activez-le uniquement pour les agents qui en ont besoin !
+    </Info>
+  </Step>
+  <Step title="Tester votre extension">
+    Maintenant, ouvrez une conversation avec votre agent et testez :
 
-Clé : longitude
-Valeur : 2.3522
+    ```text
+    Quel temps fait-il à Paris ?
+    ```
 
-Clé : current
-Valeur : temperature_2m,relative_humidity_2m,weathercode
+    L'agent devrait répondre avec les informations de la météo de Paris :
 
-Clé : timezone
-Valeur : Europe/Paris
-```
+    ```text
+    Agent : [Utilise l'outil Météo Paris]
+                À Paris actuellement :
+                - Température : 12°C
+                - Humidité : 75%
+                - Conditions : Partiellement nuageux
+    ```
+  </Step>
+  <Step title="Version avancée : N'importe quelle ville">
+    Une fois que ça marche, vous pouvez améliorer pour gérer toutes les villes avec les [placeholders](/docs/catalog/skills#les-placeholders-valeurs-dynamiques) :
 
-<Info>
-  **Pourquoi ces valeurs ?** - `48.8566, 2.3522` = coordonnées de Paris -
-  `current` = les données qu'on veut (température, humidité, météo) - `timezone`
-  = pour avoir l'heure locale
-</Info>
+    **Modifiez les paramètres de requête :**
 
-**Qui peut utiliser cette extension** :
+    ```text
+    Clé : latitude
+    Valeur : {{lat|Latitude de la ville}}
+    
+    Clé : longitude
+    Valeur : {{lon|Longitude de la ville}}
+    
+    Clé : current
+    Valeur : temperature_2m,relative_humidity_2m,weathercode,windspeed_10m
+    
+    Clé : timezone
+    Valeur : auto
+    ```
 
-Moi uniquement (pour le test)
+    **Changez aussi la description :**
 
-</Step>
+    ```text
+    Description : Obtenir la météo actuelle pour n'importe quelle ville du monde.
+    À utiliser quand l'utilisateur demande la météo ou le temps qu'il fait.
+    ```
 
-<Step title="Valider">
+    Maintenant vous pouvez tester :
 
-Cliquez sur **Valider** pour sauvegarder votre extension.
+    ```text
+    "Météo à New York"
+    ```
 
-</Step>
+    ```text
+    "Quel temps à Tokyo ?"
+    ```
 
-<Step title="Activer l'extension dans votre Agent IA">
+    ```text
+    "Prévisions pour Londres"
+    ```
 
-Votre extension est créée, mais elle n'est pas encore disponible pour les conversations. Il faut l'activer dans un agent :
-
-1. Allez dans **Agent IA** (menu latéral)
-2. Sélectionnez votre agent (par exemple "Agent Opérationnel" ou "Agent Agentique")
-3. Dans la section **Outils disponibles**, trouvez "Météo Paris"
-4. **Activez le toggle** pour rendre l'outil accessible à cet agent
-
-<Info>
-  Un même outil peut être activé pour plusieurs agents différents. Activez-le
-  uniquement pour les agents qui en ont besoin !
-</Info>
-
-</Step>
-
-<Step title="Tester votre extension">
-
-Maintenant, ouvrez une conversation avec votre agent et testez :
-
-```text filename="prompt"
-Quel temps fait-il à Paris ?
-```
-
-L'agent devrait répondre avec les informations de la météo de Paris :
-
-```text
-Agent : [Utilise l'outil Météo Paris]
-            À Paris actuellement :
-            - Température : 12°C
-            - Humidité : 75%
-            - Conditions : Partiellement nuageux
-```
-
-</Step>
-
-<Step title="Version avancée : N'importe quelle ville">
-
-Une fois que ça marche, vous pouvez améliorer pour gérer toutes les villes avec les [placeholders](/docs/catalog/skills#les-placeholders-valeurs-dynamiques) :
-
-**Modifiez les paramètres de requête :**
-
-```
-Clé : latitude
-Valeur : {{lat|Latitude de la ville}}
-
-Clé : longitude
-Valeur : {{lon|Longitude de la ville}}
-
-Clé : current
-Valeur : temperature_2m,relative_humidity_2m,weathercode,windspeed_10m
-
-Clé : timezone
-Valeur : auto
-```
-
-**Changez aussi la description :**
-
-```
-Description : Obtenir la météo actuelle pour n'importe quelle ville du monde.
-À utiliser quand l'utilisateur demande la météo ou le temps qu'il fait.
-```
-
-Maintenant vous pouvez tester :
-
-```text filename="prompt"
-"Météo à New York"
-```
-
-```text filename="prompt"
-"Quel temps à Tokyo ?"
-```
-
-```text filename="prompt"
-"Prévisions pour Londres"
-```
-
-L'agent trouvera automatiquement les coordonnées !
-
-</Step>
-
+    L'agent trouvera automatiquement les coordonnées !
+  </Step>
 </Steps>
 
 ### Comment ça fonctionne ?
@@ -332,7 +294,7 @@ Quand vous demandez "Quel temps fait-il à Paris ?", voici ce qu'il se passe :
 1. **L'agent comprend** que vous parlez de météo à Paris
 2. **Il sélectionne** votre outil "Météo Paris"
 3. **Il appelle** l'URL avec tous les paramètres :
-   ```
+   ```text
    https://api.open-meteo.com/v1/forecast?latitude=48.8566&longitude=2.3522&current=temperature_2m,relative_humidity_2m,weathercode&timezone=Europe/Paris
    ```
 4. **Il reçoit** les données météo en JSON
@@ -352,7 +314,7 @@ Les placeholders, c'est vraiment le cœur du système. C'est ce qui permet à l'
 
 Prenons un exemple concret. Vous avez configuré :
 
-```
+```text
 Endpoint: https://api.bibliotheque.com/livres/{{isbn|Numéro ISBN du livre}}
 ```
 
@@ -370,7 +332,7 @@ Voici ce qui se passe dans les coulisses :
 
 Un placeholder suit toujours ce format :
 
-```
+```text
 {{nom_de_variable|Description pour l'Agent}}
 ```
 
@@ -380,7 +342,7 @@ Un placeholder suit toujours ce format :
 - Doit commencer par une lettre
 - Pas d'espaces ni de caractères spéciaux
 
-```
+```text
 ✅ {{user_id|...}}
 ✅ {{firstName|...}}
 ✅ {{date_debut|...}}
@@ -396,7 +358,7 @@ C'est ici que vous aidez l'agent à comprendre ce qu'il doit chercher. Soyez pr�
 
 Comparez :
 
-```
+```text
 ❌ {{id|ID}}
 Trop vague. L'agent ne sait pas quel ID chercher.
 
@@ -413,13 +375,13 @@ Vous pouvez mettre des placeholders à 4 endroits différents :
 
 **1. Dans l'URL**
 
-```
+```text
 https://api.exemple.com/utilisateurs/{{user_id}}/commandes/{{order_id}}
 ```
 
 **2. Dans les paramètres de requête**
 
-```
+```text
 search={{terme|Ce qu'on cherche}}
 limit={{max|Nombre max de résultats}}
 ```
@@ -438,22 +400,22 @@ limit={{max|Nombre max de résultats}}
 
 La qualité de votre description fait toute la différence. Voici comment améliorer vos descriptions :
 
-| Mauvais exemple        | Bon exemple                                       | Pourquoi c'est mieux              |
-| ---------------------- | ------------------------------------------------- | --------------------------------- |
-| `{{id\|ID}}`           | `{{id\|ID numérique du client}}`                  | On précise le type et le contexte |
-| `{{date\|Date}}`       | `{{date\|Date au format JJ/MM/AAAA}}`             | On indique le format              |
-| `{{montant\|Montant}}` | `{{montant\|Montant en euros sans le symbole}}`   | On clarifie l'unité et le format  |
-| `{{statut\|Statut}}`   | `{{statut\|Statut : actif, inactif ou suspendu}}` | On liste les valeurs possibles    |
+| Mauvais exemple | Bon exemple | Pourquoi c'est mieux |
+| --- | --- | --- |
+| `{{id\|ID}}` | `{{id\|ID numérique du client}}` | On précise le type et le contexte |
+| `{{date\|Date}}` | `{{date\|Date au format JJ/MM/AAAA}}` | On indique le format |
+| `{{montant\|Montant}}` | `{{montant\|Montant en euros sans le symbole}}` | On clarifie l'unité et le format |
+| `{{statut\|Statut}}` | `{{statut\|Statut : actif, inactif ou suspendu}}` | On liste les valeurs possibles |
 
 **La formule magique :**
 
-```
+```text
 [Type de donnée] + [Format si besoin] + [Contexte d'usage]
 ```
 
 Exemples appliqués :
 
-```
+```text
 {{telephone|Numéro de téléphone français au format +33XXXXXXXXX}}
 {{role|Rôle de l'utilisateur : admin, user ou guest uniquement}}
 {{quantite|Quantité en unités, nombre entier entre 1 et 100}}
@@ -471,7 +433,7 @@ Rien de tel que des exemples concrets pour comprendre. Voici deux configurations
 
 **Configuration :**
 
-```
+```text
 Nom : Recherche Client
 Description : Trouver les informations d'un client dans notre CRM par son ID, email ou téléphone
 
@@ -487,7 +449,7 @@ Partage : Équipes Ventes et Support
 
 **Utilisation en pratique :**
 
-```
+```text
 User : Cherche le client jean.martin@example.com
 Agent : [Appelle l'API avec identifiant="jean.martin@example.com"]
             Voici les informations de Jean Martin :
@@ -506,7 +468,7 @@ Agent : [Appelle l'API avec identifiant="12345"]
 
 **Configuration :**
 
-```
+```text
 Nom : Créer un Rendez-vous
 Description : Planifier des réunions dans le calendrier partagé. Utilisez ceci quand quelqu'un veut réserver, planifier ou créer une réunion.
 
@@ -533,7 +495,7 @@ Partage : Toute l'organisation
 
 **Utilisation en pratique :**
 
-```
+```text
 User : Réserve une réunion "Point Projet" demain à 14h pour 1h30
        avec marie@entreprise.com dans la salle Bordeaux.
        On va discuter du planning Q2.
@@ -561,7 +523,7 @@ Agent: [Extrait les informations]
 
 Vous pouvez mettre autant de placeholders que nécessaire :
 
-```
+```text
 https://api.exemple.com/users/{{user_id}}/orders/{{order_id}}/items
 ```
 
@@ -601,7 +563,7 @@ L'agent peut utiliser plusieurs outils à la suite pour répondre à une questio
 
 Exemple :
 
-```
+```text
 User : Quel est le statut de la dernière commande de client@example.com ?
 
 L'agent va :
@@ -616,33 +578,23 @@ L'agent va :
 ## Questions fréquentes
 
 <Accordion title="Combien d'extensions puis-je créer ?">
-
-Autant que vous voulez ! Pas de limite. Créez une extension par API ou par cas d'usage selon ce qui vous arrange.
-
+  Autant que vous voulez ! Pas de limite. Créez une extension par API ou par cas d'usage selon ce qui vous arrange.
 </Accordion>
 
 <Accordion title="Puis-je modifier une extension après l'avoir créée ?">
-
-Oui, cliquez simplement dessus dans la liste pour la réouvrir et la modifier. Les changements prennent effet immédiatement.
-
+  Oui, cliquez simplement dessus dans la liste pour la réouvrir et la modifier. Les changements prennent effet immédiatement.
 </Accordion>
 
 <Accordion title="Comment supprimer une extension ?">
-
-Utilisez l'icône poubelle dans la liste des extensions. Attention, ceci définitif et affecte tous ceux qui l'utilisaient.
-
+  Utilisez l'icône poubelle dans la liste des extensions. Attention, ceci définitif et affecte tous ceux qui l'utilisaient.
 </Accordion>
 
 <Accordion title="Que se passe-t-il si l'utilisateur oublie un paramètre dans sa question ?">
-
-L'agent va lui demander de préciser l'information manquante. Par exemple, si quelqu'un demande "Quel temps fait-il ?" sans dire où, l'agent demandera "Pour quelle ville ?".
-
+  L'agent va lui demander de préciser l'information manquante. Par exemple, si quelqu'un demande "Quel temps fait-il ?" sans dire où, l'agent demandera "Pour quelle ville ?".
 </Accordion>
 
 <Accordion title="Mon API est lente, ça pose problème ?">
-
-Les appels ont un timeout de 30 secondes. Si votre API répond plus lentement, l'appel sera interrompu. Dans ce cas, il faudra optimiser l'API.
-
+  Les appels ont un timeout de 30 secondes. Si votre API répond plus lentement, l'appel sera interrompu. Dans ce cas, il faudra optimiser l'API.
 </Accordion>
 
 ---
@@ -677,6 +629,5 @@ Vous savez maintenant créer des extensions Web API pour votre agent. Les points
 Besoin d'aide ? Contactez le support ou consultez vos collègues qui ont déjà créé des extensions. Et n'hésitez pas à expérimenter, c'est comme ça qu'on apprend !
 
 <Info>
-  Cette documentation est en constante évolution. Si vous trouvez des points à
-  améliorer ou si vous avez des questions, faites-nous signe !
+  Cette documentation est en constante évolution. Si vous trouvez des points à améliorer ou si vous avez des questions, faites-nous signe !
 </Info>

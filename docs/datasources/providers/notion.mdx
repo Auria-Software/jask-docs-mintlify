@@ -1,6 +1,7 @@
 ---
 title: "Connecteur Notion"
 sidebarTitle: "Notion"
+icon: "lightbulb"
 ---
 
 ![Notion](/images/notion/notion.png)
@@ -13,69 +14,54 @@ sidebarTitle: "Notion"
 ## Guide pour connecter Notion
 
 <Steps>
+  <Step title="Etape 1 : Créer une intégration Notion">
+    <Info>
+      Une intégration = 1 source de donnée dans Jask. Un agent connecté à cette source de donnée dans Jask pourra utiliser toutes les pages rendues accessibles par l'intégration. Vous pouvez créer plusieurs intégrations pour restreindre l'accès aux sources à certains agents.
+    </Info>
 
-<Step title="Etape 1 : Créer une intégration Notion">
+    Rendez vous sur le portail d'intégration Notion disponible [ici](https://www.notion.so/my-integrations).
 
-<Info>
-  Une intégration = 1 source de donnée dans Jask. Un agent connecté à cette
-  source de donnée dans Jask pourra utiliser toutes les pages rendues
-  accessibles par l'intégration. Vous pouvez créer plusieurs intégrations pour
-  restreindre l'accès aux sources à certains agents.
-</Info>
+    Cliquez sur le bouton `+ Nouvelle intégration` au centre de l'écran.
 
-Rendez vous sur le portail d'intégration Notion disponible [ici](https://www.notion.so/my-integrations).
+    ![Notion Integration](/images/notion/integration.png)
 
-Cliquez sur le bouton `+ Nouvelle intégration` au centre de l'écran.
+    Remplissez le formulaire avec les informations suivantes :
 
-![Notion Integration](/images/notion/integration.png)
+    - Nom de l'intégration : `Jask`
+    - Espace de travail associé : sélectionnez l'espace de travail associé à l'intégration
+    - Type : Séléctionnez `Interne`
 
-Remplissez le formulaire avec les informations suivantes :
+    <Warning>
+      Vous devez créer plusieurs intégrations pour chaque espace de travail.
+    </Warning>
 
-- Nom de l'intégration : `Jask`
-- Espace de travail associé : sélectionnez l'espace de travail associé à l'intégration
-- Type : Séléctionnez `Interne`
+    Cliquez sur le bouton `Enregistrer` en bas de la page.
 
-<Warning>
-  Vous devez créer plusieurs intégrations pour chaque espace de travail.
-</Warning>
+    ![Notion appform](/images/notion/appform.png)
+  </Step>
+  <Step title="Etape 2 : Donner les accès à Jask aux pages de l'espace de travail">
+    Rendez vous sur la page de configuration de l'intégration. Cliquez sur le bouton `Accès` dans les vues de la page.
 
-Cliquez sur le bouton `Enregistrer` en bas de la page.
+    ![Notion go-access](/images/notion/go-access.png)
 
-![Notion appform](/images/notion/appform.png)
+    Cliquez sur `Accès en écriture` pour donner les accès à Jask aux pages de l'espace de travail que vous voulez connecter à Jask.
 
-</Step>
+    <Info>
+      Vous pouvez changer les accès à tout moment.
+    </Info>
 
-<Step title="Etape 2 : Donner les accès à Jask aux pages de l'espace de travail">
+    ![Notion access](/images/notion/access.png)
+  </Step>
+  <Step title="Etape 3 : Récupérer les identifiants de l'intégration">
+    Rendez vous sur la page de configuration de l'intégration et récupérez la clé d'api pour la fournir dans Jask.
 
-Rendez vous sur la page de configuration de l'intégration. Cliquez sur le bouton `Accès` dans les vues de la page.
+    ![Notion api](/images/notion/api-key.png)
+  </Step>
+  <Step title="Etape 4 : Configurer les identifiants dans Jask">
+    Rendez vous sur Jask puis dans le menu de gauche, cliquez sur `Sources de données` puis sur `+ Ajouter une source de données`. Nommez votre source, sélectionnez `Notion`, paramétrez la visibilité et fournissez une description puis cliquez sur `Suivant`.
 
-![Notion go-access](/images/notion/go-access.png)
+    Fournissez `la clé d'intégration` et cliquez sur `Tester la connexion` avant de terminer les étapes.
 
-Cliquez sur `Accès en écriture` pour donner les accès à Jask aux pages de l'espace de travail que vous voulez connecter à Jask.
-
-<Info>Vous pouvez changer les accès à tout moment.</Info>
-
-![Notion access](/images/notion/access.png)
-
-</Step>
-
-<Step title="Etape 3 : Récupérer les identifiants de l'intégration">
-
-Rendez vous sur la page de configuration de l'intégration et récupérez la clé d'api pour la fournir dans Jask.
-
-![Notion api](/images/notion/api-key.png)
-
-</Step>
-
-<Step title="Etape 4 : Configurer les identifiants dans Jask">
-
-Rendez vous sur Jask puis dans le menu de gauche, cliquez sur `Sources de données` puis sur `+ Ajouter une source de données`.
-Nommez votre source, sélectionnez `Notion`, paramétrez la visibilité et fournissez une description puis cliquez sur `Suivant`.
-
-Fournissez `la clé d'intégration` et cliquez sur `Tester la connexion` avant de terminer les étapes.
-
-![notion jask](/images/notion/jask.png)
-
-</Step>
-
+    ![notion jask](/images/notion/jask.png)
+  </Step>
 </Steps>
