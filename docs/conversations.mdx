@@ -1,33 +1,34 @@
 ---
 title: "Conversations"
 sidebarTitle: "Conversations"
+icon: "message-circle"
 ---
 
 <div
   style={{
-    position: "relative",
-    paddingBottom: "56.25%",
-    height: 0,
-    overflow: "hidden",
-    width: "100%",
-    borderRadius: "8px",
-    marginTop: "24px",
-  }}>
+  position: "relative",
+  paddingBottom: "56.25%",
+  height: 0,
+  overflow: "hidden",
+  width: "100%",
+  borderRadius: "8px",
+  marginTop: "24px",
+}}
+>
   <iframe
     style={{
-      position: "absolute",
-      top: 0,
-      left: 0,
-      width: "100%",
-      height: "100%",
-      borderRadius: "12px",
-    }}
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    borderRadius: "12px",
+  }}
     src="https://www.youtube.com/embed/fkKRprSlsgw?si=7cCbVi8OziS3Hu10"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowFullScreen
   />
 </div>
-
 
 Les conversations sont l'interface principale des réponses générées par l'IA : c'est ici que vous échangez avec les agents de votre organisation, que vous partagez des fichiers, et que vous exploitez les résultats produits par l'IA. Chaque conversation est un espace structuré qui va bien au-delà d'un simple échange de messages — les agents peuvent raisonner, exécuter du code, générer des fichiers et exposer leur processus de réflexion en toute transparence.
 
@@ -55,9 +56,7 @@ Chaque réponse dans le fil affiche :
 - **Les fichiers générés** — affichés sous forme de carte avec un bouton **Télécharger** lorsque l'agent a produit un livrable (CSV, Excel, PDF…)
 - Des actions rapides : Copier la réponse, Feedback positif et négatif sur la réponse, Export de la réponse
 
-Les réponses des agents JAsk sont structurées pour être lisibles, exploitables et traçables. Elles peuvent prendre des formes très variées selon la nature de la requête : texte enrichi, tableaux, listes structurées, fichiers téléchargeables — et s'accompagnent systématiquement d'indicateurs qui vous informent sur le traitement effectué. Cette page explique comment lire une réponse et quelles actions vous pouvez effectuer dessus.
-Le fil des messages peut contenir la production de certains éléments comme des images ou des fichiers.
-En cliquant sur ces éléments ils apparaitront en preview dans le panel de droite.
+Les réponses des agents JAsk sont structurées pour être lisibles, exploitables et traçables. Elles peuvent prendre des formes très variées selon la nature de la requête : texte enrichi, tableaux, listes structurées, fichiers téléchargeables — et s'accompagnent systématiquement d'indicateurs qui vous informent sur le traitement effectué. Cette page explique comment lire une réponse et quelles actions vous pouvez effectuer dessus. Le fil des messages peut contenir la production de certains éléments comme des images ou des fichiers. En cliquant sur ces éléments ils apparaitront en preview dans le panel de droite.
 
 ### Format riche des réponses
 
@@ -91,21 +90,21 @@ Vous pouvez également cliquer sur la carte pour ouvrir une **prévisualisation*
 En bas à droite de chaque message d'agent, une barre d'actions apparaît au survol :
 
 | Action | Description |
-|--------|-------------|
+| --- | --- |
 | **Copier** | Copie le contenu de la réponse dans le presse-papiers |
 | **👍 Utile** | Signale la réponse comme satisfaisante (feedback positif) |
 | **👎 Pas utile** | Signale la réponse comme insuffisante (feedback négatif) |
 | **`…` Plus** | Ouvre un menu d'options supplémentaires (export sous différents formats de la réponse) |
 
-![conv_actions](/images/conv_actions.png)
+![conv\_actions](/images/conv_actions.png)
 
 <Info>
   Le feedback 👍 / 👎 est utilisé par les administrateurs JAsk pour suivre la qualité des agents et identifier les cas d'usage à améliorer. N'hésitez pas à l'utiliser.
 </Info>
 
 ## La réflexion
-Au cours de son processus de génération, le processus auquel l'utilisateur a fait appel va pouvoir raisonner en plusieurs étapes. Ces étapes permettent à l'IA de décomposer son travail en afin d'atteindre l'objectif demandé par l'utilisateur.
-Lors de la réflexion, les étapes vont défiler dans le fil de la conversation, mais tout le détail et l'historique des étapes est disponible dans le panneau de réflexion.
+
+Au cours de son processus de génération, le processus auquel l'utilisateur a fait appel va pouvoir raisonner en plusieurs étapes. Ces étapes permettent à l'IA de décomposer son travail en afin d'atteindre l'objectif demandé par l'utilisateur. Lors de la réflexion, les étapes vont défiler dans le fil de la conversation, mais tout le détail et l'historique des étapes est disponible dans le panneau de réflexion.
 
 Le panneau de réflexion est l'interface de transparence de JAsk : il expose l'ensemble du processus de raisonnement qu'un agent a suivi pour produire une réponse. Plutôt que de livrer uniquement un résultat, JAsk vous permet de vérifier comment ce résultat a été obtenu — quelles étapes ont été exécutées, quelles données ont été analysées, quelles sources ont été consultées, quels skills ont été appelées et avec quel niveau de confiance. C'est un outil essentiel pour valider les réponses avant de les utiliser dans un contexte professionnel.
 
@@ -116,22 +115,21 @@ Lorsqu'une réponse implique un raisonnement multi-étapes ou une exécution de 
 Le panneau s'ouvre sans quitter le fil de conversation — il coexiste avec la vue principale.
 
 <Note>
-Le nombre d'étapes que va suivre le processus dépend du niveau de réflexion défini au niveau de la conversation, ou de l'agent en question. Un niveau de réflexion élevé induira un nombre d'étapes beaucoup plus conséquent qu'un niveau de réflexion faible. 
- [Détails](/docs/catalog/agents/create)
+  Le nombre d'étapes que va suivre le processus dépend du niveau de réflexion défini au niveau de la conversation, ou de l'agent en question. Un niveau de réflexion élevé induira un nombre d'étapes beaucoup plus conséquent qu'un niveau de réflexion faible. [Détails](/docs/catalog/agents/create)
 </Note>
 
-Dans le panel détaillé vous retrouverez différents onglets : 
-* Voir tout : Toutes les étapes de réflexion
-* Réflexions : Onglet filtré sur les étapes de raisonnement
-* Infos clés : Onglet filtré sur les infos clés enregistrées au cours de la réflexion
-* Sources : Onglet filtré sur les sources utilisés au cours de la réflexion
-* Agents : Onglet filtré sur les agents utilisés au cours de la réflexion
+Dans le panel détaillé vous retrouverez différents onglets :
+
+- Voir tout : Toutes les étapes de réflexion
+- Réflexions : Onglet filtré sur les étapes de raisonnement
+- Infos clés : Onglet filtré sur les infos clés enregistrées au cours de la réflexion
+- Sources : Onglet filtré sur les sources utilisés au cours de la réflexion
+- Agents : Onglet filtré sur les agents utilisés au cours de la réflexion
 
 <Accordion title="Détails">
-
-![thinking](/images/thinking.png)
-
+  ![thinking](/images/thinking.png)
 </Accordion>
+
 ## Pourquoi avoir des conversations distinctes ?
 
 - **Contexte** : Chaque conversation conserve le contexte de tous les messages de la conversation, ce qui permet à l'agent de fournir des réponses plus pertinentes basées sur l'historique de la conversation.

@@ -1,121 +1,71 @@
 ---
 title: "Gérer un projet"
 sidebarTitle: "Gérer un projet"
+icon: "pencil"
 ---
 
-La gestion d'un projet permet de définir les paramètres principaux de ce projet. 
+La gestion d'un projet permet de définir les paramètres principaux de ce projet.
 
 ## Créer un projet
 
-Depuis l'onglet Collab du menu, vous pouvez cliquez sur le bouton **+ Projet** afin de créer un nouveau projet. Créez le projet en indiquant un nom et une description.
-Ces informations peuvent être modifié via le bouton Paramètres > Modifier la description
+Depuis l'onglet Collab du menu, vous pouvez cliquez sur le bouton **\+ Projet** afin de créer un nouveau projet. Créez le projet en indiquant un nom et une description. Ces informations peuvent être modifié via le bouton Paramètres \> Modifier la description
 
 ## Paramètres du projet
 
 <Steps>
+  <Step title="Modèle et prompt système">
+    Sous le bouton **Intelligence IA**, accessible sous la zone de chat du projet, vous permet de personnaliser le comportement de l'agent de ce projet. Vous pouvez y définir :
 
-<Step title="Modèle et prompt système">
+    - Le modèle LLM utilisé
+    - Le prompt système qui gouverne les réponses de l'agent, et comment activer des capacités supplémentaires (skills) pour étendre ses possibilités d'action.
+    - Le niveau de réflexion du projet
+    - Les paramètres avancés du projet
 
-Sous le bouton **Intelligence IA**, accessible sous la zone de chat du projet, vous permet de personnaliser le comportement de l'agent de ce projet. Vous pouvez y définir : 
-- Le modèle LLM utilisé
-- Le prompt système qui gouverne les réponses de l'agent, et comment activer des capacités supplémentaires (skills) pour étendre ses possibilités d'action. 
-- Le niveau de réflexion du projet
-- Les paramètres avancés du projet
+    <Info>
+      Ces réglages sont propres au projet et n'affectent pas les autres conversations ou projets de votre organisation.
+    </Info>
 
-<Info>
-Ces réglages sont propres au projet et n'affectent pas les autres conversations ou projets de votre organisation.
-</Info>
+    ![projects\_ia](/images/project_ia.png)
 
-![projects_ia](/images/project_ia.png)
+    <Warning>
+      Le Prompt Système est partagé avec tous les membres du projet. Les modifications que vous apportez s'appliquent immédiatement à toutes les nouvelles conversations.
+    </Warning>
+  </Step>
+  <Step title="Ressources du projet">
+    Les ressources du projet sont tous les éléments (fichiers importés manuellement et les sources connectées (intégrations externes)) qui constituent la base de connaissance du projet. L'agent y accède pour générer ses réponses quand cela est nécessaire.
 
-<Warning>
-  Le Prompt Système est partagé avec tous les membres du projet. Les modifications que vous apportez s'appliquent immédiatement à toutes les nouvelles conversations.
-</Warning>
+    - Fichiers importés : Liste des fichiers déjà importés dans le projet. Les membres du projet peuvent supprimer ou télécharger les fichiers du projet
+    - Sources connectées : Liste des sources de données connectées et accessible au projet. Les membres du projet peuvent supprimer les sources
+  </Step>
+  <Step title="Skills du projet">
+    Les **capacités**, aussi appelées **skills**, sont des actions ou des traitements spécialisés que vous pouvez activer pour enrichir ce que l'agent est capable de faire dans le projet. En cliquant sur le bouton, les membres peuvent ajouter des skills au projet ou en supprimer.
 
-</Step>
+    Pour accéder au panneau de sélection des skills :
 
-<Step title="Ressources du projet">
-
-Les ressources du projet sont tous les éléments (fichiers importés manuellement et les sources connectées (intégrations externes)) qui constituent la base de connaissance du projet. L'agent y accède pour générer ses réponses quand cela est nécessaire.
-
-- Fichiers importés : Liste des fichiers déjà importés dans le projet. Les membres du projet peuvent supprimer ou télécharger les fichiers du projet
-
-- Sources connectées : Liste des sources de données connectées et accessible au projet. Les membres du projet peuvent supprimer les sources
-
-</Step>
-
-<Step title="Skills du projet">
-
-Les **capacités**, aussi appelées **skills**, sont des actions ou des traitements spécialisés que vous pouvez activer pour enrichir ce que l'agent est capable de faire dans le projet. En cliquant sur le bouton, les membres peuvent ajouter des skills au projet ou en supprimer.
-
-Pour accéder au panneau de sélection des skills : 
-- cliquer sur Intelligence IA puis "Capacités (skills) supplémentaires" 
-- cliquer sur "Cliquez pour ajouter"  depuis la liste des skills en bas de page
-
-</Step>
-
+    - cliquer sur Intelligence IA puis "Capacités (skills) supplémentaires"
+    - cliquer sur "Cliquez pour ajouter"  depuis la liste des skills en bas de page
+  </Step>
 </Steps>
 
 ## Inviter des membres
 
 La gestion des membres d'un projet est l'élément central pour donner accès au projet à d'autres utilisateurs et collaborer. Vous accèder à l'interface de gestion des utilisateurs depuis le bouton **Inviter** en haut à droite de l'écran.
 
-![projects_members](/images/project_members.png)
+![projects\_members](/images/project_members.png)
 
 La gestion des membres vous permet d'inviter des collaborateurs dans un Projet JAsk et de définir précisément ce que chacun peut voir ou faire. JAsk propose trois niveaux d'accès distincts qui s'adaptent à des profils variés : un lecteur qui consulte les travaux de l'équipe, un contributeur qui participe activement aux conversations, ou un administrateur qui gère l'ensemble du projet. Cette granularité garantit que les bonnes personnes ont accès aux bonnes informations, sans compromettre la confidentialité du projet.
 
-- Contributeurs : 
+- Contributeurs :
 
 <Info>
   Le rôle Contributeur est le rôle par défaut recommandé pour les membres actifs d'une équipe projet.
 </Info>
 
-<table>
-  <thead>
-    <tr>
-      <th>Rôle</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Lecture seule</td>
-      <td>
-        Peuvent uniquement consulter les conversations existantes du projet. Ils
-        ne peuvent pas démarrer de nouvelles conversations, modifier les
-        ressources ou interagir avec l'agent. 
-        
-        
-        Ce rôle est adapté aux parties
-        prenantes qui ont besoin d'un accès en transparence aux travaux de
-        l'équipe, sans pour autant y contribuer directement.
-      </td>
-    </tr>
-    <tr>
-      <td>Contributeurs</td>
-      <td>
-        Disposent de tous les droits opérationnels sur le projet :
-        <ul>
-          <li>- Démarrer et participer aux conversations</li>
-          <li>- Importer et supprimer des fichiers</li>
-          <li>- Utiliser les agents et les capacités configurées</li>
-        </ul>
-        Ils ne peuvent pas en revanche inviter d'autres utilisateurs dans le projet.
-      </td>
-    </tr>
-    <tr>
-      <td>Administrateurs</td>
-      <td>
-        Accès complet au projet, incluant toutes les actions disponibles pour
-        les Contributeurs, plus :
-        <ul>
-          <li>- Inviter et gérer les membres (modifier les rôles, retirer des accès)</li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
+|  |
+| --- |
+| Peuvent uniquement consulter les conversations existantes du projet. Ils ne peuvent pas démarrer de nouvelles conversations, modifier les ressources ou interagir avec l'agent. Ce rôle est adapté aux parties prenantes qui ont besoin d'un accès en transparence aux travaux de l'équipe, sans pour autant y contribuer directement. |
+| Disposent de tous les droits opérationnels sur le projet : Ils ne peuvent pas en revanche inviter d'autres utilisateurs dans le projet. |
+| Accès complet au projet, incluant toutes les actions disponibles pour les Contributeurs, plus : |
 
 <Warning>
   Le rôle Administrateur doit être attribué avec discernement. Un administrateur peut supprimer l'ensemble du projet, y compris toutes les conversations et ressources associées.
@@ -128,6 +78,7 @@ La gestion des membres vous permet d'inviter des collaborateurs dans un Projet J
 ## Modifier ou retirer un membre
 
 Pour modifier le rôle d'un membre existant ou le retirer du projet, rouvrez la modale **Inviter des membres** :
+
 - Pour **changer de rôle** : retirez l'utilisateur du rôle actuel (icône ×) et ajoutez-le dans le rôle souhaité
 - Pour **retirer l'accès** : supprimez l'utilisateur de tous les rôles et validez avec **Mettre à jour**
 
@@ -144,6 +95,7 @@ L'option **Supprimer le project** permet de supprimer définitivement l'espace d
 </Warning>
 
 Avant de supprimer un projet, assurez-vous que :
+
 - Les conversations importantes ont été exportées ou archivées
 - Les fichiers importés dans le projet ont une copie dans un autre espace
 - Les membres de l'équipe ont été informés de la fermeture du projet

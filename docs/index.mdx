@@ -1,6 +1,7 @@
 ---
 title: "Documentation Jask"
 sidebarTitle: "Introduction"
+icon: "text-initial"
 ---
 
 **Jask** une **plateforme unique, sécurisée et intuitive**, vos organisations et métiers créent **en quelques minutes** et en toute **autonomie** leurs propres agents et workflows pour servir leurs enjeux business.
@@ -10,21 +11,14 @@ sidebarTitle: "Introduction"
 Suivez ces guides pour utiliser rapidement Jask
 
 <Columns cols={2}>
-  <Card
-    title="Utilisateur : Démarrage rapide dans l'Accueil"
-    href="/docs/accueil"
-    icon="rocket"
-  />
-  <Card
-    title="Developpeur : Appeller Jask via API"
-    href="/api/intro"
-    icon="chevrons-left-right-ellipsis"
-  />
-  <Card
-    title="Admin : Ajouter un modèle LLM"
-    href="/docs/catalog/ai_models"
-    icon="cable"
-  />
+  <Card title="Utilisateur : Démarrage rapide dans l'Accueil" icon="rocket" href="/docs/accueil">
+  </Card>
+
+  <Card title="Developpeur : Appeller Jask via API" icon="chevrons-left-right-ellipsis" href="/api/intro">
+  </Card>
+
+  <Card title="Admin : Ajouter un modèle LLM" icon="cable" href="/docs/catalog/ai_models">
+  </Card>
 </Columns>
 
 ---
@@ -34,159 +28,103 @@ Suivez ces guides pour utiliser rapidement Jask
 Le menu de Jask se découpe en 3 onglets à partir desquels vous avez accès à toute la puissance de l'IA Générative proposée par Jask.
 
 <Steps>
+  <Step title="Chats">
+    L'onglet Chats est l'endroit où les utilisateurs vont consommer l'IA générative Jask. Différentes vues permettent de retrouver l'historique de vos conversations avec les services Jask. Chacune d'elles possède ses propres avantages et répondent à des usages spécifiques (chronologie, par agent, par tag)
 
-<Step title="Chats">
+    <Columns cols={2}>
+      <Card title="Accueil" icon="home" href="/docs/accueil">
+      </Card>
 
-L'onglet Chats est l'endroit où les utilisateurs vont consommer l'IA générative Jask.
-Différentes vues permettent de retrouver l'historique de vos conversations avec les services Jask. Chacune d'elles possède ses propres avantages et répondent à des usages spécifiques (chronologie, par agent, par tag)
+      <Card title="Conversations" icon="messages-square" href="/docs/conversations">
+      </Card>
+    </Columns>
 
-<Columns cols={2}>
-  <Card title="Accueil" href="/docs/accueil" icon="home" />
-  <Card
-    title="Conversations"
-    href="/docs/conversations"
-    icon="messages-square"
-  />
-</Columns>
-![accueil](/images/accueil_chats.png)
+    ![accueil](/images/accueil_chats.png)
+  </Step>
+  <Step title="Collaboration">
+    L'onglet Collab regroupe tous vos projets. Les projets sont des espaces collaboratifs et partagés avec d'autres utilisateurs pour collaborer sur des thématiques communes.
 
-</Step>
+    Le menu de gauche vous permet de naviguer sous `Catalogue` dans les vues suivantes :
 
-<Step title="Collaboration">
+    <Columns cols={2}>
+      <Card title="Projets" icon="library-big" href="/docs/projects">
+      </Card>
+    </Columns>
 
-L'onglet Collab regroupe tous vos projets. Les projets sont des espaces collaboratifs et partagés avec d'autres utilisateurs pour collaborer sur des thématiques communes.
+    ![collab](/images/accueil_collab.png)
+  </Step>
+  <Step title="Réglages">
+    <Warning>
+      Dans cette section l'ensemble des éléments ne sont pas disponibles. Leur visibilité dépend de votre niveau d'accès à la plateforme
+    </Warning>
 
-Le menu de gauche vous permet de naviguer sous `Catalogue` dans les vues suivantes :
+    Les fonctionnalités accessibles ici sont réparties en 6 sections : <img src="/images/accueil_settings.png" alt="settings" />
 
-<Columns cols={2}>
-  <Card
-    title="Projets"
-    href="/docs/projects"
-    icon="library-big"
-  />
-</Columns>
-![collab](/images/accueil_collab.png)
+    #### Mon espace de travail
 
-</Step>
+    <Columns cols={2}>
+      <Card title="Mes bibliothèques" icon="library-big" href="/docs/workspace/libraries">
+      </Card>
 
-<Step title="Réglages">
+      <Card title="Sources de données" icon="database" href="/docs/workspace/datasources">
+      </Card>
 
-<Warning>
-  Dans cette section l'ensemble des éléments ne sont pas disponibles. Leur
-  visibilité dépend de votre niveau d'accès à la plateforme
-</Warning>
+      <Card title="Automatisation" icon="calendar-sync" href="/docs/workspace/automations">
+      </Card>
+    </Columns>
 
-Les fonctionnalités accessibles ici sont réparties en 6 sections :
-![settings](/images/accueil_settings.png)
+    #### Catalogue
 
-#### Mon espace de travail
+    <Columns cols={2}>
+      <Card title="Agents IA" icon="bot" href="/docs/catalog/agents">
+      </Card>
 
-<Columns cols={2}>
-  <Card
-    title="Mes bibliothèques"
-    icon="library-big"
-    href="/docs/workspace/libraries"
-  />
-  <Card
-    title="Sources de données"
-    icon="database"
-    href="/docs/workspace/datasources"
-  />
-  <Card
-    title="Automatisation"
-    icon="calendar-sync"
-    href="/docs/workspace/automations"
-  />
-</Columns>
+      <Card title="Prompts" icon="book-type" href="/docs/catalog/prompts_store">
+      </Card>
 
+      <Card title="Skills" icon="wrench" href="/docs/catalog/skills">
+      </Card>
 
+      <Card title="Gestion des modèles" icon="brain-circuit" href="/docs/catalog/ai_models">
+      </Card>
 
-#### Catalogue
+      <Card title="Expériences" icon="workflow" href="/docs/catalog/experiences">
+      </Card>
+    </Columns>
 
-<Columns cols={2}>
-  <Card
-    title="Agents IA"
-    icon="bot"
-    href="/docs/catalog/agents"
-  />
-  <Card
-    title="Prompts"
-    icon="book-type"
-    href="/docs/catalog/prompts_store"
-  />
-  <Card
-    title="Skills"
-    icon="wrench"
-    href="/docs/catalog/skills"
-  />
-  <Card
-    title="Gestion des modèles"
-    icon="brain-circuit"
-    href="/docs/catalog/ai_models"
-  />
-  <Card
-    title="Expériences"
-    icon="workflow"
-    href="/docs/catalog/experiences"
-  />
-</Columns>
+    #### Utilisateurs et Groupes
 
+    <Columns cols={2}>
+      <Card title="Utilisateurs" icon="user-cog" href="/docs/users_groups/users">
+      </Card>
 
+      <Card title="Rôles" icon="shield-user" href="/docs/users_groups/roles">
+      </Card>
+    </Columns>
 
-#### Utilisateurs et Groupes
+    #### Sources de données
 
-<Columns cols={2}>
-  <Card
-    title="Utilisateurs"
-    icon="user-cog"
-    href="/docs/users_groups/users"
-  />
-  <Card title="Rôles" icon="shield-user" href="/docs/users_groups/roles" />
-</Columns>
+    <Columns cols={2}>
+      <Card title="Gestion des sources" icon="database" href="/docs/workspace/datasources">
+      </Card>
 
+      <Card title="Connexions et secrets" icon="key-round" href="/docs/datasources/permissions">
+      </Card>
 
+      <Card title="Terminologie interne" icon="book-a" href="/docs/terminology">
+      </Card>
+    </Columns>
 
-#### Sources de données
+    #### Déploiement et Observabilité
 
-<Columns cols={2}>
-  <Card
-    title="Gestion des sources"
-    icon="database"
-    href="/docs/workspace/datasources"
-  />
-  <Card
-    title="Connexions et secrets"
-    icon="key-round"
-    href="/docs/datasources/permissions"
-  />
-  <Card
-    title="Terminologie interne"
-    icon="book-a"
-    href="/docs/terminology"
-  />
-</Columns>
+    <Columns cols={2}>
+      <Card title="Liste des déploiements" icon="rocket" href="/docs/deployment/excel">
+      </Card>
 
-
-
-#### Déploiement et Observabilité
-
-<Columns cols={2}>
-  <Card
-    title="Liste des déploiements"
-    icon="rocket"
-    href="/docs/deployment/excel"
-  />
-  <Card
-    title="Observabilité"
-    icon="chart-column-big"
-    href="/docs/observability"
-  />
-</Columns>
-
-
-
-</Step>
-
+      <Card title="Observabilité" icon="chart-column-big" href="/docs/observability">
+      </Card>
+    </Columns>
+  </Step>
 </Steps>
 
 En bas de ce menu, en cliquant sur votre nom d'utilisateur, vous pouvez personnaliser votre expérience :
