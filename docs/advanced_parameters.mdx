@@ -1,99 +1,173 @@
 ---
-title: "Paramètres avancés"
+title: "Configurer les paramètres avancés"
 sidebarTitle: "Paramètres avancés"
-tag: "New"
-icon: "compass"
+tag: "NEW"
+description: "Configurez l’expérience des chats, les agents IA, les skills, la sécurité, les fonctionnalités et la télémétrie de JAsk."
+keywords: ["paramètres avancés", "administration", "agents IA", "skills IA", "sécurité", "gouvernance", "télémétrie"]
 ---
 
-Le paramétrage de la plateforme est l'espace de configuration globale de JAsk : les options définies ici s'appliquent à l'ensemble des utilisateurs de l'organisation, contrairement aux réglages de la page Mon profil qui restent individuels. C'est depuis cet écran que les administrateurs définissent l'expérience de chat par défaut, les limites des agents IA, les skills transverses, les règles de sécurité et de gouvernance, ainsi que les fonctionnalités activées sur la plateforme.
+Les paramètres avancés définissent l’interface et la personnalisation de JAsk pour l’ensemble des utilisateurs de l’organisation.
+
+Contrairement aux réglages de la page **Mon profil**, qui restent individuels, les modifications effectuées sur cette page s’appliquent à l’ensemble de la plateforme.
 
 <Warning>
-  Ce niveau de configuration de la plateforme est réservé aux administrateurs et doit être manipulé avec précaution. Les modifications apportées ont un impact direct sur la plateforme des utilisateurs.
+  Cette page est réservée aux administrateurs. Les modifications prennent effet immédiatement et peuvent affecter l’expérience de tous les utilisateurs.
 </Warning>
 
-Pour accèder à cette page, rendez-vous dans **Réglages → Déploiement → Paramètres avancés**.
+## Accéder aux paramètres avancés
 
-### Chats
+Vous devez être administrateur pour accéder à cette page et configurer l’interface ainsi que la personnalisation de la plateforme.
 
-Cette section configure l'expérience des chats des utilisateurs :
+Dans la barre latérale, ouvrez **Réglages → Déploiement → Paramètres avancés**.
 
-- **Ouverture automatique des documents** : les documents générés par les agent s'ouvrent dans le panneau de droite, sans que l'utilisateur ait à cliquer dessus
-- **Montrer automatiquement les résultats de recherche** : ouvre automatiquement le panneau de réflexion à droite avec les résultats de la recherche effectuée par l'agent
-- **Afficher la consommation** : affiche dans le panel de réflexion un résumé de la consommation en tokens de cette réflexion
+{/* DÉDUIT: la réponse « OUI » à la question « automatiquement ou via un bouton ? » est interprétée comme un enregistrement automatique. À confirmer explicitement. */}
 
-![advanced1](/images/advanced1.png)
+Les modifications sont enregistrées automatiquement et prennent effet immédiatement.
 
-### Agents IA
+<Check>
+  Une fois un paramètre modifié, vérifiez son effet dans l’interface avec un compte utilisateur concerné.
+</Check>
 
-Cette section définit les limites et comportements globaux des agents IA :
+## Configurer l’expérience des chats
 
-- **Durée maximale de réflexion des agents** : durée (en secondes) au-delà de laquelle un agent interrompt sa réflexion. Par exemple, une valeur de 3600 arrête tout raisonnement dépassant une heure.
-- **Model IA par défaut** : modèle utilisé par défaut sur la plateforme
-- **Model IA Vision par défaut** :modèle utilisé par défaut sur la plateforme pour les analyses d'images, questions-réponses sur des PowerPoint…)
-- **Prompt Système admin** : lorsqu'il est activé, inclut un prompt système défini par l'administrateur dans tous les agents de la plateforme
+La section **Chats** contrôle l’affichage des documents, des résultats de recherche et de la consommation pendant une conversation.
+
+| Paramètre | Effet |
+| --- | --- |
+| **Ouverture automatique des documents** | Ouvre les documents générés par les agents dans le panneau de droite, sans action supplémentaire de l’utilisateur. |
+| **Montrer automatiquement les résultats de recherche** | Ouvre automatiquement le panneau de réflexion à droite pour afficher les résultats de la recherche effectuée par l’agent. |
+| **Afficher la consommation** | Affiche dans le panneau de réflexion un résumé de la consommation de tokens associée à la réflexion. |
+
+<Frame caption="Paramètres globaux de l’expérience des chats.">
+  ![Section Chats des paramètres avancés avec les options d’ouverture automatique des documents, d’affichage des résultats de recherche et de consommation.](/images/advanced1.png)
+</Frame>
+
+## Configurer les agents IA
+
+La section **Agents IA** définit les limites de réflexion et les modèles utilisés par défaut sur la plateforme.
+
+| Paramètre | Effet |
+| --- | --- |
+| **Durée maximale de réflexion des agents** | Définit, en secondes, la durée au-delà de laquelle un agent interrompt sa réflexion. |
+| **Modèle IA par défaut** | Définit le modèle utilisé par défaut sur la plateforme. |
+| **Modèle IA Vision par défaut** | Définit le modèle utilisé par défaut pour les analyses d’images et les questions portant sur des présentations PowerPoint. |
+| **Prompt Système admin** | Ajoute un prompt système défini par l’administrateur à tous les agents de la plateforme lorsque l’option est activée. |
+
+Par exemple, une durée maximale de `3600` secondes interrompt une réflexion qui dépasse une heure.
 
 <Tip>
-  La durée maximale de réflexion agit comme un garde-fou de consommation : elle évite qu'un agent avec un niveau de réflexion élevé ne s'exécute indéfiniment sur une requête complexe.
+  Utilisez la durée maximale de réflexion pour empêcher l’exécution indéfinie d’un agent sur une requête complexe, ce qui engendre des coûts indésirables.
 </Tip>
 
-### Skills IA
+## Configurer les skills IA
 
-Cette section liste les skills transverses de la plateforme, c'est-à-dire des skills que vous souhaitez mettre à disposition globalement plutôt que de les rattacher à un agent en particulier. Pour chaque skill (par exemple `just-xlsx` pour les fichiers tableur ou `just-pptx` pour les présentations), vous pouvez :
+La section **Skills IA** regroupe les skills transverses de la plateforme.
 
-- Activer l'option **Attacher à tous les agents**, qui rend le skill disponible dans l'ensemble des agents de la plateforme, indépendamment du rattachement manuel sur un agent donné
-- Choisir le **modèle** utilisé par le skill : un modèle spécifique (ex. gpt-5.2) ou le **modèle par défaut** de la plateforme. Certains skills nécessitent des modèles avancés pour fonctionner correctement.
+Ces skills peuvent être mis à disposition globalement, sans être rattachés manuellement à chaque agent. Ils peuvent inclure `just-xlsx` pour les fichiers tableur ou `just-pptx` pour les présentations.
 
-![advanced2](/images/advanced2.png)
+Pour chaque skill, vous pouvez configurer les options suivantes :
 
-### Sécurité et Gouvernance
+| Option | Effet |
+| --- | --- |
+| **Attacher à tous les agents** | Rend le skill disponible dans tous les agents de la plateforme, indépendamment de son rattachement manuel à un agent. |
+| **Modèle** | Définit le modèle utilisé par le skill. Vous pouvez sélectionner un modèle spécifique, comme `gpt-5.5`, ou utiliser le modèle par défaut de la plateforme. |
 
-Cette section regroupe les options qui encadrent l'usage de la plateforme :
+<Warning>
+  Certains skills nécessitent des modèles avancés pour fonctionner correctement. Vérifiez les prérequis du skill avant de modifier le modèle qui lui est associé.
+</Warning>
 
-- **Autoriser le partage de conversations** : active ou désactive la possibilité pour les utilisateurs de partager les conversations avec Jask à d'autres utilisateurs
-- **Activer la mémoire des agents** : permet aux agents d'enregistrer des informations sur les utilisateurs à travers toutes leurs conversations, pour des réponses plus personnalisées
-- **Afficher uniquement les utilisateurs d'un même tenant** : restreint la visibilité des utilisateurs à ceux du même tenant Azure
-- **Masquer automatiquement les données personnelles** : masque automatiquement les données personnelles (email, téléphone, carte bancaire…) dans les échanges
-- **Charte IA** : lorsqu'elle est activée, affiche une charte d'utilisation de l'IA que chaque utilisateur devra lire et valider avant d'utiliser la plateforme. Le contenu de la charte se rédige directement dans le champ texte qui apparaît sous l'option
-- **Autoriser le partage via JAsk** : contrôle l'affichage de ce paramètre dans le formulaire de création d'un agent. Par mesure de sécurité, il est pas défaut désactivé. <img src="/images/advanced3.png" alt="advanced3" />
+<Frame caption="Configuration des skills transverses et du modèle utilisé par chaque skill.">
+  ![Section Skills IA avec les options permettant d’attacher un skill à tous les agents et de sélectionner son modèle.](/images/advanced2.png)
+</Frame>
 
-### Fonctionnalités
+## Configurer la sécurité et la gouvernance
 
-Cette section permet d'activer ou de désactiver des pans entiers de la plateforme, afin d'adapter JAsk aux usages de votre organisation :
+La section **Sécurité et Gouvernance** contrôle le partage, la mémoire des agents, la visibilité des utilisateurs et l’affichage de la charte IA.
 
-- **Expériences** : création de scénarios ou parcours métier
-- **Projets collaboratifs** : onglet Collab, permettant de créer des projets entre plusieurs utilisateurs
-- **Automatisation des tâches** : Affichage de l'écran de gestion des automatisations pour permettre aux utilisateurs de créer leurs propres automatisations d'agent et de workflows.
-- **Terminologie interne** : Utilisation de la terminologie interne (glossaire de vocabulaire spécifique à l'entreprise)
-- **Agents Workflow** : Utilisation (création, gestion) des workflows agentiques grâce au studio
-- **Masquer le menu réglage pour les simples utilisateurs uniquement** : simplifie la vue principale des collaborateurs en retirant le menu Réglages (catalogues, documents...).
-- **Masquer également l'accès au profil utilisateur** : Retire aussi la page Mon profil du menu latéral, cela permet d'empêcher l'accès aux utilisateurs à certains paramètres avancés gérables depuis cette page.
-- **Masquer l'effort de raisonnement pour les utilisateurs** : Retire le sélecteur d'effort de raisonnement de la barre de saisie des conversations
-- **Applications natives** : Enlève les applications permettant d'accéder aux données O365 (fonctionnalité obsolète)
+| Paramètre | Effet |
+| --- | --- |
+| **Autoriser le partage de conversations** | Permet aux utilisateurs de partager leurs conversations JAsk avec d’autres utilisateurs. |
+| **Activer la mémoire des agents** | Permet aux agents d’enregistrer des informations sur les utilisateurs entre leurs conversations afin de personnaliser leurs réponses. |
+| **Afficher uniquement les utilisateurs d’un même tenant** | Limite la visibilité des utilisateurs à ceux du même tenant Azure. |
+| **Masquer automatiquement les données personnelles** | Masque automatiquement certaines données personnelles dans les échanges, comme les adresses e-mail, les numéros de téléphone ou les numéros de carte bancaire. |
+| **Charte IA** | Affiche une charte d’utilisation de l’IA que chaque utilisateur doit lire et accepter avant d’utiliser la plateforme. |
+| **Autoriser le partage via JAsk** | Contrôle l’affichage de cette option dans le formulaire de création d’un agent. Ce paramètre est désactivé par défaut. |
 
-![advanced4](/images/advanced4.png)
+Lorsque vous activez **Charte IA**, rédigez le contenu de la charte dans le champ texte qui apparaît sous l’option.
+
+<Frame caption="Options de sécurité et de gouvernance de la plateforme.">
+  ![Section Sécurité et Gouvernance avec les paramètres de partage, de mémoire des agents, de visibilité des utilisateurs, de masquage des données personnelles et de charte IA.](/images/advanced3.png)
+</Frame>
+
+## Activer ou masquer des fonctionnalités
+
+La section **Fonctionnalités** permet d’adapter les fonctions et les menus visibles dans JAsk aux usages de votre organisation.
+
+| Paramètre | Effet dans l’interface |
+| --- | --- |
+| **Expériences** | Affiche les fonctions de création de scénarios ou de parcours métier. |
+| **Projets collaboratifs** | Affiche l’onglet **Collab**, qui permet de créer des projets entre plusieurs utilisateurs. |
+| **Automatisation des tâches** | Affiche l’écran de gestion des automatisations. Les utilisateurs peuvent y créer leurs automatisations d’agents et de workflows. |
+| **Terminologie interne** | Active l’utilisation du glossaire de vocabulaire propre à l’organisation. |
+| **Agents Workflow** | Affiche les fonctions de création et de gestion des workflows agentiques dans le studio. |
+| **Masquer le menu réglage pour les simples utilisateurs uniquement** | Retire le menu **Réglages** de l’interface des utilisateurs concernés, notamment l’accès aux catalogues et aux documents. |
+| **Masquer également l’accès au profil utilisateur** | Retire aussi la page **Mon profil** du menu latéral. |
+| **Masquer l’effort de raisonnement pour les utilisateurs** | Retire le sélecteur d’effort de raisonnement de la barre de saisie des conversations. |
+| **Applications natives** | Retire les applications permettant d’accéder aux données Microsoft 365. Cette fonctionnalité est obsolète. |
 
 <Info>
-  Désactiver une fonctionnalité la retire de l'interface pour tous les utilisateurs, mais ne supprime pas les données associées : réactiver la fonctionnalité restaure l'accès aux contenus existants.
+  La désactivation d’une fonctionnalité la retire de l’interface pour tous les utilisateurs. Elle ne supprime pas les données associées. Si vous la réactivez, les contenus existants redeviennent accessibles dans l’interface.
 </Info>
 
-### Télémétrie
+<Frame caption="Fonctionnalités pouvant être activées ou masquées à l’échelle de la plateforme.">
+  ![Section Fonctionnalités avec les options liées aux expériences, aux projets collaboratifs, aux automatisations, aux workflows et à la visibilité des menus.](/images/advanced4.png)
+</Frame>
 
-Cette section définit les informations remontées pour le suivi de la plateforme :
+## Configurer la télémétrie
 
-- **Heart Beat** : envoie un signal de disponibilité de la plateforme toutes les 5 minutes
-- **Données d'usage** : envoie des statistiques anonymisées d'usage, à des fins d'analyse de santé de la plateforme
-- **Contenu des chats en erreur** : inclut dans les demandes support le contenu des chats en erreur, à des fins de diagnostic
+La section **Télémétrie** définit les informations remontées pour suivre l’état de la plateforme et diagnostiquer les erreurs.
 
-![advanced5](/images/advanced5.png)
+| Paramètre | Effet |
+| --- | --- |
+| **Heart Beat** | Envoie un signal de disponibilité de la plateforme toutes les cinq minutes. |
+| **Données d’usage** | Envoie des statistiques anonymisées d’usage afin d’analyser la santé de la plateforme. |
+| **Contenu des chats en erreur** | Inclut le contenu des chats en erreur dans les demandes de support à des fins de diagnostic. |
 
-### À propos de JAsk
+<Frame caption="Options de télémétrie et de diagnostic de la plateforme.">
+  ![Section Télémétrie avec les options Heart Beat, Données d’usage et Contenu des chats en erreur.](/images/advanced5.png)
+</Frame>
 
-Cette section, en lecture seule, affiche les informations de version et de statut de votre instance :
+## Identifier la version de l’instance
 
-- **Identifiant tenant** : identifiant unique de l'organisation
-- **Audience API** : URI de ressource de l'application
-- **Image API** et **Tag de l'image** : nom et tag de l'image de conteneur déployée
-- **Version de l'API** : version courante déployée (référence de build)
-- **Commit de l'image** : référence du commit source
-- **Agent Support** et **Email Agent support** : interlocuteur en charge de la plateforme et son adresse de contact
-- **Dernier redémarrage** : date du dernier redémarrage du serveur. Ces informations sont utiles à communiquer aux équipes support en cas d'incident ou de demande d'assistance.
+La section **À propos de JAsk** est en lecture seule. Elle affiche les informations techniques de votre instance.
+
+| Information | Description |
+| --- | --- |
+| **Identifiant tenant** | Identifiant unique de l’organisation. |
+| **Audience API** | URI de ressource de l’application. |
+| **Image API** | Nom de l’image de conteneur déployée. |
+| **Tag de l’image** | Tag de l’image de conteneur déployée. |
+| **Version de l’API** | Version actuellement déployée ou référence de build. |
+| **Commit de l’image** | Référence du commit source. |
+| **Agent Support** | Interlocuteur indiqué pour l’assistance de la plateforme. |
+| **Email Agent support** | Adresse e-mail de cet interlocuteur. |
+| **Dernier redémarrage** | Date du dernier redémarrage du serveur. |
+
+Ces informations permettent d’identifier votre instance lors d’un incident ou d’une demande d’assistance.
+
+## Vérifier une modification
+
+Les modifications prennent effet immédiatement.
+
+Après avoir modifié un paramètre, utilisez un compte utilisateur concerné pour vérifier le résultat dans l’interface.
+
+Selon le paramètre modifié, contrôlez :
+
+- l’affichage ou la disparition du menu concerné ;
+- l’ouverture automatique des documents ou des résultats de recherche ;
+- la disponibilité d’un skill dans un agent ;
+- le modèle sélectionné par défaut ;
+- l’affichage de la charte IA ;
+- l’accès aux fonctionnalités activées.
+
+Si le résultat ne correspond pas à vos attentes, restaurez la valeur précédente depuis **Réglages → Déploiement → Paramètres avancés**.
