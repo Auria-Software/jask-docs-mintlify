@@ -1,84 +1,163 @@
 ---
-title: "Comprendre la terminologie de Jask"
+title: "Choisir entre un prompt, un agent et un workflow"
 sidebarTitle: "Glossaire"
 icon: "whole-word"
+description: "Comparez les prompts, agents, workflows, groupes d’agents, skills, expériences et modèles disponibles dans Jask."
 ---
 
-Il existe 5 grands types de concepts dans Jask qu'un utilisateur peut créer et réutiliser :
+Jask propose sept types d’objets pour configurer l’IA, automatiser un processus ou guider un utilisateur. Cette page vous aide à choisir celui qui correspond à votre besoin.
+
+## Comparer les concepts
+
+| Si vous voulez… | Utilisez… |
+| --- | --- |
+| Définir des instructions réutilisables | Un **prompt** |
+| Répondre à des demandes dans une interface conversationnelle | Un **agent** |
+| Automatiser une suite d’actions | Un **agent** ou **workflow** |
+| Faire intervenir plusieurs agents dans une réflexion | Un **groupe d’agents** |
+| Ajouter une action ou un traitement spécialisé | Un **skill** |
+| Guider l’utilisateur dans un scénario interactif | Une **expérience** |
+| Choisir le moteur d’IA utilisé | Un **modèle** |
+
+## Comprendre chaque concept
+
+### Prompt
+
+Un **prompt** est un ensemble d’instructions réutilisables transmis à un modèle d’IA. Il peut définir le comportement d’un agent ou être exécuté dans un workflow.
+
+Pour un agent d’analyse financière, un prompt peut préciser :
+
+- son rôle, comme celui d’un analyste financier senior ;
+- le format attendu, comme un tableau ou une synthèse structurée ;
+- les limites à respecter, comme l’absence de recommandations d’investissement ;
+- le ton et les règles applicables aux réponses.
+
+<Tip>
+  Testez le prompt avec plusieurs demandes représentatives. Ajustez-le si les réponses varient trop en structure, en ton ou en niveau de détail.
+</Tip>
+
+### Agent
+
+Un [agent](/docs/catalog/agents) répond aux demandes d’un utilisateur dans une interface conversationnelle.
+
+Il génère ses réponses avec un modèle d’IA. Il peut aussi utiliser des bases de connaissances et appeler des outils selon la demande reçue.
+
+Ces outils peuvent, par exemple, générer un graphique ou une image, appeler une base de données ou une API personnalisée.
+
+**Choisissez un agent** lorsque l’utilisateur doit poser des questions, préciser son besoin et recevoir une réponse adaptée au contexte.
+
+### Workflow
+
+Un [workflow](/docs/catalog/agents/applications) automatise un processus défini. Il peut exécuter des prompts, appeler des agents et déclencher une série d’actions préconfigurées.
+
+Par exemple, un workflow peut exploiter des services liés à Microsoft, traduire du contenu ou lancer une recherche approfondie.
+
+<Warning>
+  Dans certaines pages ou interfaces, les workflows peuvent encore être appelés **applications**, **Agent Workflows** ou **mini-apps**. La terminologie peut donc varier.
+</Warning>
+
+**Choisissez un workflow** lorsque les actions doivent suivre un enchaînement prévisible, notamment pour automatiser une tâche répétitive.
+
+### Groupe d’agents
+
+Un [groupe d’agents](/docs/catalog/agents/group) rassemble plusieurs agents spécialisés.
+
+Selon sa configuration, le groupe peut :
+
+- orchestrer plusieurs agents pour atteindre un objectif ;
+- sélectionner l’agent le plus pertinent pour une demande ;
+- interroger plusieurs agents simultanément.
+
+**Choisissez un groupe d’agents** lorsque plusieurs expertises sont nécessaires pour traiter une même demande.
+
+### Skill
+
+Un [skill](/docs/catalog/skills), ou **capacité**, définit une action ou un traitement spécialisé réutilisable par plusieurs agents.
+
+Un skill peut, par exemple :
+
+- produire un rapport selon le format attendu par un comité exécutif ;
+- mettre en forme des données financières ;
+- générer un fichier ;
+- analyser un document selon une structure définie ;
+- interagir avec un outil externe.
+
+Contrairement à un modèle, qui génère du contenu, un skill ajoute une logique d’action ou un format de traitement spécifique.
+
+**Choisissez un skill** lorsque plusieurs agents doivent appliquer la même méthode, produire le même format ou exécuter la même action.
+
+### Expérience
+
+Une [expérience](/docs/catalog/experiences) est un scénario interactif qui guide l’utilisateur dans une tâche précise.
+
+Elle pose les questions nécessaires, puis orchestre les appels aux agents ou aux workflows concernés. Une expérience peut enchaîner plusieurs cas d’usage sans exposer l’orchestration sous-jacente à l’utilisateur.
+
+**Choisissez une expérience** lorsque l’utilisateur doit être accompagné étape par étape dans un parcours interactif.
+
+### Modèle
+
+Un [modèle LLM](/docs/catalog/ai_models) est le moteur d’IA qui analyse les instructions et génère les réponses.
+
+Les administrateurs de Jask déploient les modèles disponibles dans la plateforme. Ces modèles peuvent notamment être fournis par OpenAI, Mistral, Anthropic ou xAI.
+
+Tous les modèles du marché ne sont donc pas nécessairement proposés dans votre environnement Jask.
+
+**Choisissez un modèle** pour déterminer le moteur utilisé par un agent ou un autre objet compatible.
+
+## Distinguer les concepts proches
+
+### Agent ou workflow ?
+
+Choisissez un **agent** lorsque l’utilisateur échange avec l’IA et que la réponse dépend de sa demande. L'agent garde de la liberté sur l'exécution des tâches qu'il doit réaliser, et la manière de parvenir à son but, bien que le prompt puisse lui donner un maximum de consignes.
+
+Choisissez un **workflow** lorsqu’une suite d’actions doit être exécutée selon un processus défini.
+
+### Workflow ou expérience ?
+
+Un **workflow** automatise les actions sous-jacentes.
+
+Une **expérience** organise l’interaction avec l’utilisateur et peut appeler des workflows ou des agents pendant le parcours.
+
+### Agent ou groupe d’agents ?
+
+Un **agent** fournit une expertise ou un comportement principal.
+
+Un **groupe d’agents** combine plusieurs agents lorsque la demande nécessite plusieurs expertises ou une sélection automatique de l’interlocuteur.
+
+### Prompt ou skill ?
+
+Un **prompt** définit les instructions transmises au modèle.
+
+Un **skill** définit une action, une méthode de traitement ou un format réutilisable.
+
+## Approfondir
 
 <Columns cols={2}>
   <Card title="Prompts" icon="book-type" href="/docs/catalog/prompts_store">
+    Créez et réutilisez des instructions.
   </Card>
 
-  <Card title="Agents" icon="bot" href="/docs/catalog/agents/create">
+  <Card title="Agents" icon="bot" href="/docs/catalog/agents">
+    Configurez une interface conversationnelle.
   </Card>
 
   <Card title="Workflows" icon="package" href="/docs/catalog/agents/applications">
+    Automatisez un processus et enchaînez des actions.
   </Card>
 
-  <Card title="Groupe d'agents" icon="group" href="/docs/catalog/agents/group">
+  <Card title="Groupes d’agents" icon="group" href="/docs/catalog/agents/group">
+    Faites collaborer plusieurs agents spécialisés.
   </Card>
 
   <Card title="Skills" icon="wrench" href="/docs/catalog/skills">
+    Ajoutez des capacités réutilisables aux agents.
   </Card>
 
   <Card title="Expériences" icon="workflow" href="/docs/catalog/experiences">
+    Créez des parcours interactifs guidés.
   </Card>
 
   <Card title="Modèles" icon="languages" href="/docs/catalog/ai_models">
+    Consultez les modèles d’IA disponibles.
   </Card>
 </Columns>
-
----
-
-## Lequel choisir ?
-
-<Steps>
-  <Step title="Prompts">
-    Le **Prompt** est l'instruction de base fournie à l'agent avant chaque conversation. Il définit sa personnalité, son périmètre d'action, le ton de ses réponses et les règles qu'il doit respecter dans le contexte de son utilisation.
-
-    Par exemple, pour un agent dédié à l'analyse financière, le prompt système peut préciser :
-
-    - Le rôle de l'agent ("Tu es un analyste financier senior...")
-    - Le format de réponse attendu (tableaux, synthèses structurées...)
-    - Les limites à respecter (ne pas donner de recommandations d'investissement...)
-
-    <Tip>
-      Un prompt système bien rédigé améliore considérablement la cohérence et la pertinence des réponses de l'agent sur l'ensemble des conversations de cet agent. Prenez le temps de le tester et de l'itérer.
-    </Tip>
-  </Step>
-  <Step title="Agents">
-    Les [Agents](/docs/catalog/agents) sont utilisés pour répondre à des questions de type chat. Ils sont très utilisés pour faire des chatbots classiques. Ils peuvent accéder à des bases de connaissances et génèrent leurs réponses grâce à l'IA Générative à l'aide de modèles OpenAI, Claude, Mistral, etc. Les agents peuvent être munis d'outils qu'ils seront en capacité d'appeler en fonction de la requête de l'utilisateur (génération de graphes, images, API tools custom...)
-  </Step>
-  <Step title="Workflows">
-    <Warning>
-      Les applications deviennent progressivement des Workflows ou Agents Workflows. Ainsi le nommage de ces services pourra varier au fur et à mesure de la documentation.
-    </Warning>
-
-    Les [Workflows](/docs/catalog/agents/applications) permettent d’automatiser des processus métiers précis. Ils sont particulièrement utiles pour la gestion de tâches répétitives. Ces workflows peuvent, par exemple, faire appel à des agents, exécuter des prompts et déclencher automatiquement une série d’actions préconfigurées.
-
-    Certains workflows, aussi appellées mini-apps, sont préconfigurés par Jask, et permettent d'accéder à des services d'IA génériques : accéder à votre environnement Microsoft (Teams, Outlook, Transcripts...), Traduire, Activer le Deep Research.
-
-    La liste des mini-apps et de leur fonctionnement sera détaillé dans un article à venir.
-  </Step>
-  <Step title="Groupes d'agents">
-    Les [groupes d'agents](/docs/catalog/agents/group) permettent de regrouper plusieurs agents spécifiques dans un groupe qui va, selon son paramétrage :
-
-    - Orchestrer les différents agents membres afin d'atteindre l'objectif demandé par l'utilisateur
-    - Interroger l'agent membre le plus pertinent par rapport à la demande
-    - Demander à tous les agents membres simultanément
-
-    Selon le paramétrage les groupes d'agents permettent d'atteindre différents objectifs.
-  </Step>
-  <Step title="Skills">
-    Les [skills](/docs/catalog/skills), aussi appelées **capacités**, sont des actions ou des traitements spécialisés que vous pouvez créer pour enrichir ce que les agents sont capables de faire. Les skills sont des instructions qui peuvent être réutilisées entre différents agents. Ils permettent de définir des capacités qui seront fournies aux agents. Par exemple, le format de restitution d'un rapport pour le COMEX, le formattage de données financières, la génération de fichiers... sont autant d'éléments qui peuvent être standardisés dans des skills et partagés avec plusieurs agents.
-
-    Contrairement au modèle de base, un skill ajoute une logique d'action spécifique — par exemple, générer un fichier Excel selon un format précis, analyser un document selon une structure définie, ou interagir avec un outil externe.
-  </Step>
-  <Step title="Expériences">
-    Les [Expériences](/docs/catalog/experiences) servent à concevoir des scénarios interactifs destinés à simplifier l’usage de l’IA pour l’utilisateur final. Elles guident l’utilisateur à travers une tâche précise, en lui posant les bonnes questions et en orchestrant automatiquement les appels aux agents ou aux applications nécessaires — le tout de manière fluide et transparente. Chaque scénario peut combiner plusieurs cas d’usage, enchaînant des interactions entre agents et applications sans que l’utilisateur n’ait à se soucier de l'orchestration sous-jacente.
-  </Step>
-  <Step title="Modèles">
-    Les [modèles LLM](/docs/catalog/ai_models) (Large Language Models) sont des IA basées sur des réseaux de neurones géants entraînés sur des milliards de données. Ils apprennent à comprendre, prédire et générer du langage humain de façon très naturelle. Les administrateurs de la plateforme Jask déploient certains de ces modèles sur l'outil (Open AI, Mistral, Claude, Grok...) et les mettent à votre disposition. C'est pourquoi tous les modèles du marché ne sont pas disponibles dans la plateforme.
-  </Step>
-</Steps>

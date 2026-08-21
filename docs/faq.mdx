@@ -1,7 +1,9 @@
 ---
-title: "Foire Aux Questions"
+title: "Foire aux questions sur Jask"
 sidebarTitle: "FAQ"
 icon: "circle-question-mark"
+description: "Réponses aux questions fréquentes sur les agents, les groupes d’agents, les workflows, les Projets et le partage dans Jask."
+keywords: ["FAQ", "agent IA", "groupe d’agents", "workflow", "Projet", "partage", "sources de données"]
 ---
 
 Voici quelques questions fréquemment posées sur Jask :
@@ -10,11 +12,12 @@ Voici quelques questions fréquemment posées sur Jask :
   Jask est une plateforme IA complète qui va bien au-delà d’un chatbot générique. Elle permet à vos équipes de créer des **agents IA métier**, des **workflows automatisés** et des **projets collaboratifs**, tous branchés sur vos propres sources de données (SharePoint, BigQuery, Notion, Salesforce…). Contrairement à un chatbot grand public, chaque agent Jask est configuré avec un rôle précis, des connaissances internes et un niveau de confidentialité adapté à votre organisation.
 </Accordion>
 
-<Accordion title="Quelle est la différence entre un agent, un groupe d’agents et un workflow ?">
+<Accordion title="Quelle est la différence entre un agent, un skill et un workflow ?">
   Ce sont trois types de **services IA** distincts dans Jask :
 
   - Un **agent** répond aux questions en s’appuyant sur ses sources de données et son prompt système. C’est le service de base.
-  - Un **groupe d’agents** regroupe plusieurs agents qui se coordonnent pour traiter une requête complexe, selon différents modes de fonctionnement.
+  - Un **skill** est une capacité fournie à un ou plusieurs agents qui fournissent une capacité, un savoir-faire que l'agent pourra activer ou non en fonction de la requête de l'utilisateur
+
   - Un **workflow** est une série d’actions automatisées et prédéfinies. Il s’exécute de manière structurée, idéal pour des tâches répétitives ou des processus multi-étapes.
 
   Vous pouvez combiner ces trois types depuis l’interface Jask pour enchaîner ou croiser les services.
@@ -44,5 +47,5 @@ Voici quelques questions fréquemment posées sur Jask :
 </Accordion>
 
 <Accordion title="Pourquoi donner un Prompt système à un agent ?">
-  Le Prompt système permet de donner un cadre à l’agent : le ton à employer, le périmètre de réponse, la structure attendue, les sujets à éviter. Sans prompt système, l’agent se comporte comme un LLM générique. Avec un prompt bien rédigé, il devient un expert métier ciblé. [Consultez le guide de configuration d’un agent](/docs/catalog/agents/create) pour des exemples concrets.
+  Le Prompt système permet de donner un cadre à l’agent : le ton à employer, le périmètre de réponse, la structure attendue, les sujets à éviter. Sans prompt système, l’agent se comporte comme un LLM générique. Avec un prompt bien rédigé, il devient un expert métier ciblé.  Consultez le [guide de configuration d’un agent](/docs/catalog/agents/create) pour configurer ce champ.
 </Accordion>

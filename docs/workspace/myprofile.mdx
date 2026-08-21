@@ -2,78 +2,260 @@
 title: "Mon profil"
 sidebarTitle: "Mon profil"
 tag: "New"
+description: "Modifiez vos informations, vos préférences, votre agent par défaut, vos connexions et vos secrets personnels dans Jask."
+keywords: ["profil", "préférences", "agent par défaut", "connexions", "secrets"]
 ---
 
-La page **Mon profil** centralise tout ce qui vous concerne en tant qu'utilisateur de JAsk : vos informations de compte, vos préférences d'affichage, les permissions qui vous sont attribuées, ainsi que la configuration des agents et des connexions utilisées dans vos conversations. C'est également ici que sont recensés les secrets (identifiants, tokens) que vous avez créés ou utilisés avec un agent. Cette page est personnelle : chaque utilisateur ne voit et ne configure que son propre profil, indépendamment des autres membres de l'organisation.
+La page **Mon profil** regroupe les paramètres propres à votre compte Jask.
 
-## Accéder à cette fonctionnalité
+Vous pouvez y consulter vos permissions et gérer vos informations, vos préférences, votre agent par défaut, vos connexions et vos secrets. Vos modifications n’affectent pas le profil des autres membres de l’organisation.
 
-Rendez-vous dans **Réglages → Mon profil**, dans le menu **Mon espace de travail** de la barre latérale.
+## Accéder à votre profil
 
-![myprofile](/images/myprofile.png)
+<Steps>
+  <Step title="Ouvrir les réglages">
+    Dans la barre latérale, ouvrez **Réglages**.
+  </Step>
+  <Step title="Ouvrir votre profil">
+    Dans le menu **Mon espace de travail**, sélectionnez **Mon profil**.
 
-## Vue d'ensemble du compte
+    La page affiche les informations et les paramètres associés à votre compte.
+  </Step>
+</Steps>
 
-En haut de la page, un bandeau récapitule votre activité sur JAsk : nombre d'**Agents**, de **Skills**, de **Modèles IA** et de **Sources de données** auxquels vous avez accès. Juste en dessous, la section **Informations du compte** affiche:
+<Frame caption="La page Mon profil dans les réglages de l’espace de travail.">
+  ![Page Mon profil affichant le résumé du compte, les informations personnelles et les préférences.](/images/myprofile.png)
+</Frame>
 
-- **Identifiant** : identifiant technique unique de votre compte (non modifiable)
-- **Email** : votre adresse professionnelle, utilisée pour l'authentification
-- **Nom** et **Prénoms** : modifiables directement dans les champs correspondants
-- **Titre** : votre intitulé de poste, affiché à vos aux autres utilisateurs de la plateforme
+## Consulter le résumé de votre compte
 
-<Info>
-  Ces informations permettent à vos collègues de mieux vous identifier dans les conversations partagées et les collaborations sur JAsk.
-</Info>
+Le bandeau situé en haut de la page indique le nombre de ressources auxquelles vous avez accès :
 
-## Préférences d'affichage
+- **Agents** ;
+- **Skills** ;
+- **Modèles IA** ;
+- **Sources de données**.
 
-La section **Préférences** regroupe les réglages qui personnalisent votre expérience visuelle et linguistique :
+Ces compteurs représentent vos accès personnels. Ils peuvent donc différer de ceux des autres membres de l’organisation.
 
-- **Langue** : sélectionnez la langue de l'interface parmi les drapeaux proposés (français, anglais, japonais, chinois)
-- **Mode sombre** : bascule l'interface vers un thème sombre
-- **Thème** : choisissez la couleur d'accent de l'interface parmi les quatre teintes disponibles Ces réglages n'affectent que votre propre affichage et n'ont aucun impact sur les autres utilisateurs de l'organisation.
+## Modifier vos informations
 
-## Rôles et permissions
+La section **Informations du compte** contient les champs suivants :
 
-Cette section liste les permissions actives sur votre compte.
+| Champ | Description | Modification |
+| --- | --- | --- |
+| **Identifiant** | Identifiant technique unique de votre compte | Non modifiable |
+| **Email** | Adresse professionnelle utilisée pour l’authentification | Non documentée depuis cette page |
+| **Nom** | Votre nom | Modifiable |
+| **Prénoms** | Vos prénoms | Modifiables |
+| **Titre** | Votre intitulé de poste | Modifiable |
 
-![myprofile2](/images/myprofile_2.png)
+<Steps>
+  <Step title="Modifier une information">
+    Dans **Informations du compte**, modifiez **Nom**, **Prénoms** ou **Titre**.
+  </Step>
+  <Step title="Vérifier la modification">
+    La modification est enregistrée automatiquement. Aucun message de confirmation ne s’affiche.
+  </Step>
+</Steps>
 
-## Agent par défaut et modèles IA
+## Personnaliser l’affichage
 
-La section **Agent par défaut** définit quel agent est utilisé par défaut lorsque vous démarrez une nouvelle conversation sans en sélectionner un explicitement. Cette sélection n'impacte que votre utilisateur.
+La section **Préférences** permet de personnaliser votre interface. Ces réglages ne concernent que votre compte.
 
-L'agent par défaut de votre compte peut-être celui défini par votre organisation, celui défini sur un de vos groupes utilisateur, celui que vous définissez manuellement. La définition manuelle de l'agent par défaut prend le dessus sur les deux critères précédents. Vous pouvez facilement revenir à l'agent par défaut défini pour vous en sélectionant l'option : `Réinitialiser (groupe ou Jask par défaut)`
+| Préférence | Effet |
+| --- | --- |
+| **Langue** | Change la langue de l’interface. Les langues proposées sont le français, l’anglais, le japonais et le chinois. |
+| **Mode sombre** | Active ou désactive le thème sombre. |
+| **Thème** | Change la couleur d’accent de l’interface parmi les quatre teintes proposées. |
 
-Lors de la création des agents, le créateur peut décider de laisser la main aux utilisateurs sur deux critères de l'agent. Ces critères de personnalisation s'appliquent aussi à l'agent par défaut :
+<Steps>
+  <Step title="Choisir une préférence">
+    Dans la section **Préférences**, modifiez la langue, le mode d’affichage ou le thème.
+  </Step>
+  <Step title="Vérifier le résultat">
+    La préférence est enregistrée automatiquement. Aucun message de confirmation ne s’affiche.
 
-- Le **modèle IA** utilisé : l'utilisateur pourra choisi parmi tous les modèles visibles pour lui, s'ils ont été rendus disponibles pour cet agent.
-- Le **niveau de réflexion** appliqué à l'agent (par exemple Réflexion élevée)
+    Vérifiez que la langue, le mode d’affichage ou la couleur d’accent de l’interface a changé.
+  </Step>
+</Steps>
+
+## Consulter vos rôles et permissions
+
+La section **Rôles et permissions** liste les permissions actives sur votre compte.
+
+Ces permissions déterminent les fonctionnalités et les ressources auxquelles vous pouvez accéder.
+
+<Frame caption="Les rôles et permissions actifs sur le compte.">
+  ![Section Rôles et permissions de la page Mon profil.](/images/myprofile_2.png)
+</Frame>
+
+{/* DÉDUIT: aucune action de modification des rôles n’est décrite dans le contenu source. */}
+
+La page **Mon profil** présente ces permissions à titre informatif.
+
+`{{À_CONFIRMER: indiquer qui contacter si une permission attendue est absente}}`
+
+## Choisir votre agent par défaut
+
+L’**Agent par défaut** est sélectionné automatiquement lorsque vous démarrez une conversation sans choisir d’agent.
+
+L’agent utilisé peut provenir :
+
+- de la configuration de votre organisation ;
+- de la configuration d’un de vos groupes ;
+- de votre sélection personnelle.
+
+Une sélection manuelle remplace l’agent attribué par l’organisation ou par un groupe.
+
+{/* DÉDUIT: le contrôle prend probablement la forme d’une liste de sélection, mais son type exact n’est pas fourni. */}
+
+<Steps>
+  <Step title="Sélectionner un agent">
+    Dans **Agent par défaut**, choisissez l’agent à utiliser pour vos nouvelles conversations.
+  </Step>
+  <Step title="Vérifier votre choix">
+    Le choix est enregistré automatiquement. Aucun message de confirmation ne s’affiche.
+
+    Démarrez une nouvelle conversation sans sélectionner d’agent. Vérifiez que l’agent choisi est utilisé.
+  </Step>
+</Steps>
+
+Pour revenir à la configuration attribuée à votre compte, sélectionnez **Réinitialiser (groupe ou Jask par défaut)**.
+
+## Personnaliser le modèle et le niveau de réflexion
+
+Le créateur d’un agent peut autoriser les utilisateurs à personnaliser :
+
+- le **modèle IA** utilisé ;
+- le **niveau de réflexion** appliqué à l’agent.
+
+Ces réglages sont enregistrés individuellement pour chaque agent. Selon la configuration de l’agent, vous pouvez personnaliser un seul paramètre ou les deux.
+
+<Steps>
+  <Step title="Sélectionner l’agent">
+    Dans la liste des agents, repérez celui que vous souhaitez personnaliser.
+  </Step>
+  <Step title="Choisir le modèle IA">
+    Si ce paramètre est disponible, choisissez l’un des modèles IA proposés pour cet agent.
+  </Step>
+  <Step title="Choisir le niveau de réflexion">
+    Si ce paramètre est disponible, sélectionnez le niveau de réflexion à appliquer.
+  </Step>
+  <Step title="Vérifier la personnalisation">
+    Les paramètres sont enregistrés automatiquement pour cet agent. Aucun message de confirmation ne s’affiche.
+
+    Vérifiez que le modèle IA et le niveau de réflexion sélectionnés restent affichés pour l’agent.
+  </Step>
+</Steps>
 
 <Tip>
-  Lorsqu'un agent affiche "Modèle par défaut" ou "Réflexion non personnalisée", cela signifie qu'il suit automatiquement la configuration globale plutôt qu'un réglage propre à l'agent. Personnalisez ces valeurs uniquement si un agent ou un skill a besoin d'un comportement différent du reste de votre espace de travail. Parfois uniquement un des deux critères (modèle ou agent) est laissé à la main de l'utilisateur.
+  **Modèle par défaut** indique que l’agent utilise le modèle prévu par sa configuration. **Réflexion non personnalisée** indique qu’aucun niveau propre à votre compte ne remplace la configuration de l'agent.
 </Tip>
 
-![myprofile\_agents](/images/myprofile_agents.png)
+<Frame caption="La configuration de l’agent par défaut, du modèle IA et du niveau de réflexion.">
+  ![Section Agent par défaut avec les options de modèle IA et de niveau de réflexion.](/images/myprofile_agents.png)
+</Frame>
 
-## Connexions
+## Gérer vos connexions
 
-La section **Connexions** liste les intégrations tierces actuellement utilisées dans vos conversations avec les agents IA, par exemple Salesforce ou Odoo. Un bouton **Déconnecter** permet de couper l'accès de JAsk à ces services à tout moment.
+La section **Connexions** liste les services tiers connectés à votre compte et utilisés dans vos skills et conversations, par exemple Salesforce ou Odoo.
+
+### Déconnecter un service
+
+<Steps>
+  <Step title="Repérer la connexion">
+    Dans **Connexions**, trouvez le service que vous souhaitez déconnecter.
+  </Step>
+  <Step title="Déconnecter le service">
+    Cliquez sur **Déconnecter**.
+  </Step>
+  <Step title="Confirmer la déconnexion">
+    Confirmer la déconnexion du service
+  </Step>
+</Steps>
 
 <Warning>
-  Déconnecter une intégration peut interrompre le fonctionnement des agents ou skills qui s'appuient sur cette source de données dans vos conversations en cours.
+  La déconnexion peut interrompre les agents ou les skills qui utilisent ce service dans vos conversations.
 </Warning>
 
-## Secrets
+## Gérer vos secrets
 
-La section **Secrets** recense les identifiants et jetons (credentials) que vous avez créés manuellement ou qui ont été utilisés lors d'une conversation avec un agent IA. Pour chaque secret, la page affiche :
+Un secret est un identifiant ou un jeton utilisé par un agent pour accéder à un service.
 
-- Le **nom** du secret et le **service** associé (icône)
-- Son **statut** : **Valide** ou **Expiré**
-- Des actions rapides pour le **modifier** (icône crayon) ou le **supprimer** (icône corbeille) Le bouton **\+ Cliquez pour ajouter** permet de créer un nouveau secret manuellement, par exemple pour connecter un service qui nécessite une authentification par token.
+La section **Secrets** regroupe les secrets que vous avez créés ou utilisés dans une conversation avec un agent. Pour chaque secret, elle affiche :
+
+- son nom ;
+- le service associé ;
+- son statut, **Valide** ou **Expiré** ;
+- une action pour le modifier ;
+- une action pour le supprimer.
+
+### Ajouter un secret
+
+<Steps>
+  <Step title="Commencer l’ajout">
+    Dans la section **Secrets**, cliquez sur **\+ Cliquez pour ajouter**.
+  </Step>
+  <Step title="Renseigner le secret">
+    Coller le secret de l'application à connecter à Jask
+  </Step>
+  <Step title="Valider le secret">
+  </Step>
+  <Step title="Vérifier le résultat">
+    Vérifiez que le secret apparaît dans la liste avec le statut **Valide**.
+  </Step>
+</Steps>
+
+### Modifier un secret
+
+<Steps>
+  <Step title="Ouvrir le secret">
+    Dans la liste, cliquez sur l’icône en forme de crayon correspondant au secret.
+  </Step>
+  <Step title="Mettre à jour les informations">
+  </Step>
+  <Step title="Vérifier le statut">
+    Vérifiez que le secret affiche le statut **Valide**.
+  </Step>
+</Steps>
+
+### Supprimer un secret
+
+<Steps>
+  <Step title="Sélectionner le secret">
+    Dans la liste, cliquez sur l’icône en forme de corbeille correspondant au secret.
+  </Step>
+  <Step title="Confirmer la suppression">
+    Une confirmation s’affiche avant la suppression.
+  </Step>
+  <Step title="Vérifier la suppression">
+    Vérifiez que le secret n’apparaît plus dans la liste.
+  </Step>
+</Steps>
 
 <Warning>
-  Un secret expiré empêche les agents qui en dépendent d'accéder au service concerné. Pensez à renouveler vos secrets Auria O365, Cellenza O365 ou SSO dès qu'ils passent au statut Expiré pour éviter toute interruption de service.
+  La suppression d’un secret peut empêcher les agents qui en dépendent d’accéder au service associé.
 </Warning>
 
-![myprofile\_secrets](/images/myprofile_secrets.png)
+## Résoudre les problèmes courants
+
+<AccordionGroup>
+  <Accordion title="Un secret affiche le statut « Expiré »">
+    **Cause :** le secret n’est plus accepté par le service associé.
+
+    **Correctif :** cliquez sur l’icône en forme de crayon et renouvelez ses informations.
+  </Accordion>
+
+  <Accordion title="Mon agent par défaut n’est pas utilisé">
+    Vérifiez qu’une sélection personnelle apparaît dans la section **Agent par défaut**.
+
+    Si vous avez sélectionné **Réinitialiser (groupe ou JAsk par défaut)**, l’agent attribué par votre groupe ou par JAsk est utilisé.
+  </Accordion>
+
+  <Accordion title="Un agent ne peut plus accéder à un service">
+    Vérifiez dans **Connexions** que le service est toujours connecté.
+
+    Vérifiez ensuite dans **Secrets** que le secret associé affiche le statut **Valide**.
+  </Accordion>
+</AccordionGroup>
