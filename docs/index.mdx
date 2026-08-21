@@ -1,138 +1,174 @@
 ---
-title: "Documentation Jask"
+title: "Découvrir Jask et trouver le bon guide"
 sidebarTitle: "Introduction"
 icon: "text-initial"
+description: "Repérez les principales zones de Jask et accédez à la ressource adapté à votre objectif."
+keywords: ["Jask", "démarrage", "navigation", "chats", "collaboration", "réglages"]
 ---
 
 **Jask** une **plateforme unique, sécurisée et intuitive**, vos organisations et métiers créent **en quelques minutes** et en toute **autonomie** leurs propres agents et workflows pour servir leurs enjeux business.
 
-### Par où commencer ?
+Utilisez cette page pour identifier la zone de Jask correspondant à votre objectif et ouvrir le bon guide.
 
-Suivez ces guides pour utiliser rapidement Jask
+## Choisir votre parcours
 
 <Columns cols={2}>
-  <Card title="Utilisateur : Démarrage rapide dans l'Accueil" icon="rocket" href="/docs/accueil">
+  <Card title="Commencer à utiliser Jask" icon="rocket" href="/docs/accueil">
+    Découvrez l’accueil et accédez aux services Jask.
   </Card>
 
-  <Card title="Developpeur : Appeller Jask via API" icon="chevrons-left-right-ellipsis" href="/api/intro">
+  <Card title="Appeler Jask via l’API" icon="chevrons-left-right-ellipsis" href="/api/intro">
+    Consultez la documentation destinée aux développeurs.
   </Card>
 
-  <Card title="Admin : Ajouter un modèle LLM" icon="cable" href="/docs/catalog/ai_models">
+  <Card title="Ajouter un modèle d’IA" icon="cable" href="/docs/catalog/ai_models">
+    Accédez à la gestion des modèles disponibles dans Jask.
   </Card>
 </Columns>
 
 ---
 
-# Le menu
+## Se repérer dans le menu
 
-Le menu de Jask se découpe en 3 onglets à partir desquels vous avez accès à toute la puissance de l'IA Générative proposée par Jask.
+Le menu principal donne accès à trois zones : **Chats**, **Collaboration** et **Réglages**.
 
-<Steps>
-  <Step title="Chats">
-    L'onglet Chats est l'endroit où les utilisateurs vont consommer l'IA générative Jask. Différentes vues permettent de retrouver l'historique de vos conversations avec les services Jask. Chacune d'elles possède ses propres avantages et répondent à des usages spécifiques (chronologie, par agent, par tag)
+### Chats
 
-    <Columns cols={2}>
-      <Card title="Accueil" icon="home" href="/docs/accueil">
-      </Card>
+La zone **Chats** permet d’utiliser les services d’IA générative proposés dans Jask.
 
-      <Card title="Conversations" icon="messages-square" href="/docs/conversations">
-      </Card>
-    </Columns>
+Vous pouvez y retrouver vos conversations selon plusieurs vues, notamment par chronologie, agent ou tag.
 
-    ![accueil](/images/accueil_chats.png)
-  </Step>
-  <Step title="Collaboration">
-    L'onglet Collab regroupe tous vos projets. Les projets sont des espaces collaboratifs et partagés avec d'autres utilisateurs pour collaborer sur des thématiques communes.
+<Columns cols={2}>
+  <Card title="Accueil" icon="house" href="/docs/accueil">
+  </Card>
 
-    Le menu de gauche vous permet de naviguer sous `Catalogue` dans les vues suivantes :
+  <Card title="Conversations" icon="messages-square" href="/docs/conversations">
+  </Card>
+</Columns>
 
-    <Columns cols={2}>
-      <Card title="Projets" icon="library-big" href="/docs/projects">
-      </Card>
-    </Columns>
+<Frame caption="La zone Chats et ses principales entrées de navigation.">
+  ![Menu de Jask affichant la zone Chats, l’accueil et les conversations.](/images/accueil_chats.png)
+</Frame>
 
-    ![collab](/images/accueil_collab.png)
-  </Step>
-  <Step title="Réglages">
-    <Warning>
-      Dans cette section l'ensemble des éléments ne sont pas disponibles. Leur visibilité dépend de votre niveau d'accès à la plateforme
-    </Warning>
+### Collaboration
 
-    Les fonctionnalités accessibles ici sont réparties en 6 sections : <img src="/images/accueil_settings.png" alt="settings" />
+La zone **Collaboration** regroupe vos projets.
 
-    #### Mon espace de travail
+Un projet est un espace partagé dans lequel plusieurs utilisateurs peuvent travailler sur une thématique commune.
 
-    <Columns cols={2}>
-      <Card title="Mes bibliothèques" icon="library-big" href="/docs/workspace/libraries">
-      </Card>
+<Columns cols={2}>
+  <Card title="Projets" icon="library-big" href="/docs/projects">
+  </Card>
+</Columns>
 
-      <Card title="Sources de données" icon="database" href="/docs/workspace/datasources">
-      </Card>
+<Frame caption="La zone Collaboration et l’accès aux projets.">
+  ![Menu de Jask affichant la zone Collaboration et l’accès aux projets.](/images/accueil_collab.png)
+</Frame>
 
-      <Card title="Automatisation" icon="calendar-sync" href="/docs/workspace/automations">
-      </Card>
-    </Columns>
+### Réglages
 
-    #### Catalogue
+La zone **Réglages** regroupe les fonctions de configuration et d’administration de Jask.
 
-    <Columns cols={2}>
-      <Card title="Agents IA" icon="bot" href="/docs/catalog/agents">
-      </Card>
+<Warning>
+  Les rubriques visibles dépendent de vos droits d’accès à la plateforme.
+</Warning>
 
-      <Card title="Prompts" icon="book-type" href="/docs/catalog/prompts_store">
-      </Card>
+<Frame caption="Les sections disponibles dans les réglages de Jask.">
+  ![Menu des réglages de Jask avec ses différentes sections de configuration.](/images/accueil_settings.png)
+</Frame>
 
-      <Card title="Skills" icon="wrench" href="/docs/catalog/skills">
-      </Card>
+#### Mon espace de travail
 
-      <Card title="Gestion des modèles" icon="brain-circuit" href="/docs/catalog/ai_models">
-      </Card>
+<Columns cols={2}>
+  <Card title="Mes bibliothèques" icon="library-big" href="/docs/workspace/libraries">
+    Accédez aux bibliothèques de votre espace de travail.
+  </Card>
 
-      <Card title="Expériences" icon="workflow" href="/docs/catalog/experiences">
-      </Card>
-    </Columns>
+  <Card title="Sources de données" icon="database" href="/docs/workspace/datasources">
+    Consultez les sources de données disponibles.
+  </Card>
 
-    #### Utilisateurs et Groupes
+  <Card title="Automatisation" icon="calendar-sync" href="/docs/workspace/automations">
+    Accédez aux fonctions d’automatisation.
+  </Card>
+</Columns>
 
-    <Columns cols={2}>
-      <Card title="Utilisateurs" icon="user-cog" href="/docs/users_groups/users">
-      </Card>
+#### Catalogue
 
-      <Card title="Rôles" icon="shield-user" href="/docs/users_groups/roles">
-      </Card>
-    </Columns>
+<Columns cols={2}>
+  <Card title="Agents IA" icon="bot" href="/docs/catalog/agents">
+    Consultez et gérez les agents IA.
+  </Card>
 
-    #### Sources de données
+  <Card title="Prompts" icon="book-type" href="/docs/catalog/prompts_store">
+    Accédez au catalogue de prompts.
+  </Card>
 
-    <Columns cols={2}>
-      <Card title="Gestion des sources" icon="database" href="/docs/workspace/datasources">
-      </Card>
+  <Card title="Skills" icon="wrench" href="/docs/catalog/skills">
+    Consultez les skills disponibles.
+  </Card>
 
-      <Card title="Connexions et secrets" icon="key-round" href="/docs/datasources/permissions">
-      </Card>
+  <Card title="Gestion des modèles" icon="brain-circuit" href="/docs/catalog/ai_models">
+    Consultez et gérez les modèles d’IA.
+  </Card>
 
-      <Card title="Terminologie interne" icon="book-a" href="/docs/terminology">
-      </Card>
-    </Columns>
+  <Card title="Expériences" icon="workflow" href="/docs/catalog/experiences">
+    Accédez aux expériences configurées dans Jask.
+  </Card>
+</Columns>
 
-    #### Déploiement et Observabilité
+#### Utilisateurs et groupes
 
-    <Columns cols={2}>
-      <Card title="Liste des déploiements" icon="rocket" href="/docs/deployment/excel">
-      </Card>
+<Columns cols={2}>
+  <Card title="Utilisateurs" icon="user-cog" href="/docs/users_groups/users">
+    Accédez à la gestion des utilisateurs.
+  </Card>
 
-      <Card title="Observabilité" icon="chart-column-big" href="/docs/observability">
-      </Card>
-    </Columns>
-  </Step>
-</Steps>
+  <Card title="Rôles" icon="shield-user" href="/docs/users_groups/roles">
+    Consultez les rôles configurés dans Jask.
+  </Card>
+</Columns>
 
-En bas de ce menu, en cliquant sur votre nom d'utilisateur, vous pouvez personnaliser votre expérience :
+#### Sources de données
 
-- Choix de la langue : Français ou Anglais
-- Basculer en mode sombre ou clair,
-- Choisir le thème parmi les thèmes prédéfinis proposés
-- De basculer l'interface en Français ou en Anglais (d'autres langues seront prochainement proposées),
-- De voir quel utilisateur est connecté et de vous déconnecter de Jask en sélectionnant le choix du menu qui s'ouvre lorsque vous cliquez sur votre nom.
+<Columns cols={2}>
+  <Card title="Gestion des sources" icon="database" href="/docs/workspace/datasources">
+    Accédez à la gestion des sources de données.
+  </Card>
 
-![profile](/images/accueil_profile.png)
+  <Card title="Connexions et secrets" icon="key-round" href="/docs/datasources/permissions">
+    Consultez les connexions et secrets associés aux sources.
+  </Card>
+
+  <Card title="Terminologie interne" icon="book-a" href="/docs/terminology">
+    Consultez la terminologie utilisée par votre organisation.
+  </Card>
+</Columns>
+
+#### Déploiement et observabilité
+
+<Columns cols={2}>
+  <Card title="Liste des déploiements" icon="rocket" href="/docs/deployment/excel">
+    Consultez les déploiements disponibles.
+  </Card>
+
+  <Card title="Observabilité" icon="chart-column-big" href="/docs/observability">
+    Accédez aux fonctions d’observabilité.
+  </Card>
+</Columns>
+
+## Personnaliser votre interface
+
+Ouvrez le menu associé à votre nom pour accéder aux préférences de l’interface.
+
+Vous pouvez :
+
+- choisir la langue de l’interface entre le français et l’anglais ;
+- utiliser le mode clair ou sombre ;
+- sélectionner l’un des thèmes proposés ;
+- vérifier quel utilisateur est connecté ;
+- vous déconnecter de Jask.
+
+<Frame caption="Le menu du profil et les préférences de l’interface.">
+  ![Menu du profil Jask avec les préférences d’affichage et l’option de déconnexion.](/images/accueil_profile.png)
+</Frame>
