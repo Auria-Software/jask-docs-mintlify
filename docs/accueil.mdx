@@ -1,108 +1,343 @@
 ---
-title: "L'Accueil"
+title: "Utiliser la page d’accueil"
 sidebarTitle: "Accueil"
 icon: "house"
+description: "Démarrez une conversation, choisissez un service et personnalisez les espaces affichés sur la page d’accueil de Jask."
+keywords: ["accueil", "conversation", "agent", "groupe d’agents", "workflow", "skill", "modèle LLM", "catalogue", "bibliothèque"]
 ---
 
-<div
-  style={{
-  position: "relative",
-  paddingBottom: "56.25%",
-  height: 0,
-  overflow: "hidden",
-  width: "100%",
-  borderRadius: "8px",
-  marginTop: "24px",
-}}
->
-  <iframe
-    style={{
-    position: "absolute",
-    top: 0,
-    left: 0,
-    width: "100%",
-    height: "100%",
-    borderRadius: "12px",
-  }}
-    src="https://www.youtube.com/embed/TlTehRYIST8?si=4cscYAFhE7bxmCT5"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowFullScreen
-  />
-</div>
+La page d’accueil centralise les principales fonctionnalités de Jask. Tous les utilisateurs peuvent y démarrer une conversation, choisir un service et retrouver leurs favoris.
 
----
+Les fonctions de création sont affichées selon les droits associés à votre compte.
 
-La page d’Accueil de Jask vous permet d'accéder à toutes les fonctionnalités de Jask de manière simple et intuitive. Le menu présente la navigation principale de la plateforme et référence vos dernières conversations.
+<Frame>
+  ![Accueil Chats](/images/accueil_chats.png "Accueil Chats")
+</Frame>
 
-La partie centrale de l'accueil vous donne accès à :
+## Repérer les principales zones
 
-- La zone de chat
-- L'accès au catalogue de services
-- La personnaisation de vos services favoris (agents et modèles)
+La page d’accueil comprend trois zones principales :
 
-![accueil](/images/accueil_chats.png)
+| Zone | Utilisez-la pour |
+| --- | --- |
+| **Zone de chat** | Saisir une demande et démarrer une conversation |
+| **Catalogue** | Rechercher les services disponibles dans votre organisation |
+| **Espaces** | Retrouver vos favoris, vos bibliothèques et les autres contenus disponibles |
 
-## Les fonctionnalités
+<Frame caption="Zone de chat et espaces disponibles sur la page d’accueil">
+  ![Page d’accueil de Jask avec la zone de chat, le catalogue et les espaces](/images/accueil_chats.png)
+</Frame>
 
-### Zone de chat & catalogue d'agents
+## Démarrer une conversation
 
-La zone de chat centrale de la page d'accueil est le moyen le plus rapide d'interagir avec JAsk. Elle vous permet d'accéder à tous les agents, groupes d'agents, workflows, skills et modèles auxquels vous avez accès sur Jask.
+La zone de saisie affiche l’agent par défaut configuré dans votre profil.
 
-Toutes vos conversations peuvent être démarrées depuis cette zone de chat : question à l'agent générique, agent spécifique, groupe d'agents, modèle LLM, workflows, skills... Juste en dessous, le catalogue regroupe l'ensemble des agents et services disponibles, organisés par espaces personnalisables.
+<Steps>
+  <Step title="Vérifiez le service sélectionné">
+    Consultez le nom du service affiché dans la zone de saisie.
 
-![input](/images/input.png)
+    Pour modifier votre agent par défaut, ouvrez **Réglages**, puis **Profil**.
+  </Step>
+  <Step title="Saisissez votre demande">
+    Écrivez votre message dans la zone de saisie.
 
-### Démarrer une conversation depuis l'accueil
+    Vous pouvez joindre un fichier, choisir un autre service ou sélectionner un prompt avant l’envoi.
+  </Step>
+  <Step title="Envoyez votre message">
+    Sélectionnez **Envoyer** pour démarrer la conversation.
 
-La zone de saisie affiche l'agent par défaut qui vous a été configuré. Vous pouvez taper votre message directement et appuyer sur **Envoyer** pour lancer un nouveau chat. Cet agent peut être mis à jour dans votre profil (Réglages \> Profil).
+    Votre message apparaît dans le fil de discussion.
+  </Step>
+</Steps>
 
-Deux raccourcis sont disponibles directement dans la zone de saisie pour accéder aux services dont vous avez besoin:
+<Check>
+  La conversation a démarré lorsque votre message apparaît dans le fil de discussion.
+</Check>
 
-- **`@`** — mentionne un agent, un skill (capacité) ou un modèle LLM directement pour lui adresser votre message. En tapant `@` suivi du nom de l'élément, JAsk ouvre un sélecteur qui filtre le catalogue en fonction de votre recherche.
-- **`/`** — accède à vos sources de contenu disponibles (documents, bases de connaissances) pour ancrer votre question dans un contexte précis.
+<Frame caption="Zone de saisie utilisée pour démarrer une conversation">
+  ![Zone de saisie de Jask avec le service sélectionné et les actions disponibles](/images/input.png)
+</Frame>
 
-![@](/images/input_@.gif)
+## Choisir un service
 
-Les trois icônes situées à gauche de la zone de chat permettent respectivement de :
+La zone de chat donne accès aux services disponibles dans votre organisation :
 
-- **Joindre un fichier** — glissez-déposez ou sélectionnez un document à inclure dans votre conversation en plus de votre requête
-- **Définir le niveau de réflexion** — sélectionnez le niveau de réflexion que vous souhaitez (Rapide, Auto, Faible, Moyen, Élevé)
-- **Accéder aux prompts** — ouvrez le Prompt Store qui vous offre une collection de prompts utiles immédiatement utilisables dans vos conversations <img src="/images/text_actions.png" alt="text_actions" />
+- agents ;
+- groupes d’agents ;
+- workflows ;
+- skills ;
+- modèles LLM.
 
-<Warning>
-  Le niveau de réflexion défini au niveau de la conversation donne à l'utilisateur un niveau de contrôle sur la profondeur de raisonnement souhaité. Vous ne pouvez pas choisir le niveau de réflexion sur tous les agents, le créateur de l'agent peut bloquer cette capacité pour forcer un niveau de réflexion pré-établi.
-</Warning>
+La liste affichée dépend des accès associés à votre compte.
 
-### Rechercher dans le catalogue
+rôles et permissions contrôlant l’accès aux agents, groupes d’agents, workflows, skills et modèles LLM
 
-Sous la zone de chat, une barre de recherche intitulée **"Rechercher dans le catalogue…"** vous permet de rechercher l'ensemble des agents et workflows que vous pouvez voir dans votre organisation par mot-clé (nom, description). En cliquant sur un service il sera ajouté à la barre de saisie de texte. Ces services peuvent être épinglés sur la page d'accueil pour simplifier leur accès pour vos prochains usages.
+### Utiliser les commandes de saisie
 
-Le bouton **Ajouter** à droite de la barre permet d'initier la création de nouveaux services ([agent](/docs/catalog/agents/create), [groupe d'agents](/docs/catalog/agents/group) ou [skill](/docs/catalog/skills)), selon les droits dont vous disposez.
+Les commandes **`@`** et **`/`** sont disponibles dans toutes les conversations :
 
-![catalog](/images/accueil_catalog.gif)
+- **`@`** recherche un agent, un skill ou un modèle LLM ;
+- **`/`** recherche une source de contenu, comme un document ou une base de connaissances.
 
-### Personnaliser votre vue
+### Sélectionner un service avec `@`
 
-La partie base de votre accueil est organisée en onglet, chacun représentant un espace thématique ou fonctionnel. Ces espaces peuvent être affiché ou non en fonction de vos préférences :
+<Steps>
+  <Step title="Ouvrez le sélecteur">
+    Dans la zone de saisie, saisissez **`@`**.
+  </Step>
+  <Step title="Recherchez un service">
+    Saisissez le nom de l’agent, du skill ou du modèle LLM recherché.
+
+    La liste est filtrée à mesure que vous saisissez votre recherche.
+  </Step>
+  <Step title="Sélectionnez le service">
+    Choisissez le service dans la liste des résultats.
+
+    Le service sélectionné apparaît dans la zone de saisie.
+  </Step>
+  <Step title="Envoyez votre demande">
+    Saisissez votre message, puis sélectionnez **Envoyer**.
+  </Step>
+</Steps>
+
+<Check>
+  Le service est sélectionné lorsque son nom apparaît dans la zone de saisie.
+</Check>
+
+<Frame caption="Sélection d’un service avec la commande @">
+  ![Ouverture du sélecteur et recherche d’un service avec la commande arobase](/images/input_@.gif)
+</Frame>
+
+### Ajouter une source avec `/`
+
+<Steps>
+  <Step title="Ouvrez le sélecteur de sources">
+    Dans la zone de saisie, saisissez **`/`**.
+  </Step>
+  <Step title="Recherchez une source">
+    Saisissez le nom du dossier ou de la base de connaissances recherchée.
+  </Step>
+  <Step title="Sélectionnez la source">
+    Choisissez la source dans la liste des résultats.
+
+    La source est ajoutée au contexte de votre demande.
+  </Step>
+  <Step title="Envoyez votre demande">
+    Saisissez votre message, puis sélectionnez **Envoyer**.
+  </Step>
+</Steps>
+
+<Check>
+  La source est sélectionnée lorsqu’elle apparaît dans la zone de saisie.
+</Check>
+
+## Utiliser les actions de la zone de chat
+
+Trois actions se trouvent à gauche de la zone de saisie.
+
+| Action | Fonction |
+| --- | --- |
+| **Joindre un fichier** | Ajouter un document à la conversation |
+| **Niveau de réflexion** | Choisir la profondeur de raisonnement appliquée à la demande |
+| **Prompts** | Ouvrir le Prompt Store et sélectionner un prompt |
+
+<Frame caption="Actions disponibles à gauche de la zone de saisie">
+  ![Icônes pour joindre un fichier, choisir le niveau de réflexion et ouvrir les prompts](/images/text_actions.png)
+</Frame>
+
+<Note>
+  Les niveaux proposés sont **Rapide**, **Auto**, **Faible**, **Moyen** et **Élevé**. Le créateur d’un agent peut imposer un niveau de réflexion prédéfini, dans ce cas le bouton sera grisé
+</Note>
+
+### Joindre un fichier
+
+<Steps>
+  <Step title="Ouvrez le sélecteur de fichiers">
+    À gauche de la zone de saisie, sélectionnez **Joindre un fichier**.
+
+    Vous pouvez également glisser-déposer un document dans la zone de chat.
+  </Step>
+  <Step title="Sélectionnez le document">
+    Choisissez le fichier à ajouter à la conversation.
+  </Step>
+  <Step title="Envoyez votre demande">
+    Saisissez votre message, puis sélectionnez **Envoyer**.
+  </Step>
+</Steps>
+
+### Définir le niveau de réflexion
+
+<Steps>
+  <Step title="Ouvrez le sélecteur">
+    À gauche de la zone de saisie, sélectionnez **Niveau de réflexion**.
+  </Step>
+  <Step title="Choisissez un niveau">
+    Sélectionnez **Rapide**, **Auto**, **Faible**, **Moyen** ou **Élevé**.
+  </Step>
+</Steps>
+
+Si le niveau ne peut pas être modifié, l’agent utilise un niveau imposé par son créateur.
+
+### Utiliser un prompt
+
+<Steps>
+  <Step title="Ouvrez le Prompt Store">
+    À gauche de la zone de saisie, sélectionnez **Prompts**.
+  </Step>
+  <Step title="Choisissez un prompt">
+    Parcourez les prompts disponibles, puis sélectionnez celui que vous souhaitez utiliser.
+  </Step>
+  <Step title="Complétez la demande">
+    Adaptez le contenu inséré dans la zone de saisie, puis sélectionnez **Envoyer**.
+  </Step>
+</Steps>
+
+## Rechercher dans le catalogue
+
+La barre **Rechercher dans le catalogue…** permet de rechercher les agents et workflows visibles dans votre organisation.
+
+La recherche utilise le nom et la description des services.
+
+<Steps>
+  <Step title="Saisissez un mot-clé">
+    Dans **Rechercher dans le catalogue…**, saisissez le nom du service ou un mot-clé présent dans sa description.
+  </Step>
+  <Step title="Sélectionnez un service">
+    Choisissez le service dans les résultats.
+
+    Le service est ajouté à la zone de saisie.
+  </Step>
+  <Step title="Démarrez la conversation">
+    Saisissez votre demande, puis sélectionnez **Envoyer**.
+  </Step>
+</Steps>
+
+<Check>
+  Le service est sélectionné lorsque son nom apparaît dans la zone de saisie.
+</Check>
+
+Le bouton de création situé à droite de la barre de recherche permet de démarrer la création d’un service :
+
+- [Créer un agent](/docs/catalog/agents/create) ;
+- [Créer un groupe d’agents](/docs/catalog/agents/group) ;
+- [Créer un skill](/docs/catalog/skills).
+
+<Frame caption="Recherche et sélection d’un service dans le catalogue">
+  ![Recherche d’un service dans le catalogue de la page d’accueil](/images/accueil_catalog.gif)
+</Frame>
+
+## Configurer les espaces de l’accueil
+
+La partie inférieure de l’accueil est organisée en onglets. Chaque onglet correspond à un espace thématique ou fonctionnel.
 
 | Onglet | Contenu |
 | --- | --- |
-| **Mon espace** | Vos agents et services épinglés |
-| **Bibliothèques** | Accès rapide à vos bibliothèques de documents |
-| **Meetings & Transcripts (À venir)** | Liste de vos meetings et transcripts passés |
-| **Ma boite mail (À venir)** | Agents connectés à votre messagerie et traitant des flux email |
-| **\+** | Permet d'ajouter ou configurer un espace personnalisé |
+| **Mon espace** | Services épinglés et modèles IA disponibles |
+| **Bibliothèques** | Bibliothèques de documents disponibles |
+| **Mes réunions — À venir** | Réunions et transcriptions passées |
+| **Ma boîte mail — À venir** | Agents connectés à votre messagerie et traitant des flux d’e-mails |
+| **\+** | Configuration des espaces affichés sur l’accueil |
 
-<Tip>
-  Le bouton **\+** en fin de barre d'onglets vous permet de personnaliser votre accueil pour répondre au mieux à vos besoins
-</Tip>
+<Note>
+  Les espaces **Mes réunions** et **Ma boîte mail** sont visibles sur l’accueil, mais leurs fonctionnalités ne sont pas encore disponibles.
+</Note>
 
-### Mon espace
+Pour configurer les espaces affichés sur votre accueil, sélectionnez **\+** à la fin de la barre d’onglets.
 
-Retrouvez l'ensemble de vos services favoris épinglés ainsi que les modèles IA auxquels vous avez accès. Rajoutez des services en passant par le catalogue et en épinglant les services. Dans la liste des services épinglés en survolant un service, l'icône "..." vous permettra de désépingler le service ou de voir le détail de ses informations (agents uniquement).
+## Gérer les services épinglés
 
-![pin](/images/pin.gif)
+L’onglet **Mon espace** regroupe vos services épinglés et les modèles IA auxquels vous avez accès.
 
-### Accès au centre d'aide
+### Épingler un service
 
-Depuis l'accueil, en haut à droite de l'écran, vous pouvez accéder à des ressources comme le centre d'aide pour vous aider dans l'utilisation de la plateforme.
+<Steps>
+  <Step title="Recherchez le service">
+    Dans **Rechercher dans le catalogue…**, recherchez le service à ajouter.
+  </Step>
+  <Step title="Épinglez le service">
+    Utilisez l’action d’épinglage associée au service.
+
+    Le service apparaît dans **Mon espace**.
+  </Step>
+</Steps>
+
+<Check>
+  Le service est épinglé lorsqu’il apparaît dans l’onglet **Mon espace**.
+</Check>
+
+### Retirer un service de Mon espace
+
+<Steps>
+  <Step title="Affichez les actions du service">
+    Dans **Mon espace**, survolez le service concerné, puis sélectionnez **…**.
+  </Step>
+  <Step title="Désépinglez le service">
+    Sélectionnez l’action permettant de désépingler le service.
+
+    Le service disparaît de **Mon espace**.
+  </Step>
+</Steps>
+
+<Check>
+  Le service est désépinglé lorsqu’il n’apparaît plus dans **Mon espace**.
+</Check>
+
+Pour un agent, le menu **…** permet également d’afficher le détail de ses informations.
+
+<Frame caption="Ajout d’un service épinglé dans Mon espace">
+  ![Épinglage d’un service du catalogue dans l’onglet Mon espace](/images/pin.gif)
+</Frame>
+
+## Résoudre les problèmes courants
+
+<AccordionGroup>
+  <Accordion title="Le service recherché n’apparaît pas">
+    Vérifiez l’orthographe du nom, puis recherchez un mot-clé présent dans sa description.
+
+    La visibilité des services dépend aussi des accès associés à votre compte. Si le service reste introuvable, contactez l’administrateur de votre organisation.
+
+    \_CONFIRMER: procédure de demande d’accès à un service
+  </Accordion>
+
+  <Accordion title="Le bouton de création n’apparaît pas">
+    L’affichage du bouton dépend des droits associés à votre compte.
+
+    Contactez l’administrateur de votre organisation pour vérifier vos droits de création.
+
+    \_CONFIRMER: rôles et permissions nécessaires
+  </Accordion>
+
+  <Accordion title="Le niveau de réflexion ne peut pas être modifié">
+    L’agent sélectionné peut imposer un niveau de réflexion prédéfini.
+
+    Utilisez le niveau proposé ou sélectionnez un autre agent.
+  </Accordion>
+
+  <Accordion title="Une source n’apparaît pas avec la commande /">
+    Vérifiez le nom de la source et relancez la recherche.
+
+    Si elle reste absente, contactez l’administrateur de votre organisation pour vérifier vos accès.
+
+    \_CONFIRMER: rôles, permissions et conditions nécessaires à l’affichage d’une source
+  </Accordion>
+</AccordionGroup>
+
+## Accéder au centre d’aide
+
+Depuis la page d’accueil, utilisez le menu situé en haut à droite de l’écran pour ouvrir le centre d’aide.
+
+## Et ensuite
+
+<Columns cols={3}>
+  <Card title="Créer un agent" icon="message-square-text" href="/docs/catalog/agents/create">
+    Configurez un agent pour répondre à un besoin précis.
+  </Card>
+
+  <Card title="Créer un groupe d’agents" icon="users" href="/docs/catalog/agents/group">
+    Regroupez plusieurs agents dans un même service.
+  </Card>
+
+  <Card title="Créer un skill" icon="sparkles" href="/docs/catalog/skills">
+    Ajoutez une capacité réutilisable au catalogue.
+  </Card>
+</Columns>
