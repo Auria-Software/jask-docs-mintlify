@@ -5,8 +5,8 @@
   "description": "Documentation produit et référence API de Jask.",
   "colors": {
     "primary": "#593EFF",
-    "light": "#B94FC8",
-    "dark": "#B94FC8"
+    "light": "#593EFF",
+    "dark": "#593EFF"
   },
   "logo": {
     "light": "/images/logo-light.svg",
